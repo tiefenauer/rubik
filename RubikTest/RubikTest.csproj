@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>5270ac16-f556-45ae-9f81-fc170b58bf16</ProjectGuid>
+    <ProjectGuid>{3360648F-45DF-4162-80D7-501276A2750F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RubikTest</RootNamespace>

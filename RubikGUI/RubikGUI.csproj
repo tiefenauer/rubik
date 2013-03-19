@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>a6e3d3f6-47f7-4db2-9d40-64a53a82f74e</ProjectGuid>
+    <ProjectGuid>{0A4EC84E-9E3F-463B-9AD2-BC15FC55D48B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RubikGUI</RootNamespace>
