@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Rubik
 {
-    public class Class1
+    public class Square
     {
+        public string name;
+        public string accronym;
     }
 }
