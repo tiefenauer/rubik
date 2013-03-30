@@ -71,6 +71,9 @@ namespace Rubik
             get { return c; }
             set { c = value; }
         }
-        
+
+        public virtual void Rotate(Axis axis, bool counterclockwise)
+        {
+        }
     }
 }

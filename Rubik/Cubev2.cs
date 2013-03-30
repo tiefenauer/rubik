@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace Rubik
 {
-    public class Cubev2
+    public enum Axis
     {
+        xAxis,
+        yAxis,
+        zAxis
+    };
+
+    public class Cubev2
+    {        
         List<Piece> pieces = new List<Piece>();
 
         /// <summary>
@@ -30,7 +37,7 @@ namespace Rubik
             pieces.Add(new Edge(-1, 1, 0, new PositionValue(-1, "o"), new PositionValue(1, "y"), null));
             pieces.Add(new Edge(1, 1, 0, new PositionValue(1, "r"), new PositionValue(1, "y"), null));
             pieces.Add(new Corner(-1, 1, -1, new PositionValue(-1, "o"), new PositionValue(1, "y"), new PositionValue(-1, "b")));
-            pieces.Add(new Edge(0, 1, 0, null, new PositionValue(1, "y"), new PositionValue(-1, "b")));
+            pieces.Add(new Edge(0, 1, -1, null, new PositionValue(1, "y"), new PositionValue(-1, "b")));
             pieces.Add(new Corner(1, 1, -1, new PositionValue(1, "r"), new PositionValue(1, "y"), new PositionValue(-1, "b")));
 
             //Left Layer
@@ -38,7 +45,7 @@ namespace Rubik
             pieces.Add(new Edge(-1, -1, 0, new PositionValue(-1, "o"), new PositionValue(-1, "g"), null));
             pieces.Add(new Corner(-1, -1, -1, new PositionValue(-1, "o"), new PositionValue(-1, "g"), new PositionValue(-1, "b")));
             pieces.Add(new Edge(-1, 0, -1, new PositionValue(-1, "o"), null, new PositionValue(-1, "b")));
-            pieces.Add(new Corner(-1, 1, -1, new PositionValue(-1, "o"), new PositionValue(1, "y"), new PositionValue(-1, "b")));
+            //pieces.Add(new Corner(-1, 1, -1, new PositionValue(-1, "o"), new PositionValue(1, "y"), new PositionValue(-1, "b")));
 
             //Right Layer
             pieces.Add(new Middle(1, 0, 0, new PositionValue(1, "r"), null, null));
@@ -58,6 +65,7 @@ namespace Rubik
 
         public override string ToString()
         {
+
             string tab = "\t";
            List<Piece> firstpieces = pieces.Where(p=>p.Y == -1 && p.Z == -1).OrderBy(p=>p.X).ToList();
            string line1 = " \t \t \t" + firstpieces[0].B.Val + tab + firstpieces[1].B.Val + tab + firstpieces[2].B.Val + "\t \t \t \t \t \t ";
@@ -95,6 +103,7 @@ namespace Rubik
            List<Piece> pieces63WrongOrder = pieces.Where(p => p.Z == -1 && p.Y == 1).OrderBy(p => p.X).ToList();
            string line6 = pieces6[0].A.Val + tab + pieces6[1].A.Val + tab + pieces6[2].A.Val + tab + pieces61[0].C.Val + tab + pieces61[1].C.Val + tab + pieces61[2].C.Val + tab + pieces62WrongOrder[2].A.Val + tab + pieces62WrongOrder[1].A.Val + tab + pieces62WrongOrder[0].A.Val + tab + pieces63WrongOrder[2].C.Val + tab + pieces63WrongOrder[1].C.Val + tab + pieces63WrongOrder[0].C.Val;
 
+            //Front
            List<Piece> pieces7 = pieces.Where(p => p.Y == 1 && p.Z == 1).OrderBy(p => p.X).ToList();
            string line7 = " \t \t \t" + pieces7[0].B.Val + tab + pieces7[1].B.Val + tab + pieces7[2].B.Val + "\t \t \t \t \t \t ";
            List<Piece> pieces8 = pieces.Where(p => p.Y == 1 && p.Z == 0).OrderBy(p => p.X).ToList();
@@ -104,6 +113,30 @@ namespace Rubik
 
            string value = line1 + Environment.NewLine + line2 + Environment.NewLine + line3 + Environment.NewLine + line4 + Environment.NewLine + line5 + Environment.NewLine + line6 + Environment.NewLine + line7 + Environment.NewLine + line8 + Environment.NewLine + line9;
            return value; 
+        }
+
+        public void Rotate(Axis axis, bool counterclockwise, int val)
+        {
+            switch (axis)
+            {
+                case Axis.xAxis:
+                    foreach(Piece piece in pieces.Where(p=>p.X == val)){
+                        piece.Rotate(axis, counterclockwise);
+                    }
+                    break;
+                case Axis.yAxis:
+                    foreach (Piece piece in pieces.Where(p => p.Y == val))
+                    {
+                        piece.Rotate(axis, counterclockwise);
+                    }
+                    break;
+                case Axis.zAxis:
+                    foreach (Piece piece in pieces.Where(p => p.Z == val))
+                    {
+                        piece.Rotate(axis, counterclockwise);
+                    }
+                    break;
+            }
         }
     }
 }

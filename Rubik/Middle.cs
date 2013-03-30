@@ -12,7 +12,10 @@ namespace Rubik
             : base(x, y, z, a, b, c)
         {
         }
-        
-        
+
+        public override void Rotate(Axis axis, bool counterclockwise)
+        {
+            //I don't care if you rotate me
+        }
     }
 }
