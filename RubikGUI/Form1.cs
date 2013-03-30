@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rubik;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,8 @@ namespace RubikGUI
         public Form1()
         {
             InitializeComponent();
+            Cubev2 cube = new Cubev2();
+            textBox1.Text = cube.ToString();
         }
     }
 }

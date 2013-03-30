@@ -14,13 +14,16 @@ namespace Rubik
         Left,
         Right,
         Back
-    }
+    }    
+
     public class Face
     {
         Row top;
         Row center;
         Row bottom;
         FacePosition pos;
+
+        public List<Face> neighbours = new List<Face>();
 
         public FacePosition Pos
         {
@@ -55,6 +58,11 @@ namespace Rubik
         }
 
         public void rotate(bool counterclockwise)
+        {
+
+        }
+
+        public void rotateFromNeighbour(bool counterclockwise)
         {
         }
 

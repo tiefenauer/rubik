@@ -1,0 +1,78 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Rubik
+{
+    public abstract class Piece
+    {
+        /// <summary>
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="z"></param>
+        /// <param name="a">up</param>
+        /// <param name="b">down</param>
+        /// <param name="c">left</param>
+        /// <param name="d">right</param>
+        /// <param name="e">front</param>
+        /// <param name="f">back</param>
+        public Piece(int x, int y, int z, PositionValue a, PositionValue b, PositionValue c)
+        {
+            this.X = x;
+            this.Y = y;
+            this.Z = z;
+            this.A = a;
+            this.B = b;
+            this.C = c;            
+        }
+
+        private int x;
+
+        public int X
+        {
+            get { return x; }
+            set { x = value; }
+        }
+        private int y;
+
+        public int Y
+        {
+            get { return y; }
+            set { y = value; }
+        }
+        private int z;
+
+        public int Z
+        {
+            get { return z; }
+            set { z = value; }
+        }
+
+        private PositionValue a;
+
+        public PositionValue A
+        {
+            get { return a; }
+            set { a = value; }
+        }
+
+        private PositionValue b;
+
+        public PositionValue B
+        {
+            get { return b; }
+            set { b = value; }
+        }
+        private PositionValue c;
+
+        public PositionValue C
+        {
+            get { return c; }
+            set { c = value; }
+        }
+        
+    }
+}
