@@ -9,16 +9,14 @@ namespace Rubik
     public abstract class Piece
     {
         /// <summary>
+        /// Constructor. Internal coordinates have the same heading as external.
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
         /// <param name="z"></param>
-        /// <param name="a">up</param>
-        /// <param name="b">down</param>
-        /// <param name="c">left</param>
-        /// <param name="d">right</param>
-        /// <param name="e">front</param>
-        /// <param name="f">back</param>
+        /// <param name="a">internal x</param>
+        /// <param name="b">internal y</param>
+        /// <param name="c">internal z</param>
         public Piece(int x, int y, int z, PositionValue a, PositionValue b, PositionValue c)
         {
             this.X = x;
