@@ -13,6 +13,11 @@ namespace Rubik
         {
         }
 
+        /// <summary>
+        /// Internal Rotation method. Performs rotation and piece internal rotation.
+        /// </summary>
+        /// <param name="axis">the axis that we rotate around</param>
+        /// <param name="counterclockwise">true if rotation is counterclock wise</param>
         public override void Rotate(Axis axis, bool counterclockwise)
         {
             if (axis == Axis.zAxis)
@@ -99,11 +104,6 @@ namespace Rubik
                 this.A = this.C == null ? null : new PositionValue(this.X, this.C.Val);
                 this.C = aval == null ? null : new PositionValue(this.Z, aval.Val);
             }
-        }
-
-        private void PerformInternalRotation()
-        {
-
-        }
+        }        
     }
 }

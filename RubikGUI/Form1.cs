@@ -17,7 +17,8 @@ namespace RubikGUI
         {
             InitializeComponent();
             Cubev2 cube = new Cubev2();
-            cube.Rotate(Axis.yAxis, true, 1);
+            cube.Rotate(Axis.zAxis, false, 1);
+            //cube.Rotate(Axis.xAxis, false, 1);
             textBox1.Text = cube.ToString();
         }
     }

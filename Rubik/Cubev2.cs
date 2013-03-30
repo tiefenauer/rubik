@@ -44,8 +44,7 @@ namespace Rubik
             pieces.Add(new Middle(-1, 0, 0, new PositionValue(-1, "o"), null, null));
             pieces.Add(new Edge(-1, -1, 0, new PositionValue(-1, "o"), new PositionValue(-1, "g"), null));
             pieces.Add(new Corner(-1, -1, -1, new PositionValue(-1, "o"), new PositionValue(-1, "g"), new PositionValue(-1, "b")));
-            pieces.Add(new Edge(-1, 0, -1, new PositionValue(-1, "o"), null, new PositionValue(-1, "b")));
-            //pieces.Add(new Corner(-1, 1, -1, new PositionValue(-1, "o"), new PositionValue(1, "y"), new PositionValue(-1, "b")));
+            pieces.Add(new Edge(-1, 0, -1, new PositionValue(-1, "o"), null, new PositionValue(-1, "b")));           
 
             //Right Layer
             pieces.Add(new Middle(1, 0, 0, new PositionValue(1, "r"), null, null));
@@ -63,6 +62,10 @@ namespace Rubik
             
         }
 
+        /// <summary>
+        /// Quick and dirty toString override.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
 
@@ -115,8 +118,20 @@ namespace Rubik
            return value; 
         }
 
+        /// <summary>
+        /// Rotates one part of the cube
+        /// </summary>
+        /// <param name="axis">the axis that we rotate around</param>
+        /// <param name="counterclockwise">set true if counterclockwise</param>
+        /// <param name="val">Either 1 or -1 by convention, we will not move the middle layers.</param>
         public void Rotate(Axis axis, bool counterclockwise, int val)
         {
+            if (val == 0)
+            {
+                //Middle layer will not be moved in order to keep our fixed axis.
+                return;
+            }
+
             switch (axis)
             {
                 case Axis.xAxis:

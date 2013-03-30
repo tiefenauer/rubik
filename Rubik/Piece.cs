@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Rubik
 {
+    /// <summary>
+    /// Resembles a piece of the cube.
+    /// </summary>
     public abstract class Piece
     {
         /// <summary>

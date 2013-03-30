@@ -13,6 +13,11 @@ namespace Rubik
         {
         }
 
+        /// <summary>
+        /// Performs rotation on Edge Piece
+        /// </summary>
+        /// <param name="axis">the axis that we rotate around</param>
+        /// <param name="counterclockwise">true if rotation is counterclock wise</param>
         public override void Rotate(Axis axis, bool counterclockwise)
         {
             if (axis == Axis.zAxis)
@@ -69,10 +74,6 @@ namespace Rubik
                     this.X = this.X == 0 ? -help : help;
                     this.Z = helpx;
                 }
-                //int help = this.X;
-                //this.X = this.Z;
-                //int tvalue = counterclockwise ? help : this.Z;
-                //this.Z = tvalue == 0 ? -help : help;
 
                 //Internal Rotation
                 PositionValue aval = this.A;

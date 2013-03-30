@@ -13,6 +13,11 @@ namespace Rubik
         {
         }
 
+        /// <summary>
+        /// Rotation method. Does nothing. Middle layers won't be moved.
+        /// </summary>
+        /// <param name="axis">the axis that we rotate around</param>
+        /// <param name="counterclockwise">true if rotation is counterclock wise</param>
         public override void Rotate(Axis axis, bool counterclockwise)
         {
             //I don't care if you rotate me
