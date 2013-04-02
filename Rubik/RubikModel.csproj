@@ -40,15 +40,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Corner.cs" />
-    <Compile Include="Cube.cs" />
     <Compile Include="Cubev2.cs" />
     <Compile Include="Edge.cs" />
-    <Compile Include="Face.cs" />
     <Compile Include="Middle.cs" />
     <Compile Include="Piece.cs" />
     <Compile Include="PositionValue.cs" />
-    <Compile Include="Row.cs" />
-    <Compile Include="Square.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
