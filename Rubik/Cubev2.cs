@@ -14,8 +14,14 @@ namespace Rubik
     };
 
     public class Cubev2
-    {        
+    {
         List<Piece> pieces = new List<Piece>();
+
+        public List<Piece> Pieces
+        {
+            get { return pieces; }
+            set { pieces = value; }
+        }
 
         /// <summary>
         /// front yellow. Top white.

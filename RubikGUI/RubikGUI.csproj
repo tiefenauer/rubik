@@ -44,14 +44,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CubeColorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CubeColorView.Designer.cs">
+      <DependentUpon>CubeColorView.cs</DependentUpon>
+    </Compile>
     <Compile Include="CubeView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CubeView.Designer.cs">
       <DependentUpon>CubeView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Position.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CubeColorView.resx">
+      <DependentUpon>CubeColorView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CubeView.resx">
       <DependentUpon>CubeView.cs</DependentUpon>
     </EmbeddedResource>

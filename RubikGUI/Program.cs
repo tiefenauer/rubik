@@ -16,7 +16,7 @@ namespace RubikGUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CubeView());
+            Application.Run(new CubeColorView());
         }
     }
 }
