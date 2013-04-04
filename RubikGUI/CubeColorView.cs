@@ -17,12 +17,13 @@ namespace RubikGUI
         public Dictionary<string, Position> positionmappings = new Dictionary<string, Position>();
 
         public Cubev2 cube = new Cubev2();
+        private PictureBox lastSelected = null;
 
         public CubeColorView()
         {            
             InitializeComponent();
             PrepareMappings();            
-            PaintCurrentCube();
+            PaintCurrentCube();            
         }
 
         public void PrepareMappings()
@@ -111,5 +112,45 @@ namespace RubikGUI
                 }
             }
         }
+
+        private void pictureBox_MouseClick(object sender, EventArgs e)
+        {
+            lastSelected = (PictureBox)sender;
+        }
+
+        private void Color_Click(object sender, EventArgs e)
+        {
+            if (lastSelected != null)
+            {
+                lastSelected.BackColor = (sender as PictureBox).BackColor;
+            }
+        }
+
+        private void SaveCubeConfigToCube(){
+            foreach (KeyValuePair<string, Position> positionmapping in positionmappings)
+            {
+                Piece piece = cube.Pieces.Where(p => p.X.Equals(positionmapping.Value.X) && p.Y.Equals(positionmapping.Value.Y) && p.Z.Equals(positionmapping.Value.Z)).SingleOrDefault();
+                switch (positionmapping.Value.Axis)
+                {
+                    case Axis.xAxis:
+                        piece.A = new PositionValue(piece.X, colormappings.Where(cm => cm.Value.Equals((this.Controls.Find(positionmapping.Key, false)[0] as PictureBox).BackColor)).SingleOrDefault().Key);                            
+                        break;
+                    case Axis.yAxis:
+                        piece.B = new PositionValue(piece.Y, colormappings.Where(cm => cm.Value.Equals((this.Controls.Find(positionmapping.Key, false)[0] as PictureBox).BackColor)).SingleOrDefault().Key);
+                        break;
+                    case Axis.zAxis:
+                        piece.C = new PositionValue(piece.Z, colormappings.Where(cm => cm.Value.Equals((this.Controls.Find(positionmapping.Key, false)[0] as PictureBox).BackColor)).SingleOrDefault().Key);
+                        break;
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaveCubeConfigToCube();
+            PaintCurrentCube();
+        }
+
+        
     }
 }
