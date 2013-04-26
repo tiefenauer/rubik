@@ -17,7 +17,7 @@ namespace RubikGUI
         public Dictionary<string, Position> positionmappings = new Dictionary<string, Position>();
 
         public Cubev2 cube = new Cubev2();
-        private PictureBox lastSelected = null;
+        private PictureBox selectedColor = null;
 
         public CubeColorView()
         {            
@@ -113,20 +113,22 @@ namespace RubikGUI
             }
         }
 
-        private void pictureBox_MouseClick(object sender, EventArgs e)
+        private void tileClick(object sender, EventArgs e)
         {
-            lastSelected = (PictureBox)sender;
+            (sender as PictureBox).BackColor = selectedColor.BackColor;
         }
 
         private void Color_Click(object sender, EventArgs e)
         {
-            if (lastSelected != null)
-            {
-                lastSelected.BackColor = (sender as PictureBox).BackColor;
-            }
+            if (selectedColor != null)
+                selectedColor.BorderStyle = BorderStyle.None;
+            selectedColor = sender as PictureBox;
+            selectedColor.BorderStyle = BorderStyle.FixedSingle;
         }
 
         private void SaveCubeConfigToCube(){
+            List<Piece> pieces = new List<Piece>();
+
             foreach (KeyValuePair<string, Position> positionmapping in positionmappings)
             {
                 Piece piece = cube.Pieces.Where(p => p.X.Equals(positionmapping.Value.X) && p.Y.Equals(positionmapping.Value.Y) && p.Z.Equals(positionmapping.Value.Z)).SingleOrDefault();
@@ -142,12 +144,103 @@ namespace RubikGUI
                         piece.C = new PositionValue(piece.Z, colormappings.Where(cm => cm.Value.Equals((this.Controls.Find(positionmapping.Key, false)[0] as PictureBox).BackColor)).SingleOrDefault().Key);
                         break;
                 }
+                pieces.Add(piece);
             }
+
+            // TO DO: XML-Serialization
+            /*
+            System.Xml.Serialization.XmlSerializer writer = new System.Xml.Serialization.XmlSerializer(typeof(List<Piece>));
+            System.IO.StreamWriter file = new System.IO.StreamWriter(@"defaultcube.xml");
+            writer.Serialize(file, pieces);
+            file.Close();
+             */
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void saveButtonClick(object sender, EventArgs e)
         {
             SaveCubeConfigToCube();
+            PaintCurrentCube();
+        }
+
+        private void solveButtonClick(object sender, EventArgs e)
+        {
+            cube.solve();
+        }
+
+        private void loadButtonClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rotateD_Click(object sender, EventArgs e)
+        {
+            cube.Rotate(Axis.zAxis, false, 1);
+            PaintCurrentCube();
+        }
+
+        private void rotateDi_Click(object sender, EventArgs e)
+        {
+            cube.Rotate(Axis.zAxis, true, 1);
+            PaintCurrentCube();
+        }
+
+        private void rotateR_Click(object sender, EventArgs e)
+        {
+            cube.Rotate(Axis.xAxis, false, 1);
+            PaintCurrentCube();
+        }
+
+        private void rotateRi_Click(object sender, EventArgs e)
+        {
+            cube.Rotate(Axis.xAxis, true, 1);
+            PaintCurrentCube();
+        }
+
+        private void rotateB_Click(object sender, EventArgs e)
+        {
+            cube.Rotate(Axis.zAxis, false, -1);
+            PaintCurrentCube();
+        }
+
+        private void rotateBi_Click(object sender, EventArgs e)
+        {
+            cube.Rotate(Axis.zAxis, true, -1);
+            PaintCurrentCube();
+        }
+
+        private void rotateL_Click(object sender, EventArgs e)
+        {
+            cube.Rotate(Axis.xAxis, false, -1);
+            PaintCurrentCube();
+        }
+
+        private void rotateLi_Click(object sender, EventArgs e)
+        {
+            cube.Rotate(Axis.xAxis, true, -1);
+            PaintCurrentCube();
+        }
+
+        private void rotateF_Click(object sender, EventArgs e)
+        {
+            cube.Rotate(Axis.yAxis, false, 1);
+            PaintCurrentCube();
+        }
+
+        private void rotateFi_Click(object sender, EventArgs e)
+        {
+            cube.Rotate(Axis.yAxis, true, 1);
+            PaintCurrentCube();
+        }
+
+        private void rotateT_Click(object sender, EventArgs e)
+        {
+            cube.Rotate(Axis.zAxis, false, 1);
+            PaintCurrentCube();
+        }
+
+        private void rotateTi_Click(object sender, EventArgs e)
+        {
+            cube.Rotate(Axis.zAxis, true, 1);
             PaintCurrentCube();
         }
 
