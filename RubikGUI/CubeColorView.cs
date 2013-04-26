@@ -172,37 +172,25 @@ namespace RubikGUI
 
         }
 
-        private void rotateD_Click(object sender, EventArgs e)
+        private void rotateT_Click(object sender, EventArgs e)
         {
             cube.Rotate(Axis.zAxis, false, 1);
             PaintCurrentCube();
         }
 
-        private void rotateDi_Click(object sender, EventArgs e)
+        private void rotateTi_Click(object sender, EventArgs e)
         {
             cube.Rotate(Axis.zAxis, true, 1);
             PaintCurrentCube();
         }
 
-        private void rotateR_Click(object sender, EventArgs e)
-        {
-            cube.Rotate(Axis.xAxis, false, 1);
-            PaintCurrentCube();
-        }
-
-        private void rotateRi_Click(object sender, EventArgs e)
-        {
-            cube.Rotate(Axis.xAxis, true, 1);
-            PaintCurrentCube();
-        }
-
-        private void rotateB_Click(object sender, EventArgs e)
+        private void rotateD_Click(object sender, EventArgs e)
         {
             cube.Rotate(Axis.zAxis, false, -1);
             PaintCurrentCube();
         }
 
-        private void rotateBi_Click(object sender, EventArgs e)
+        private void rotateDi_Click(object sender, EventArgs e)
         {
             cube.Rotate(Axis.zAxis, true, -1);
             PaintCurrentCube();
@@ -220,6 +208,30 @@ namespace RubikGUI
             PaintCurrentCube();
         }
 
+        private void rotateR_Click(object sender, EventArgs e)
+        {
+            cube.Rotate(Axis.xAxis, false, 1);
+            PaintCurrentCube();
+        }
+
+        private void rotateRi_Click(object sender, EventArgs e)
+        {
+            cube.Rotate(Axis.xAxis, true, 1);
+            PaintCurrentCube();
+        }
+
+        private void rotateB_Click(object sender, EventArgs e)
+        {
+            cube.Rotate(Axis.yAxis, false, -1);
+            PaintCurrentCube();
+        }
+
+        private void rotateBi_Click(object sender, EventArgs e)
+        {
+            cube.Rotate(Axis.yAxis, true, -1);
+            PaintCurrentCube();
+        }
+
         private void rotateF_Click(object sender, EventArgs e)
         {
             cube.Rotate(Axis.yAxis, false, 1);
@@ -229,18 +241,6 @@ namespace RubikGUI
         private void rotateFi_Click(object sender, EventArgs e)
         {
             cube.Rotate(Axis.yAxis, true, 1);
-            PaintCurrentCube();
-        }
-
-        private void rotateT_Click(object sender, EventArgs e)
-        {
-            cube.Rotate(Axis.zAxis, false, 1);
-            PaintCurrentCube();
-        }
-
-        private void rotateTi_Click(object sender, EventArgs e)
-        {
-            cube.Rotate(Axis.zAxis, true, 1);
             PaintCurrentCube();
         }
 
