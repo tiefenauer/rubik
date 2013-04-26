@@ -13,8 +13,18 @@ namespace Rubik
         zAxis
     };
 
+    public delegate void ChangedEventHandler(object sender, EventArgs e);
+
     public class Cubev2
     {
+
+        public event ChangedEventHandler Changed;
+        protected virtual void OnChanged(EventArgs e)
+        {
+            if (Changed != null)
+                Changed(this, e);
+        }
+
         List<Piece> pieces = new List<Piece>();
 
         public List<Piece> Pieces
@@ -102,10 +112,12 @@ namespace Rubik
              * */
         }
 
-        public void solve()
+        public void solveStep()
         {
             PhaseOne one = new PhaseOne(this);
-            one.solve();
+            if (!one.finished){
+                one.step();
+            }
             // PhaseOne.solve(this);
             // PhaseTwo.solve(this);
             // PhaseThree.solve(this);
@@ -205,6 +217,9 @@ namespace Rubik
                     }
                     break;
             }
+            OnChanged(EventArgs.Empty);
         }
+
+
     }
 }
