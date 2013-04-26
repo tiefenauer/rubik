@@ -44,6 +44,10 @@ namespace Rubik
                         this.Y = this.X;                        
                     }
                 }
+
+                this.X = this.X * this.Z;
+                this.Y = this.Y * this.Z;
+
                 PositionValue bval = this.B;
                 this.B = this.A == null ? null : new PositionValue(this.Y, this.A.Val);
                 this.A = bval == null ? null : new PositionValue(this.X, bval.Val);
@@ -72,6 +76,10 @@ namespace Rubik
                         this.Z = this.Y;
                     }
                 }
+
+                this.Y = this.Y * this.X;
+                this.Z = this.Z * this.X;
+
                 PositionValue bval = this.B;
                 this.B = this.C == null ? null : new PositionValue(this.Y, this.C.Val);
                 this.C = bval == null ? null : new PositionValue(this.Z, bval.Val);
@@ -100,6 +108,10 @@ namespace Rubik
                         this.Z = this.X;
                     }
                 }
+
+                this.X = this.X * this.Y;
+                this.Z = this.Z * -this.Y;
+
                 PositionValue aval = this.A;
                 this.A = this.C == null ? null : new PositionValue(this.X, this.C.Val);
                 this.C = aval == null ? null : new PositionValue(this.Z, aval.Val);

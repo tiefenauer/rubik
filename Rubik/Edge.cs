@@ -33,6 +33,9 @@ namespace Rubik
                     this.Y = helpx;
                 }
 
+                this.X = this.X * this.Z;
+                this.Y = this.Y * this.Z;
+
                 //Internal Rotation
                 PositionValue bval = this.B;
                 this.B = this.A == null ? null: new PositionValue(this.Y, this.A.Val);
@@ -54,6 +57,9 @@ namespace Rubik
                     this.Z = helpx;
                 }
 
+                this.Y = this.Y * this.X;
+                this.Z = this.Z * this.X;
+
                 //Internal Rotation
                 PositionValue bval = this.B;
                 this.B = this.C == null ? null : new PositionValue(this.Y, this.C.Val);
@@ -74,6 +80,9 @@ namespace Rubik
                     this.X = this.X == 0 ? -help : help;
                     this.Z = helpx;
                 }
+
+                this.X = this.X * -this.Y;
+                this.Z = this.Z * -this.Y;
 
                 //Internal Rotation
                 PositionValue aval = this.A;
