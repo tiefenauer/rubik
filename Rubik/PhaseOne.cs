@@ -11,6 +11,8 @@ namespace Rubik
     /// </summary>
     class PhaseOne
     {
+        private Boolean stepwise;
+        private Boolean stepFinished;
         private Cubev2 cube;
         private String topColor;
         private String northColor;
@@ -22,15 +24,15 @@ namespace Rubik
         /// Constructor
         /// </summary>
         /// <param name="cube"></param>
-        public PhaseOne(Cubev2 cube)
+        public PhaseOne(Cubev2 cube, Boolean stepwise = true)
         {
             this.cube = cube;
+            this.stepwise = stepwise;
+            this.stepFinished = false;
+            init();
         }
 
-        /// <summary>
-        /// Solve this phase
-        /// </summary>
-        public void solve()
+        private void init()
         {
             topColor = cube.Pieces.Where(p => p.X == 0 && p.Y == 0 && p.Z == 1).SingleOrDefault().C.Val;
             // determine colors of adjacent pieces
@@ -39,28 +41,54 @@ namespace Rubik
             westColor = cube.Pieces.Where(p => p.X == -1 && p.Y == 0 && p.Z == 0).SingleOrDefault().A.Val;
             eastColor = cube.Pieces.Where(p => p.X == 1 && p.Y == 0 && p.Z == 0).SingleOrDefault().A.Val;
 
-            IList<Edge> edges = getEdges();
-            
-            Edge southEdge = edges.Where(p => p.A != null && p.A.Val.Equals(southColor) || p.B != null && p.B.Val.Equals(southColor) || p.C != null && p.C.Val.Equals(southColor)).SingleOrDefault();
-            Edge westEdge = edges.Where(p => p.A != null && p.A.Val.Equals(westColor) || p.B != null && p.B.Val.Equals(westColor) || p.C != null && p.C.Val.Equals(westColor)).SingleOrDefault();
-            Edge eastEdge = edges.Where(p => p.A != null && p.A.Val.Equals(eastColor) || p.B != null && p.B.Val.Equals(eastColor) || p.C != null && p.C.Val.Equals(eastColor)).SingleOrDefault();
+        }
 
+        public bool finished
+        {
+            get
+            {
+                return northEdge.X == 0 &&
+                        northEdge.Y == -1 &&
+                        northEdge.Z == 1 &&
+                        northEdge.C.Val.Equals(topColor) &&
+                        northEdge.B.Val.Equals(northColor) &&
+                        southEdge.X == 0 &&
+                        southEdge.Y == 11 &&
+                        southEdge.Z == 1 &&
+                        southEdge.C.Val.Equals(topColor) &&
+                        southEdge.B.Val.Equals(southColor) &&
+                        westEdge.X == 1 &&
+                        westEdge.Y == 0 &&
+                        westEdge.Z == 1 &&
+                        westEdge.C.Val.Equals(topColor) &&
+                        westEdge.B.Val.Equals(westColor) &&
+                        eastEdge.X == -1 &&
+                        eastEdge.Y == 0 &&
+                        eastEdge.Z == 1 &&
+                        eastEdge.C.Val.Equals(topColor) &&
+                        eastEdge.B.Val.Equals(eastColor)
+                        ;
+            }
+        }
+
+        /// <summary>
+        /// Solve this phase
+        /// </summary>
+        public void step()
+        {
             // rotate each edge according to its position so that its side with the same color as top color is on top
-            rotateNorthEdge(edges);
-            rotateSouthEdge(southEdge);
-            rotateWestEdge(westEdge);
-            rotateEastEdge(eastEdge);
+            rotateNorthEdge();
+            rotateSouthEdge();
+            rotateWestEdge();
+            rotateEastEdge();
         }
 
         /// <summary>
         /// Rotate north edge into correct position
         /// </summary>
         /// <param name="edge"></param>
-        private void rotateNorthEdge(IList<Edge> edges)
+        private void rotateNorthEdge()
         {
-            // find north edge
-            Edge northEdge = edges.Where(p => p.A != null && p.A.Val.Equals(northColor) || p.B != null && p.B.Val.Equals(northColor) || p.C != null && p.C.Val.Equals(northColor)).SingleOrDefault();
-            
             switch (northEdge.Z)
             {
                 // edge is already in top layer
@@ -75,11 +103,8 @@ namespace Rubik
 
                     break;
             }
-            // edge is already in place
-            if (northEdge.X == 0 && northEdge.Y == -1 && northEdge.Z == 1 && northEdge.C.Val.Equals(northColor))
-            {
-                return;
-            }
+
+
         }
 
         /// <summary>
@@ -103,7 +128,8 @@ namespace Rubik
             // rotate until other color lines up with correct side
             if(edge.X == 1 || edge.X == -1) {
                 if(edge.C.Val.Equals(northColor) || edge.A.Val.Equals(northColor)){
-                    cube.Rotate(Axis.zAxis, edge.X == 1, 1);                
+                    cube.Rotate(Axis.zAxis, edge.X == 1, 1);
+                    stepFinished = true;
                 }
                 else if(edge.C.Val.Equals(northColor) || edge.A.Val.Equals(southColor)){
                     cube.Rotate(Axis.zAxis, edge.X == -1, 1);
@@ -120,14 +146,14 @@ namespace Rubik
                 else if(edge.B.Val.Equals(westColor)){
                     cube.Rotate(Axis.zAxis, edge.Y == -1, 1);
                 }
-                else if( (edge.Y == 1 && (edge.C.Val.Equals(northColor) || edge.B.Val.Equals(northColor))) || (edge.Y == -1 && (edge.C.Val.Equals(northColor) || edge.B.Val.Equals(southColor))) ){
+                else if( (edge.Y == 1 && (edge.C.Val.Equals(northColor) || edge.B.Val.Equals(northColor))) || (edge.Y == -1 && (edge.C.Val.Equals(southColor) || edge.B.Val.Equals(southColor))) ){
                     cube.Rotate(Axis.zAxis, true, 1);
                     cube.Rotate(Axis.zAxis, true, 1);
                 }
             }
 
             // check if we have to swap colors so that the top color matches
-            if(!edge.C.Val.Equals(topColor)){
+            if(!stepFinished && !edge.C.Val.Equals(topColor)){
                 swapColors(edge);
             }
         }
@@ -163,7 +189,7 @@ namespace Rubik
         /// Rotate south edge into correct position
         /// </summary>
         /// <param name="edge"></param>
-        private void rotateSouthEdge(Edge edge)
+        private void rotateSouthEdge()
         {
 
         }
@@ -172,7 +198,7 @@ namespace Rubik
         /// Rotate west edge into correct position
         /// </summary>
         /// <param name="edge"></param>
-        private void rotateWestEdge(Edge edge)
+        private void rotateWestEdge()
         {
 
         }
@@ -181,7 +207,7 @@ namespace Rubik
         /// Rotate east edge into correct position
         /// </summary>
         /// <param name="edge"></param>
-        private void rotateEastEdge(Edge edge)
+        private void rotateEastEdge()
         {
 
         }
@@ -190,19 +216,22 @@ namespace Rubik
         /// Get edges for toplayer
         /// </summary>
         /// <returns></returns>
-        private IList<Edge> getEdges()
+        private IList<Edge> edges
         {
-            IEnumerable<Edge> edges = getPieces<Edge>(cube); //.Where(p => (p.A != null && p.A.Val.Equals(topColor)) || (p.B != null && p.B.Val.Equals(topColor)) || (p.C != null && p.C.Val.Equals(topColor)));
-            // in foreach-loop ausgelagert für bessere Lesbarkeit
-            List<Edge> result = new List<Edge>();
-            foreach (Edge edge in edges)
-            {
-                if ((edge.A != null && edge.A.Val.Equals(topColor)) ||
-                    (edge.B != null && edge.B.Val.Equals(topColor)) ||
-                    (edge.C != null && edge.C.Val.Equals(topColor)))
-                    result.Add(edge);
+            get {
+                IEnumerable<Edge> allEdges = getPieces<Edge>(cube); //.Where(p => (p.A != null && p.A.Val.Equals(topColor)) || (p.B != null && p.B.Val.Equals(topColor)) || (p.C != null && p.C.Val.Equals(topColor)));
+                // in foreach-loop ausgelagert für bessere Lesbarkeit
+                List<Edge> result = new List<Edge>();
+                foreach (Edge edge in allEdges)
+                {
+                    if ((edge.A != null && edge.A.Val.Equals(topColor)) ||
+                        (edge.B != null && edge.B.Val.Equals(topColor)) ||
+                        (edge.C != null && edge.C.Val.Equals(topColor)))
+                        result.Add(edge);
+                }
+                return result;
             }
-            return result;
+            
         }
 
         /// <summary>
@@ -214,6 +243,37 @@ namespace Rubik
         private IList<T> getPieces<T>(Cubev2 cube) where T : Edge
         {
             return cube.Pieces.OfType<T>().ToList();
+        }
+
+        private Edge northEdge
+        {
+            get
+            {
+                return edges.Where(p => p.A != null && p.A.Val.Equals(northColor) || p.B != null && p.B.Val.Equals(northColor) || p.C != null && p.C.Val.Equals(northColor)).SingleOrDefault();
+            }
+        }
+        private Edge southEdge
+        {
+            get
+            {
+                return edges.Where(p => p.A != null && p.A.Val.Equals(southColor) || p.B != null && p.B.Val.Equals(southColor) || p.C != null && p.C.Val.Equals(southColor)).SingleOrDefault();
+            }
+        }
+
+        private Edge westEdge
+        {
+            get
+            {
+                return edges.Where(p => p.A != null && p.A.Val.Equals(westColor) || p.B != null && p.B.Val.Equals(westColor) || p.C != null && p.C.Val.Equals(westColor)).SingleOrDefault();
+            }
+        }
+
+        private Edge eastEdge
+        {
+            get
+            {
+                return edges.Where(p => p.A != null && p.A.Val.Equals(eastColor) || p.B != null && p.B.Val.Equals(eastColor) || p.C != null && p.C.Val.Equals(eastColor)).SingleOrDefault();
+            }
         }
     }
 }
