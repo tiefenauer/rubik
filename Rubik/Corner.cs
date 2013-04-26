@@ -109,7 +109,7 @@ namespace Rubik
                     }
                 }
 
-                this.X = this.X * this.Y;
+                this.X = this.X * -this.Y;
                 this.Z = this.Z * -this.Y;
 
                 PositionValue aval = this.A;
