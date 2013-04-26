@@ -736,9 +736,9 @@
             // 
             this.solveButton.Location = new System.Drawing.Point(519, 256);
             this.solveButton.Name = "solveButton";
-            this.solveButton.Size = new System.Drawing.Size(75, 23);
+            this.solveButton.Size = new System.Drawing.Size(161, 23);
             this.solveButton.TabIndex = 62;
-            this.solveButton.Text = "Solve Cube";
+            this.solveButton.Text = "Solve Cube (Stepwise)";
             this.solveButton.UseVisualStyleBackColor = true;
             this.solveButton.Click += new System.EventHandler(this.solveButtonClick);
             // 
