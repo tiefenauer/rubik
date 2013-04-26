@@ -11,6 +11,9 @@ namespace Rubik
     /// </summary>
     public abstract class Piece
     {
+        public Piece()
+        {
+        }
         /// <summary>
         /// Constructor. Internal coordinates have the same heading as external.
         /// </summary>
