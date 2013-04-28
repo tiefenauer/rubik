@@ -13,6 +13,10 @@ namespace Rubik
         {
         }
 
+        public Edge()
+        {
+        }
+
         /// <summary>
         /// Performs rotation on Edge Piece
         /// </summary>

@@ -28,5 +28,9 @@ namespace Rubik
             this.Key = key;
             this.Val = val;
         }
+
+        public PositionValue()
+        {
+        }
     }
 }

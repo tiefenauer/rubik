@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace Rubik
 {
+    [Serializable]
     public class Corner: Piece
     {
         public Corner(int x, int y, int z, PositionValue a, PositionValue b, PositionValue c)
             : base(x, y, z, a, b, c)
+        {
+        }
+
+        public Corner()
         {
         }
 

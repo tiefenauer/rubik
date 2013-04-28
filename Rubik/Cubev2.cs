@@ -15,6 +15,7 @@ namespace Rubik
 
     public delegate void ChangedEventHandler(object sender, EventArgs e);
 
+    [Serializable]
     public class Cubev2
     {
 
@@ -27,6 +28,7 @@ namespace Rubik
 
         List<Piece> pieces = new List<Piece>();
 
+        
         public List<Piece> Pieces
         {
             get { return pieces; }

@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace RubikGUI
 {
@@ -156,10 +159,36 @@ namespace RubikGUI
              */
         }
 
+        private void SerializeConfigToCurrentDirectory()
+        {
+            XmlSerializer writer = new XmlSerializer(typeof(Cubev2), new Type[] { typeof(List<Piece>) });
+            using (StreamWriter file = new StreamWriter(@"defaultcube.xml"))
+            {
+                writer.Serialize(file, this.cube);
+            }
+        }
+
+        private void DeSerializeConfigToCurrentDirectory()
+        {
+            XmlSerializer reader = new XmlSerializer(typeof(Cubev2), new Type[] { typeof(List<Piece>) });
+            using (XmlReader file = new XmlTextReader(@"defaultcube.xml"))
+            {
+                try
+                {
+                   this.cube = (Cubev2) reader.Deserialize(file);                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + ": " + ex.StackTrace);
+                }
+            }            
+        }
+
         private void saveButtonClick(object sender, EventArgs e)
         {
             SaveCubeConfigToCube();
             PaintCurrentCube();
+            SerializeConfigToCurrentDirectory();
         }
 
         private void solveButtonClick(object sender, EventArgs e)
@@ -175,7 +204,8 @@ namespace RubikGUI
 
         private void loadButtonClick(object sender, EventArgs e)
         {
-
+            DeSerializeConfigToCurrentDirectory();
+            PaintCurrentCube();
         }
 
         private void rotateT_Click(object sender, EventArgs e)

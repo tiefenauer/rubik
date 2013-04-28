@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Rubik
 {
     /// <summary>
     /// Resembles a piece of the cube.
     /// </summary>
+    ///     
+    [XmlInclude(typeof(Middle))]
+    [XmlInclude(typeof(Corner))]
+    [XmlInclude(typeof(Edge))]
     public abstract class Piece
     {
         public Piece()
