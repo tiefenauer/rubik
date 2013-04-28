@@ -13,8 +13,18 @@ namespace Rubik
         zAxis
     };
 
+    public delegate void ChangedEventHandler(object sender, EventArgs e);
+
     public class Cubev2
     {
+
+        public event ChangedEventHandler Changed;
+        protected virtual void OnChanged(EventArgs e)
+        {
+            if (Changed != null)
+                Changed(this, e);
+        }
+
         List<Piece> pieces = new List<Piece>();
 
         public List<Piece> Pieces
@@ -29,6 +39,16 @@ namespace Rubik
         public Cubev2(){
             //TopLayer
             pieces.Add(new Middle(0, 0, 1, null, null, new PositionValue(1, "w")));
+            pieces.Add(new Corner(-1, 1, 1, new PositionValue(-1, "r"), new PositionValue(1, "y"), new PositionValue(1, "b")));
+            pieces.Add(new Edge(0, 1, 1, null, new PositionValue(1, "w"), new PositionValue(1, "b")));
+            pieces.Add(new Corner(1, 1, 1, new PositionValue(1, "w"), new PositionValue(1, "b"), new PositionValue(1, "r")));
+            pieces.Add(new Edge(-1, 0, 1, new PositionValue(-1, "w"), null, new PositionValue(1, "o")));
+            pieces.Add(new Edge(1, 0, 1, new PositionValue(1, "g"), null, new PositionValue(1, "y")));
+            pieces.Add(new Corner(-1, -1, 1, new PositionValue(-1, "b"), new PositionValue(-1, "w"), new PositionValue(1, "o")));
+            pieces.Add(new Edge(0, -1, 1, null, new PositionValue(-1, "b"), new PositionValue(1, "r")));
+            pieces.Add(new Corner(1, -1, 1, new PositionValue(1, "r"), new PositionValue(-1, "g"), new PositionValue(1, "y")));
+            /*
+            pieces.Add(new Middle(0, 0, 1, null, null, new PositionValue(1, "w")));
             pieces.Add(new Corner(-1, 1, 1, new PositionValue(-1, "o"), new PositionValue(1, "y"), new PositionValue(1, "w")));
             pieces.Add(new Edge(0, 1, 1, null, new PositionValue(1, "y"), new PositionValue(1, "w")));
             pieces.Add(new Corner(1, 1, 1, new PositionValue(1, "r"), new PositionValue(1, "y"), new PositionValue(1, "w")));
@@ -37,35 +57,74 @@ namespace Rubik
             pieces.Add(new Corner(-1, -1, 1, new PositionValue(-1, "o"), new PositionValue(-1, "g"), new PositionValue(1, "w")));
             pieces.Add(new Edge(0, -1, 1, null, new PositionValue(-1, "g"), new PositionValue(1, "w")));
             pieces.Add(new Corner(1, -1, 1, new PositionValue(1, "r"), new PositionValue(-1, "g"), new PositionValue(1, "w")));
-            
+            */
+
             //Front Layer
+            pieces.Add(new Middle(0, 1, 0, null, new PositionValue(1, "r"), null));
+            pieces.Add(new Edge(-1, 1, 0, new PositionValue(-1, "r"), new PositionValue(1, "g"), null));
+            pieces.Add(new Edge(1, 1, 0, new PositionValue(1, "r"), new PositionValue(1, "w"), null));
+            pieces.Add(new Corner(-1, 1, -1, new PositionValue(-1, "w"), new PositionValue(1, "r"), new PositionValue(-1, "g")));
+            pieces.Add(new Edge(0, 1, -1, null, new PositionValue(1, "o"), new PositionValue(-1, "y")));
+            pieces.Add(new Corner(1, 1, -1, new PositionValue(1, "g"), new PositionValue(1, "w"), new PositionValue(-1, "o")));
+            /*
             pieces.Add(new Middle(0, 1, 0, null, new PositionValue(1, "y"), null));
             pieces.Add(new Edge(-1, 1, 0, new PositionValue(-1, "o"), new PositionValue(1, "y"), null));
             pieces.Add(new Edge(1, 1, 0, new PositionValue(1, "r"), new PositionValue(1, "y"), null));
             pieces.Add(new Corner(-1, 1, -1, new PositionValue(-1, "o"), new PositionValue(1, "y"), new PositionValue(-1, "b")));
             pieces.Add(new Edge(0, 1, -1, null, new PositionValue(1, "y"), new PositionValue(-1, "b")));
             pieces.Add(new Corner(1, 1, -1, new PositionValue(1, "r"), new PositionValue(1, "y"), new PositionValue(-1, "b")));
+            */
 
             //Left Layer
+            pieces.Add(new Middle(-1, 0, 0, new PositionValue(-1, "g"), null, null));
+            pieces.Add(new Edge(-1, -1, 0, new PositionValue(-1, "w"), new PositionValue(-1, "g"), null));
+            pieces.Add(new Corner(-1, -1, -1, new PositionValue(-1, "y"), new PositionValue(-1, "o"), new PositionValue(-1, "b")));
+            pieces.Add(new Edge(-1, 0, -1, new PositionValue(-1, "o"), null, new PositionValue(-1, "g")));      
+            /*
             pieces.Add(new Middle(-1, 0, 0, new PositionValue(-1, "o"), null, null));
             pieces.Add(new Edge(-1, -1, 0, new PositionValue(-1, "o"), new PositionValue(-1, "g"), null));
             pieces.Add(new Corner(-1, -1, -1, new PositionValue(-1, "o"), new PositionValue(-1, "g"), new PositionValue(-1, "b")));
             pieces.Add(new Edge(-1, 0, -1, new PositionValue(-1, "o"), null, new PositionValue(-1, "b")));           
+             * */
 
             //Right Layer
+            pieces.Add(new Middle(1, 0, 0, new PositionValue(1, "b"), null, null));
+            pieces.Add(new Edge(1, -1, 0, new PositionValue(1, "r"), new PositionValue(-1, "y"), null));
+            pieces.Add(new Edge(1, 0, -1, new PositionValue(1, "b"), null, new PositionValue(-1, "o")));
+            pieces.Add(new Corner(1, -1, -1, new PositionValue(1, "y"), new PositionValue(-1, "o"), new PositionValue(-1, "g")));
+            /*
             pieces.Add(new Middle(1, 0, 0, new PositionValue(1, "r"), null, null));
             pieces.Add(new Edge(1, -1, 0, new PositionValue(1, "r"), new PositionValue(-1, "g"), null));
             pieces.Add(new Edge(1, 0, -1, new PositionValue(1, "r"), null, new PositionValue(-1, "b")));
             pieces.Add(new Corner(1, -1, -1, new PositionValue(-1, "r"), new PositionValue(-1, "g"), new PositionValue(-1, "b")));
+            */
 
             //Bottom Layer
-            pieces.Add(new Middle(0, 0, -1, null, null, new PositionValue(-1, "b")));
+            pieces.Add(new Middle(0, 0, -1, null, null, new PositionValue(-1, "y")));
+            //pieces.Add(new Middle(0, 0, -1, null, null, new PositionValue(-1, "b")));
 
             //Back Layer
+            pieces.Add(new Middle(0, -1, 0, null, new PositionValue(-1, "o"), null));
+            pieces.Add(new Edge(0, -1, -1, null, new PositionValue(-1, "y"), new PositionValue(-1, "b")));        
+            /*
             pieces.Add(new Middle(0, -1, 0, null, new PositionValue(-1, "g"), null));
             pieces.Add(new Edge(0, -1, -1, null, new PositionValue(-1, "g"), new PositionValue(-1, "b")));            
-            
-            
+             * */
+        }
+
+        public void solveStep()
+        {
+            PhaseOne one = new PhaseOne(this);
+            if (!one.finished){
+                one.step();
+            }
+            // PhaseOne.solve(this);
+            // PhaseTwo.solve(this);
+            // PhaseThree.solve(this);
+            // PhaseFour.solve(this);
+            // PhaseFive.solve(this);
+            // PhaseSix.solve(this);
+            // PhaseSeven.solve(this);
         }
 
         /// <summary>
@@ -158,6 +217,9 @@ namespace Rubik
                     }
                     break;
             }
+            OnChanged(EventArgs.Empty);
         }
+
+
     }
 }

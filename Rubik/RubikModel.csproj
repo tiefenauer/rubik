@@ -43,6 +43,7 @@
     <Compile Include="Cubev2.cs" />
     <Compile Include="Edge.cs" />
     <Compile Include="Middle.cs" />
+    <Compile Include="PhaseOne.cs" />
     <Compile Include="Piece.cs" />
     <Compile Include="PositionValue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
