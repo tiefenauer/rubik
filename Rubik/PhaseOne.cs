@@ -34,12 +34,12 @@ namespace Rubik
 
         private void init()
         {
-            topColor = cube.Pieces.Where(p => p.X == 0 && p.Y == 0 && p.Z == 1).SingleOrDefault().C.Val;
+            topColor = cube.Pieces.Where(p => p.Z == 1 && p is Middle).SingleOrDefault().C.Val;
             // determine colors of adjacent pieces
-            northColor = cube.Pieces.Where(p => p.X == 0 && p.Y == -1 && p.Z == 0).SingleOrDefault().B.Val;
-            southColor = cube.Pieces.Where(p => p.X == 0 && p.Y == +1 && p.Z == 0).SingleOrDefault().B.Val;
-            westColor = cube.Pieces.Where(p => p.X == -1 && p.Y == 0 && p.Z == 0).SingleOrDefault().A.Val;
-            eastColor = cube.Pieces.Where(p => p.X == 1 && p.Y == 0 && p.Z == 0).SingleOrDefault().A.Val;
+            northColor = cube.Pieces.Where(p => p.Y == -1 && p is Middle).SingleOrDefault().B.Val;
+            southColor = cube.Pieces.Where(p => p.Y == +1 && p is Middle).SingleOrDefault().B.Val;
+            westColor = cube.Pieces.Where(p => p.X == -1 && p is Middle).SingleOrDefault().A.Val;
+            eastColor = cube.Pieces.Where(p => p.X == 1 && p is Middle).SingleOrDefault().A.Val;
 
         }
 
@@ -47,27 +47,31 @@ namespace Rubik
         {
             get
             {
-                return northEdge.X == 0 &&
-                        northEdge.Y == -1 &&
-                        northEdge.Z == 1 &&
-                        northEdge.C.Val.Equals(topColor) &&
-                        northEdge.B.Val.Equals(northColor) &&
-                        southEdge.X == 0 &&
-                        southEdge.Y == 11 &&
-                        southEdge.Z == 1 &&
-                        southEdge.C.Val.Equals(topColor) &&
-                        southEdge.B.Val.Equals(southColor) &&
-                        westEdge.X == 1 &&
-                        westEdge.Y == 0 &&
-                        westEdge.Z == 1 &&
-                        westEdge.C.Val.Equals(topColor) &&
-                        westEdge.B.Val.Equals(westColor) &&
-                        eastEdge.X == -1 &&
-                        eastEdge.Y == 0 &&
-                        eastEdge.Z == 1 &&
-                        eastEdge.C.Val.Equals(topColor) &&
-                        eastEdge.B.Val.Equals(eastColor)
-                        ;
+                List<Piece> toppieces = cube.Pieces.Where(p => p.Z == 1 && !(p is Middle)).ToList();                
+                foreach (Piece toppiece in toppieces)
+                {
+                    //Check if topcolors match
+                    if (!toppiece.C.Val.Equals(topColor))
+                    {                        
+                        return false;
+                    }
+                    //Check if east and west values match
+                    Piece othermiddle = null; 
+                    if(toppiece.A.Key != 0){
+                        othermiddle = cube.Pieces.Where(p=> p.X == toppiece.A.Key && p is Middle).SingleOrDefault();
+                        if(!toppiece.A.Val.Equals(othermiddle.A.Val)){
+                            return false;
+                        }
+                    }else{
+                        //Check if front and back values match.
+                        othermiddle = cube.Pieces.Where(p=> p.Y == toppiece.B.Key && p is Middle).SingleOrDefault();
+                        if(!toppiece.B.Val.Equals(othermiddle.B.Val)){
+                            return false;
+                        }
+                    }                    
+
+                }
+                return false;
             }
         }
 
