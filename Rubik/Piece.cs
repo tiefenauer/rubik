@@ -86,5 +86,40 @@ namespace Rubik
         public virtual void Rotate(Axis axis, bool counterclockwise)
         {
         }
+
+        public bool ContainsColor(string color)
+        {
+            if (this.A != null && this.A.Val.Equals(color))
+            {
+                return true;
+            }
+            if (this.B != null && this.B.Val.Equals(color))
+            {
+                return true;
+            }
+            if (this.C != null && this.C.Val.Equals(color))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public List<string> GetColors()
+        {
+            List<string> colors = new List<string>();
+            if (this.A != null)
+            {
+                colors.Add(this.A.Val);
+            }
+            if (this.B != null)
+            {
+                colors.Add(this.B.Val);
+            }
+            if (this.B != null)
+            {
+                colors.Add(this.C.Val);
+            }
+            return colors;
+        }
     }
 }
