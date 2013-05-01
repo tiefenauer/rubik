@@ -47,7 +47,7 @@ namespace Rubik
         {
             get
             {
-                List<Piece> toppieces = cube.Pieces.Where(p => p.Z == 1 && !(p is Middle)).ToList();                
+                List<Piece> toppieces = cube.Pieces.Where(p => p.Z == 1 && p is Edge).ToList();                
                 foreach (Piece toppiece in toppieces)
                 {
                     //Check if topcolors match

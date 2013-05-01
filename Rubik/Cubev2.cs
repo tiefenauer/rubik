@@ -39,6 +39,15 @@ namespace Rubik
         /// front yellow. Top white.
         /// </summary>
         public Cubev2(){
+            
+        }
+
+        /// <summary>
+        /// Init Method instead of a constructor.
+        /// Because else we get doubled values for pieces (because constructor runs anyways)
+        /// </summary>
+        public void InitPieces()
+        {
             //TopLayer
             pieces.Add(new Middle(0, 0, 1, null, null, new PositionValue(1, "w")));
             pieces.Add(new Corner(-1, 1, 1, new PositionValue(-1, "r"), new PositionValue(1, "y"), new PositionValue(1, "b")));
@@ -81,7 +90,7 @@ namespace Rubik
             pieces.Add(new Middle(-1, 0, 0, new PositionValue(-1, "g"), null, null));
             pieces.Add(new Edge(-1, -1, 0, new PositionValue(-1, "w"), new PositionValue(-1, "g"), null));
             pieces.Add(new Corner(-1, -1, -1, new PositionValue(-1, "y"), new PositionValue(-1, "o"), new PositionValue(-1, "b")));
-            pieces.Add(new Edge(-1, 0, -1, new PositionValue(-1, "o"), null, new PositionValue(-1, "g")));      
+            pieces.Add(new Edge(-1, 0, -1, new PositionValue(-1, "o"), null, new PositionValue(-1, "g")));
             /*
             pieces.Add(new Middle(-1, 0, 0, new PositionValue(-1, "o"), null, null));
             pieces.Add(new Edge(-1, -1, 0, new PositionValue(-1, "o"), new PositionValue(-1, "g"), null));
@@ -107,7 +116,7 @@ namespace Rubik
 
             //Back Layer
             pieces.Add(new Middle(0, -1, 0, null, new PositionValue(-1, "o"), null));
-            pieces.Add(new Edge(0, -1, -1, null, new PositionValue(-1, "y"), new PositionValue(-1, "b")));        
+            pieces.Add(new Edge(0, -1, -1, null, new PositionValue(-1, "y"), new PositionValue(-1, "b")));
             /*
             pieces.Add(new Middle(0, -1, 0, null, new PositionValue(-1, "g"), null));
             pieces.Add(new Edge(0, -1, -1, null, new PositionValue(-1, "g"), new PositionValue(-1, "b")));            

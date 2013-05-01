@@ -19,14 +19,15 @@ namespace RubikGUI
         public Dictionary<string, Color> colormappings = new Dictionary<string, Color>();
         public Dictionary<string, Position> positionmappings = new Dictionary<string, Position>();
 
-        public Cubev2 cube = new Cubev2();
+        public Cubev2 cube = new Cubev2();        
         private PictureBox selectedColor = null;
 
         public CubeColorView()
-        {            
+        {
+            cube.InitPieces();
             InitializeComponent();
             PrepareMappings();            
-            PaintCurrentCube();            
+            PaintCurrentCube();             
         }
 
         public void PrepareMappings()
@@ -170,7 +171,7 @@ namespace RubikGUI
 
         private void DeSerializeConfigToCurrentDirectory()
         {
-            XmlSerializer reader = new XmlSerializer(typeof(Cubev2), new Type[] { typeof(List<Piece>) });
+            XmlSerializer reader = new XmlSerializer(typeof(Cubev2), new Type[] { typeof(List<Piece>), typeof(Edge), typeof(Middle), typeof(Corner) });
             using (XmlReader file = new XmlTextReader(@"defaultcube.xml"))
             {
                 try
