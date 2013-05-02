@@ -196,9 +196,9 @@ namespace RubikGUI
         {
             //cube.Changed += new ChangedEventHandler(CubeChanged);
             //cube.solveStep();
-            //PhaseTwo two = new PhaseTwo(this.cube);
-            //two.Solve();
-            //PaintCurrentCube();
+            PhaseTwo two = new PhaseTwo(this.cube);
+            two.Solve();
+            PaintCurrentCube();
         }
 
         private void CubeChanged(object sender, EventArgs e)

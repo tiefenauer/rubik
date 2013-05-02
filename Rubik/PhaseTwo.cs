@@ -36,8 +36,8 @@ namespace Rubik
             Piece piece = GetCornerOnLowestLevel();
             while (piece != null)
             {
-                Piece middleone = this.cube.Pieces.Where(p => p.X == piece.A.Key && p is Middle).SingleOrDefault();
-                Piece middletwo = this.cube.Pieces.Where(p => p.Y == piece.B.Key && p is Middle).SingleOrDefault();
+                Piece middleone = this.cube.Pieces.Where(p => p.X == piece.X && p is Middle).SingleOrDefault();
+                Piece middletwo = this.cube.Pieces.Where(p => p.Y == piece.Y && p is Middle).SingleOrDefault();
                 RotateCubeTilLowestLevelCornerMatches(piece);
                 RotateToTop(piece);
                 piece = GetCornerOnLowestLevel();
@@ -46,32 +46,42 @@ namespace Rubik
 
         private Piece GetCornerOnLowestLevel()
         {
-            return cube.Pieces.Where(p => p.Z == -1 && p is Corner && p.ContainsColor(topColor)).First();
+            try
+            {
+                return cube.Pieces.Where(p => p.Z == -1 && p is Corner && p.ContainsColor(topColor)).First();
+            }
+            catch (Exception ex)
+            {
+            }
+            return null;
         }
 
         private void RotateCubeTilLowestLevelCornerMatches(Piece piece)
         {
             List<string> colorsOfPiece = piece.GetColors();
-            Piece middleone = this.cube.Pieces.Where(p => p.X == piece.A.Key && p is Middle).SingleOrDefault();
-            Piece middletwo = this.cube.Pieces.Where(p => p.Y == piece.B.Key && p is Middle).SingleOrDefault();
+            Piece middleone = this.cube.Pieces.Where(p => p.X == piece.X && p is Middle).SingleOrDefault();
+            Piece middletwo = this.cube.Pieces.Where(p => p.Y == piece.Y && p is Middle).SingleOrDefault();
             while(!colorsOfPiece.Contains(middleone.A.Val) || !colorsOfPiece.Contains(middletwo.B.Val))
             {
                 cube.Rotate(Axis.zAxis, false, -1);
-                middleone = this.cube.Pieces.Where(p => p.X == piece.A.Key && p is Middle).SingleOrDefault();
-                middletwo = this.cube.Pieces.Where(p => p.Y == piece.B.Key && p is Middle).SingleOrDefault();
+                middleone = this.cube.Pieces.Where(p => p.X == piece.X && p is Middle).SingleOrDefault();
+                middletwo = this.cube.Pieces.Where(p => p.Y == piece.Y && p is Middle).SingleOrDefault();
             }
         }
 
         private void RotateToTop(Piece piece)
         {
-            Piece middleone = this.cube.Pieces.Where(p => p.X == piece.A.Key && p is Middle).SingleOrDefault();
-            Piece middletwo = this.cube.Pieces.Where(p => p.Y == piece.B.Key && p is Middle).SingleOrDefault();
-            while (!middleone.A.Val.Equals(piece.A.Val) || !middletwo.B.Val.Equals(piece.B.Val))
+            Piece middleone = this.cube.Pieces.Where(p => p.X == piece.X && p is Middle).SingleOrDefault();
+            Piece middletwo = this.cube.Pieces.Where(p => p.Y == piece.Y && p is Middle).SingleOrDefault();
+            while (!middleone.A.Val.Equals(piece.A.Val) || !middletwo.B.Val.Equals(piece.B.Val) || piece.Z != 1)
             {
-                cube.Rotate(Axis.xAxis, true, middleone.X);
+                cube.Rotate(Axis.yAxis, true, middletwo.Y);
                 cube.Rotate(Axis.zAxis, true, -1);
-                cube.Rotate(Axis.xAxis, false, middleone.X);
-                cube.Rotate(Axis.zAxis, false, -1);
+                if (!middleone.A.Val.Equals(piece.A.Val) || !middletwo.B.Val.Equals(piece.B.Val) || piece.Z != 1)
+                {
+                    cube.Rotate(Axis.yAxis, false, middletwo.Y);
+                    cube.Rotate(Axis.zAxis, false, -1);
+                }
                 //break;
             }
         }
