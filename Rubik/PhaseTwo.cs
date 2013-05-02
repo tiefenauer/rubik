@@ -41,7 +41,18 @@ namespace Rubik
                 RotateCubeTilLowestLevelCornerMatches(piece);
                 RotateToTop(piece);
                 piece = GetCornerOnLowestLevel();
-            }
+                if (piece == null)
+                {
+                    piece = GetCornerWrongOnTopLevel();
+                    if (piece != null)
+                    {
+                        int oldy = piece.Y;
+                        cube.Rotate(Axis.yAxis, true, piece.Y);
+                        cube.Rotate(Axis.zAxis, true, -1);
+                        cube.Rotate(Axis.yAxis, false, oldy);
+                    }
+                }
+            }            
         }
 
         private Piece GetCornerOnLowestLevel()
@@ -54,6 +65,31 @@ namespace Rubik
             {
             }
             return null;
+        }
+
+        private Piece GetCornerWrongOnTopLevel()
+        {
+            try
+            {
+                return cube.Pieces.Where(p => p.Z == 1 && p is Corner && p.ContainsColor(topColor) && !isCorrectOnTop(p)).First();
+            }
+            catch (Exception ex)
+            {
+            }
+            return null;
+        }
+
+        private bool isCorrectOnTop(Piece piece)
+        {
+            Piece middleone = this.cube.Pieces.Where(p => p.X == piece.X && p is Middle).SingleOrDefault();
+            Piece middletwo = this.cube.Pieces.Where(p => p.Y == piece.Y && p is Middle).SingleOrDefault();
+            Piece middlethree = this.cube.Pieces.Where(p => p.Z == piece.Z && p is Middle).SingleOrDefault();
+
+            if (piece.A.Val.Equals(middleone.A.Val) && piece.B.Val.Equals(middletwo.B.Val) && piece.C.Val.Equals(middlethree.C.Val))
+            {
+                return true;
+            }
+            return false;
         }
 
         private void RotateCubeTilLowestLevelCornerMatches(Piece piece)
