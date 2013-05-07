@@ -14,10 +14,20 @@ namespace Rubik
     };
 
     public delegate void ChangedEventHandler(object sender, EventArgs e);
+    public delegate void RotatedEventHandler (object sender,  EventArgs data);
+  
 
     [Serializable]
     public class Cubev2
-    {
+    {        
+        public event RotatedEventHandler Rotated;
+        protected void OnRotated(object sender, EventArgs e)
+        {            
+            if (Rotated != null)
+            {                
+                Rotated(this, e);
+            }
+        }
 
         public event ChangedEventHandler Changed;
         protected virtual void OnChanged(EventArgs e)
