@@ -8,6 +8,6 @@ namespace Rubik
 {
     public interface IPhaseSolvable
     {
-        public List<Rotation> Solve(Cubev2 cube);        
+        List<Rotation> Solve(Cubev2 cube);        
     }
 }

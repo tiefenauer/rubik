@@ -14,18 +14,18 @@ namespace Rubik
     };
 
     public delegate void ChangedEventHandler(object sender, EventArgs e);
-    public delegate void RotatedEventHandler (object sender,  EventArgs data);
+    public delegate void RotatedEventHandler (object sender,  EventArgs data, Rotation rotation);
   
 
     [Serializable]
-    public class Cubev2
+    public class Cubev2 : ICloneable
     {        
         public event RotatedEventHandler Rotated;
-        protected void OnRotated(object sender, EventArgs e)
+        protected void OnRotated(object sender, EventArgs e, Rotation rotation)
         {            
             if (Rotated != null)
             {                
-                Rotated(this, e);
+                Rotated(this, e,rotation);
             }
         }
 
@@ -177,6 +177,7 @@ namespace Rubik
                     break;
             }
             OnChanged(EventArgs.Empty);
+            OnRotated(this,EventArgs.Empty, new Rotation(axis,counterclockwise,val));
         }
 
         /// <summary>
@@ -215,6 +216,13 @@ namespace Rubik
                     break;
             }
             OnChanged(EventArgs.Empty);
+            OnRotated(this, EventArgs.Empty,rotation);
+        }
+
+        //Todo
+        public object Clone()
+        {
+            return null;
         }
     }
 }

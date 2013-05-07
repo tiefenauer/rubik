@@ -8,6 +8,13 @@ namespace Rubik
 {
     public class Rotation
     {
+        public Rotation(Axis axis, bool counterclockwise, int val)
+        {
+            this.Axis = axis;
+            this.Counterclockwise = counterclockwise;
+            this.Value = val;
+        }
+
         private int value;
 
         public int Value

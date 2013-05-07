@@ -42,6 +42,7 @@
     <Compile Include="Corner.cs" />
     <Compile Include="Cubev2.cs" />
     <Compile Include="Edge.cs" />
+    <Compile Include="IPhaseSolvable.cs" />
     <Compile Include="Middle.cs" />
     <Compile Include="PhaseOne.cs" />
     <Compile Include="PhaseThree.cs" />
@@ -49,6 +50,7 @@
     <Compile Include="Piece.cs" />
     <Compile Include="PositionValue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rotation.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

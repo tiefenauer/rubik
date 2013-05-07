@@ -14,6 +14,7 @@ namespace Rubik
         private String southColor;
         private String westColor;
         private String eastColor;
+        private List<Rotation> rotations = new List<Rotation>();
 
         public PhaseTwo(Cubev2 cube)
         {
@@ -32,7 +33,14 @@ namespace Rubik
         }
 
         public List<Rotation> Solve(Cubev2 cube)
-        {            
+        {
+            //change refrence of this cube to new one
+            this.cube = cube;
+            init();
+            //Clear list of rotations
+            rotations = new List<Rotation>();
+            //add event for on rotated
+            cube.Rotated += cube_Rotated;
             Piece piece = GetCornerOnLowestLevel();
             while (piece != null)
             {
@@ -53,8 +61,14 @@ namespace Rubik
                     }
                 }
             }
-            return new List<Rotation>();
+            cube.Rotated -= cube_Rotated;
+            return rotations;
         }
+
+        void cube_Rotated(object sender, EventArgs data, Rotation rotation)
+        {
+            rotations.Add(rotation);
+        }        
 
         private Piece GetCornerOnLowestLevel()
         {
