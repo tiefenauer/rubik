@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rubik
 {
-    public class PhaseTwo
+    public class PhaseTwo : IPhaseSolvable
     {
         Cubev2 cube = null;
         private String topColor;
@@ -31,8 +31,8 @@ namespace Rubik
             eastColor = cube.Pieces.Where(p => p.X == 1 && p is Middle).SingleOrDefault().A.Val;
         }
 
-        public void Solve()
-        {
+        public List<Rotation> Solve(Cubev2 cube)
+        {            
             Piece piece = GetCornerOnLowestLevel();
             while (piece != null)
             {
@@ -52,7 +52,8 @@ namespace Rubik
                         cube.Rotate(Axis.yAxis, false, oldy);
                     }
                 }
-            }            
+            }
+            return new List<Rotation>();
         }
 
         private Piece GetCornerOnLowestLevel()
