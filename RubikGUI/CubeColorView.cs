@@ -169,6 +169,15 @@ namespace RubikGUI
             }
         }
 
+        private void SerializeConfigToDirectory(string filename)
+        {
+            XmlSerializer writer = new XmlSerializer(typeof(Cubev2), new Type[] { typeof(List<Piece>) });
+            using (StreamWriter file = new StreamWriter(@filename))
+            {
+                writer.Serialize(file, this.cube);
+            }
+        }
+
         private void DeSerializeConfigToCurrentDirectory()
         {
             XmlSerializer reader = new XmlSerializer(typeof(Cubev2), new Type[] { typeof(List<Piece>), typeof(Edge), typeof(Middle), typeof(Corner) });
@@ -185,11 +194,20 @@ namespace RubikGUI
             }            
         }
 
-        private void saveButtonClick(object sender, EventArgs e)
+        private void DeSerializeConfigFromDirectory(string filename)
         {
-            SaveCubeConfigToCube();
-            PaintCurrentCube();
-            SerializeConfigToCurrentDirectory();
+            XmlSerializer reader = new XmlSerializer(typeof(Cubev2), new Type[] { typeof(List<Piece>), typeof(Edge), typeof(Middle), typeof(Corner) });
+            using (XmlReader file = new XmlTextReader(@filename))
+            {
+                try
+                {
+                    this.cube = (Cubev2)reader.Deserialize(file);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + ": " + ex.StackTrace);
+                }
+            }
         }
 
         private void solveButtonClick(object sender, EventArgs e)
@@ -203,12 +221,6 @@ namespace RubikGUI
 
         private void CubeChanged(object sender, EventArgs e)
         {
-            PaintCurrentCube();
-        }
-
-        private void loadButtonClick(object sender, EventArgs e)
-        {
-            DeSerializeConfigToCurrentDirectory();
             PaintCurrentCube();
         }
 
@@ -282,6 +294,35 @@ namespace RubikGUI
         {
             cube.Rotate(Axis.yAxis, true, 1);
             PaintCurrentCube();
+        }
+
+        private void saveCubeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog fd = new SaveFileDialog();
+            fd.AddExtension = true;
+            fd.DefaultExt = "xml";
+            fd.Filter = "XML file with cube definition|*.xml";
+            DialogResult res = fd.ShowDialog();
+            if (res == System.Windows.Forms.DialogResult.OK)
+            {
+                string filename = fd.FileName;
+                SerializeConfigToDirectory(filename);
+            }
+        }
+
+        private void loadCubeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fd = new OpenFileDialog();
+            fd.AddExtension = true;
+            fd.DefaultExt = "xml";
+            fd.Filter = "XML file with cube definition|*.xml";
+            DialogResult res = fd.ShowDialog();
+            if (res == System.Windows.Forms.DialogResult.OK)
+            {
+                DeSerializeConfigFromDirectory(fd.FileName);
+            }
+            PaintCurrentCube();
+            
         }
 
         
