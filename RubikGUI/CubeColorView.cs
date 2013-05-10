@@ -202,10 +202,9 @@ namespace RubikGUI
             rotations.Concat(one.Solve(cube));
             PaintCurrentCube();
 
-            //PhaseTwo two = new PhaseTwo(this.cube);            
-            //rotations.Concat(two.Solve(cube));
-
-            //PaintCurrentCube();
+            PhaseTwo two = new PhaseTwo(this.cube);            
+            rotations.Concat(two.Solve(cube));
+            PaintCurrentCube();
         }
 
         private void CubeChanged(object sender, EventArgs e)
