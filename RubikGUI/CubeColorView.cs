@@ -196,9 +196,16 @@ namespace RubikGUI
         {
             //cube.Changed += new ChangedEventHandler(CubeChanged);
             //cube.solveStep();
-            PhaseTwo two = new PhaseTwo(this.cube);            
-            two.Solve(cube);
+            List<Rotation> rotations = new List<Rotation>();
+
+            PhaseOne one = new PhaseOne(cube);
+            rotations.Concat(one.Solve(cube));
             PaintCurrentCube();
+
+            //PhaseTwo two = new PhaseTwo(this.cube);            
+            //rotations.Concat(two.Solve(cube));
+
+            //PaintCurrentCube();
         }
 
         private void CubeChanged(object sender, EventArgs e)

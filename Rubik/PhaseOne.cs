@@ -9,9 +9,8 @@ namespace Rubik
     /// <summary>
     /// Solve Phase one of a rubik's cube by creating the cross on the top (usually white) layer
     /// </summary>
-    class PhaseOne
+    public class PhaseOne : IPhaseSolvable
     {
-        private Boolean stepwise;
         private Boolean stepFinished;
         private Cubev2 cube;
         private String topColor;
@@ -20,20 +19,23 @@ namespace Rubik
         private String westColor;
         private String eastColor;
 
+        private List<Rotation> rotations = new List<Rotation>();
+
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="cube"></param>
-        public PhaseOne(Cubev2 cube, Boolean stepwise = true)
+        public PhaseOne(Cubev2 cube)
         {
             this.cube = cube;
-            this.stepwise = stepwise;
-            this.stepFinished = false;
             init();
         }
 
         private void init()
         {
+            cube.Rotated += cube_Rotated;
+            rotations = new List<Rotation>();
+
             topColor = cube.Pieces.Where(p => p.Z == 1 && p is Middle).SingleOrDefault().C.Val;
             // determine colors of adjacent pieces
             northColor = cube.Pieces.Where(p => p.Y == -1 && p is Middle).SingleOrDefault().B.Val;
@@ -78,37 +80,133 @@ namespace Rubik
         /// <summary>
         /// Solve this phase
         /// </summary>
-        public void step()
+        public List<Rotation> Solve(Cubev2 cube)
         {
+            this.cube = cube;
+            init();
+
             // rotate each edge according to its position so that its side with the same color as top color is on top
-            rotateNorthEdge();
-            rotateSouthEdge();
-            rotateWestEdge();
-            rotateEastEdge();
+            rotateEdge(northEdge);
+            rotateEdge(southEdge);
+            rotateEdge(westEdge);
+            rotateEdge(eastEdge);
+
+            return rotations;
         }
 
         /// <summary>
         /// Rotate north edge into correct position
         /// </summary>
         /// <param name="edge"></param>
-        private void rotateNorthEdge()
+        private void rotateEdge(Edge edge)
         {
-            switch (northEdge.Z)
+            // step one: bring edge to bottom
+            switch (edge.Z)
             {
-                // edge is already in top layer
+                // edge is in top layer
                 case 1:
-                    matchEdge(northEdge);
+                    topToBottom(edge);
                     break;
-                // edge is in middle layer ==> bring to top
+                // edge is in middle layer
                 case 0:
+                    middleToBottom(edge);
                     break;
-                // edge is in bottom layer ==> bring to top
-                case -1:
-
+                // edge is in bottom layer
+                default:
                     break;
             }
+            // step two: match with correct side
+            matchEdge(edge);
+            // step three: bring edge to top
+            bottomToTop(edge);
+            // step four: swap colors, if necessary
+            if (!edgeColorsMatch(edge)) 
+                swapColors(edge);
+        }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="edge"></param>
+        private void topToBottom(Edge edge)
+        {
+            Axis axis = (edge.X != 0)?Axis.xAxis:Axis.yAxis;
+            int val = (axis == Axis.xAxis)? edge.X:edge.Y;
 
+            cube.Rotate(axis, true, val);
+            cube.Rotate(axis, true, val);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="edge"></param>
+        private void middleToBottom(Edge edge)
+        {
+            Axis axis = Axis.xAxis;
+            int val = edge.X;
+            Boolean counterclockwise = false;
+            if (val == -1 && edge.Y == -1){
+                counterclockwise = true;
+            }
+            if (val == 1 && edge.Y == 1){
+                counterclockwise = true;
+            }
+
+            cube.Rotate(axis, counterclockwise, val); // zum Boden rotieren
+            cube.Rotate(Axis.zAxis, true, -1); // Teil Wegrotieren
+            cube.Rotate(axis, !counterclockwise, val); // Fläche wieder zurückrotieren
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="?"></param>
+        private void bottomToTop(Edge edge)
+        {
+            Axis axis = (edge.X != 0) ? Axis.xAxis : Axis.yAxis;
+            int val = (axis == Axis.xAxis) ? edge.X : edge.Y;
+
+            cube.Rotate(axis, true, val);
+            cube.Rotate(axis, true, val);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="edge"></param>
+        /// <returns></returns>
+        private Boolean isMatched(Edge edge)
+        {
+            if (edge.X == 1 && (edge.A.Val == eastColor || edge.C.Val == eastColor))
+                return true;
+            if (edge.X == -1 && (edge.A.Val == westColor|| edge.C.Val == westColor))
+                return true;
+            if (edge.Y == -1 && (edge.B.Val == northColor|| edge.C.Val == northColor))
+                return true;
+            if (edge.Y == 1 && (edge.B.Val == southColor || edge.C.Val == southColor))
+                return true;
+
+            return false;
+        }
+
+        private Boolean edgeColorsMatch(Edge edge)
+        {
+            if (edge.C.Val == topColor){
+                if (edge.X == 1){
+                    return (edge.A.Val == eastColor);
+                }
+                else if (edge.X == -1){
+                    return (edge.A.Val == westColor);
+                }
+                else if (edge.Y == 1){
+                    return (edge.B.Val == southColor);
+                }
+                else if (edge.Y == -1){
+                    return (edge.B.Val == northColor);
+                }            
+            }
+            return false;
         }
 
         /// <summary>
@@ -117,48 +215,9 @@ namespace Rubik
         /// <param name="edge"></param>
         private void matchEdge(Edge edge)
         {
-
-            // detect other color of edge (one of both is top color)
-            /*
-            String otherColor;
-            if (edge.C.Val.Equals(topColor)){
-                otherColor = (edge.A != null) ? edge.A.Val : edge.B.Val;
-            }
-            else{
-                otherColor = edge.C.Val;
-            }
-            */
-
-            // rotate until other color lines up with correct side
-            if(edge.X == 1 || edge.X == -1) {
-                if(edge.C.Val.Equals(northColor) || edge.A.Val.Equals(northColor)){
-                    cube.Rotate(Axis.zAxis, edge.X == 1, 1);
-                    stepFinished = true;
-                }
-                else if(edge.C.Val.Equals(northColor) || edge.A.Val.Equals(southColor)){
-                    cube.Rotate(Axis.zAxis, edge.X == -1, 1);
-                }
-                else if( (edge.X == 1 && (edge.C.Val.Equals(northColor) || edge.A.Val.Equals(westColor))) || (edge.X == -1 && (edge.C.Val.Equals(northColor) || edge.A.Val.Equals(eastColor)) ) ) {
-                    cube.Rotate(Axis.zAxis, true, 1);
-                    cube.Rotate(Axis.zAxis, true, 1);
-                }
-            }
-            else if (edge.Y == 1 || edge.Y == -1){
-                if(edge.B.Val.Equals(eastColor)){
-                    cube.Rotate(Axis.zAxis, edge.Y == 1, 1);
-                }
-                else if(edge.B.Val.Equals(westColor)){
-                    cube.Rotate(Axis.zAxis, edge.Y == -1, 1);
-                }
-                else if( (edge.Y == 1 && (edge.C.Val.Equals(northColor) || edge.B.Val.Equals(northColor))) || (edge.Y == -1 && (edge.C.Val.Equals(southColor) || edge.B.Val.Equals(southColor))) ){
-                    cube.Rotate(Axis.zAxis, true, 1);
-                    cube.Rotate(Axis.zAxis, true, 1);
-                }
-            }
-
-            // check if we have to swap colors so that the top color matches
-            if(!stepFinished && !edge.C.Val.Equals(topColor)){
-                swapColors(edge);
+            while (!isMatched(edge))
+            {
+                cube.Rotate(Axis.zAxis, false, -1);
             }
         }
 
@@ -185,34 +244,7 @@ namespace Rubik
             axis = (axis == Axis.xAxis) ? Axis.yAxis : Axis.xAxis; // swap axis
 
             cube.Rotate(axis, true, val);
-            cube.Rotate(Axis.zAxis, true, -1);
-
-        }
-
-        /// <summary>
-        /// Rotate south edge into correct position
-        /// </summary>
-        /// <param name="edge"></param>
-        private void rotateSouthEdge()
-        {
-
-        }
-
-        /// <summary>
-        /// Rotate west edge into correct position
-        /// </summary>
-        /// <param name="edge"></param>
-        private void rotateWestEdge()
-        {
-
-        }
-
-        /// <summary>
-        /// Rotate east edge into correct position
-        /// </summary>
-        /// <param name="edge"></param>
-        private void rotateEastEdge()
-        {
+            cube.Rotate(Axis.zAxis, true, 1);
 
         }
 
@@ -237,6 +269,17 @@ namespace Rubik
             }
             
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="data"></param>
+        /// <param name="rotation"></param>
+        void cube_Rotated(object sender, EventArgs data, Rotation rotation)
+        {
+            rotations.Add(rotation);
+        } 
 
         /// <summary>
         /// get Pieces of a certain type
