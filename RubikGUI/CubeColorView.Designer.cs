@@ -106,6 +106,7 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveCubeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadCubeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -877,22 +878,33 @@
             // saveCubeToolStripMenuItem
             // 
             this.saveCubeToolStripMenuItem.Name = "saveCubeToolStripMenuItem";
-            this.saveCubeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveCubeToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.saveCubeToolStripMenuItem.Text = "Save Cube";
             this.saveCubeToolStripMenuItem.Click += new System.EventHandler(this.saveCubeToolStripMenuItem_Click);
             // 
             // loadCubeToolStripMenuItem
             // 
             this.loadCubeToolStripMenuItem.Name = "loadCubeToolStripMenuItem";
-            this.loadCubeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loadCubeToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.loadCubeToolStripMenuItem.Text = "Load Cube";
             this.loadCubeToolStripMenuItem.Click += new System.EventHandler(this.loadCubeToolStripMenuItem_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(519, 309);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(161, 23);
+            this.btnSave.TabIndex = 66;
+            this.btnSave.Text = "Save to Data Structure";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // CubeColorView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 397);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.rotateFi);
             this.Controls.Add(this.rotateF);
             this.Controls.Add(this.rotateBi);
@@ -1118,5 +1130,6 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveCubeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadCubeToolStripMenuItem;
+        private System.Windows.Forms.Button btnSave;
     }
 }
