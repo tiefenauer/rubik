@@ -226,8 +226,12 @@ namespace RubikGUI
             //rotations.Concat(one.Solve(cube));
             //PaintCurrentCube();
 
-            PhaseTwo two = new PhaseTwo(this.cube);
-            rotations.Concat(two.Solve(cube));
+            //PhaseTwo two = new PhaseTwo(this.cube);            
+            //rotations.Concat(two.Solve(cube));
+            //PaintCurrentCube();
+
+            Phase5 five = new Phase5();
+            rotations.Concat(five.Solve(cube));
             PaintCurrentCube();
         }
 
@@ -310,6 +314,7 @@ namespace RubikGUI
 
         private void saveCubeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SaveCubeConfigToCube();
             SaveFileDialog fd = new SaveFileDialog();
             fd.AddExtension = true;
             fd.DefaultExt = "xml";
