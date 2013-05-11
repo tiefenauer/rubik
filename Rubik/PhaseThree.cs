@@ -15,11 +15,17 @@ namespace Rubik
         private String westColor;
         private String eastColor;
         private string bottomColor;
+        private List<Rotation> rotations = new List<Rotation>();
 
         public PhaseThree(Cubev2 cube)
         {
             this.cube = cube;
             init();
+        }
+
+        void cube_Rotated(object sender, EventArgs data, Rotation rotation)
+        {
+            rotations.Add(rotation);
         }
 
         private void init()
@@ -32,10 +38,16 @@ namespace Rubik
             westColor = cube.Pieces.Where(p => p.X == -1 && p is Middle).SingleOrDefault().A.Val;
             eastColor = cube.Pieces.Where(p => p.X == 1 && p is Middle).SingleOrDefault().A.Val;
         }
-        
 
-        public void Solve()
+
+        public List<Rotation> Solve(Cubev2 cube)
         {
+            this.cube = cube;
+            init();
+            //Clear list of rotations
+            rotations = new List<Rotation>();
+            //add event for on rotated
+            cube.Rotated += cube_Rotated;
             Piece piece = GetEdgeOnLowest();
             RotateUntilEdgeIsAtCorrectPosition(piece);
             //while (piece != null)
@@ -43,6 +55,7 @@ namespace Rubik
                 //piece = GetEdgeOnLowest();
 
             //}
+            return rotations;
         }
 
         private Piece GetEdgeOnLowest(){

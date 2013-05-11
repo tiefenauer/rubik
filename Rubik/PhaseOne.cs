@@ -90,7 +90,7 @@ namespace Rubik
             rotateEdge(southEdge);
             rotateEdge(westEdge);
             rotateEdge(eastEdge);
-
+            this.cube.Rotated -= cube_Rotated;
             return rotations;
         }
 

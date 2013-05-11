@@ -27,7 +27,13 @@ namespace RubikGUI
             cube.InitPieces();
             InitializeComponent();
             PrepareMappings();            
-            PaintCurrentCube();             
+            PaintCurrentCube();
+            cube.Rotated += cube_Rotated;
+        }
+
+        void cube_Rotated(object sender, EventArgs data, Rotation rotation)
+        {
+            PaintCurrentCube();
         }
 
         public void PrepareMappings()
@@ -216,11 +222,11 @@ namespace RubikGUI
             //cube.solveStep();
             List<Rotation> rotations = new List<Rotation>();
 
-            PhaseOne one = new PhaseOne(cube);
-            rotations.Concat(one.Solve(cube));
-            PaintCurrentCube();
+            //PhaseOne one = new PhaseOne(cube);
+            //rotations.Concat(one.Solve(cube));
+            //PaintCurrentCube();
 
-            PhaseTwo two = new PhaseTwo(this.cube);            
+            PhaseTwo two = new PhaseTwo(this.cube);
             rotations.Concat(two.Solve(cube));
             PaintCurrentCube();
         }
