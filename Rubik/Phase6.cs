@@ -124,29 +124,29 @@ namespace Rubik
             // matching corners are in the back
             if (firstCorner.Y == secondCorner.Y && firstCorner.Y == 0)
             {
-                // Ri
+                // Ri => Li
                 cube.Rotate(Axis.xAxis, true, -1);
                 // F
                 cube.Rotate(Axis.yAxis, false, 1);
-                // Ri
+                // Ri => Li
                 cube.Rotate(Axis.xAxis, true, -1);
                 // B
                 cube.Rotate(Axis.yAxis, false, -1);
                 // B
                 cube.Rotate(Axis.yAxis, false, -1);
-                // R
+                // R => Li
                 cube.Rotate(Axis.xAxis, false, -1);
                 // Fi
                 cube.Rotate(Axis.yAxis, true, 1);
-                // Ri
+                // Ri => Li
                 cube.Rotate(Axis.xAxis, true, -1);
                 // B
                 cube.Rotate(Axis.yAxis, false, -1);
                 // B
                 cube.Rotate(Axis.yAxis, false, -1);
-                // R
+                // R => L
                 cube.Rotate(Axis.xAxis, false, -1);
-                // R
+                // R => L
                 cube.Rotate(Axis.xAxis, false, -1);
                 // Ui => Di
                 cube.Rotate(Axis.zAxis, true, -1);
