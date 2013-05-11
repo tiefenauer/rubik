@@ -44,6 +44,7 @@
     <Compile Include="Edge.cs" />
     <Compile Include="IPhaseSolvable.cs" />
     <Compile Include="Middle.cs" />
+    <Compile Include="Phase5.cs" />
     <Compile Include="PhaseOne.cs" />
     <Compile Include="PhaseThree.cs" />
     <Compile Include="PhaseTwo.cs" />

@@ -155,6 +155,7 @@ namespace Rubik
                     }
                     break;
                 case Axis.zAxis:
+                    IEnumerable<Piece> test = pieces.Where(p => p.Z == val);
                     foreach (Piece piece in pieces.Where(p => p.Z == val))
                     {
                         piece.Rotate(axis, counterclockwise);
