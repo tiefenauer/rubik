@@ -26,14 +26,14 @@ namespace Rubik
         {
             if (axis == Axis.zAxis)
             {
-                int help = this.Y;                
+                int helpy = this.Y;                
                 if (counterclockwise)
                 {
-                    this.Y = help == 0 ? -this.X : this.X;
-                    this.X = help;
+                    this.Y = helpy == 0 ? -this.X : this.X;
+                    this.X = helpy;
                 }else{
                     int helpx = this.X;
-                    this.X = this.X == 0 ? -help : help;
+                    this.X = this.X == 0 ? -helpy : helpy;
                     this.Y = helpx;
                 }
 

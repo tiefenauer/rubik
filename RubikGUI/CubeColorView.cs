@@ -214,8 +214,14 @@ namespace RubikGUI
         {
             //cube.Changed += new ChangedEventHandler(CubeChanged);
             //cube.solveStep();
+            List<Rotation> rotations = new List<Rotation>();
+
+            PhaseOne one = new PhaseOne(cube);
+            rotations.Concat(one.Solve(cube));
+            PaintCurrentCube();
+
             PhaseTwo two = new PhaseTwo(this.cube);            
-            two.Solve(cube);
+            rotations.Concat(two.Solve(cube));
             PaintCurrentCube();
         }
 
