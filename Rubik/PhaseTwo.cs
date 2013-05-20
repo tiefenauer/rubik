@@ -47,10 +47,12 @@ namespace Rubik
                 piece = GetCornerWrongOnTopLevel();
                 if (piece != null)
                 {
-                    int oldy = piece.Y;
-                    cube.Rotate(Axis.yAxis, false, piece.Y);
-                    cube.Rotate(Axis.zAxis, true, -1);
-                    cube.Rotate(Axis.yAxis, true, oldy);
+                    Axis rotateAxis = Axis.yAxis;
+                    int rotateValue = piece.Y;
+                    bool counterclockwise = piece.X == 1 ? true : false;
+                    cube.Rotate(rotateAxis, counterclockwise, rotateValue);
+                    cube.Rotate(Axis.zAxis, false, -1);
+                    cube.Rotate(rotateAxis, !counterclockwise, rotateValue);
                 }
             }
             while (piece != null)
@@ -65,10 +67,12 @@ namespace Rubik
                     piece = GetCornerWrongOnTopLevel();
                     if (piece != null)
                     {
-                        int oldy = piece.Y;
-                        cube.Rotate(Axis.yAxis, false, piece.Y);
-                        cube.Rotate(Axis.zAxis, true, -1);
-                        cube.Rotate(Axis.yAxis, true, oldy);
+                        Axis rotateAxis = Axis.yAxis;                       
+                        int rotateValue = piece.Y;
+                        bool counterclockwise = piece.X == 1 ? true : false;
+                        cube.Rotate(rotateAxis, counterclockwise, rotateValue);
+                        cube.Rotate(Axis.zAxis, false, -1);
+                        cube.Rotate(rotateAxis, !counterclockwise, rotateValue);
                     }
                 }
             }
@@ -79,7 +83,7 @@ namespace Rubik
         void cube_Rotated(object sender, EventArgs data, Rotation rotation)
         {
             rotations.Add(rotation);
-        }        
+        }
 
         private Piece GetCornerOnLowestLevel()
         {
@@ -123,7 +127,7 @@ namespace Rubik
             List<string> colorsOfPiece = piece.GetColors();
             Piece middleone = this.cube.Pieces.Where(p => p.X == piece.X && p is Middle).SingleOrDefault();
             Piece middletwo = this.cube.Pieces.Where(p => p.Y == piece.Y && p is Middle).SingleOrDefault();
-            while(!colorsOfPiece.Contains(middleone.A.Val) || !colorsOfPiece.Contains(middletwo.B.Val))
+            while (!colorsOfPiece.Contains(middleone.A.Val) || !colorsOfPiece.Contains(middletwo.B.Val))
             {
                 cube.Rotate(Axis.zAxis, false, -1);
                 middleone = this.cube.Pieces.Where(p => p.X == piece.X && p is Middle).SingleOrDefault();
@@ -137,23 +141,33 @@ namespace Rubik
             Piece middletwo = this.cube.Pieces.Where(p => p.Y == piece.Y && p is Middle).SingleOrDefault();
             while (!middleone.A.Val.Equals(piece.A.Val) || !middletwo.B.Val.Equals(piece.B.Val) || piece.Z != 1)
             {
-                cube.Rotate(Axis.yAxis, false, middletwo.Y);
+
+                Axis rotateAxis = (piece.Y == piece.X) ? Axis.yAxis : Axis.xAxis;
+                bool isNotNegative;
+                int rotateValue = 0;
+                if (rotateAxis == Axis.yAxis)
+                {
+                    isNotNegative =false ;
+                    rotateValue = piece.Y;
+                }
+                else
+                {
+                    isNotNegative = false;
+                    rotateValue = piece.X;
+                }
+                cube.Rotate(rotateAxis, isNotNegative, rotateValue);
                 cube.Rotate(Axis.zAxis, false, -1);
-                cube.Rotate(Axis.yAxis, true, middletwo.Y);
+                cube.Rotate(rotateAxis, !isNotNegative, rotateValue);
                 cube.Rotate(Axis.zAxis, true, -1);
-                
-                //if (piece.Z == 1 && (!middleone.A.Val.Equals(piece.A.Val) || !middletwo.B.Val.Equals(piece.B.Val)))
-                //{
-                //    cube.Rotate(Axis.yAxis, false, middletwo.Y);
-                //    cube.Rotate(Axis.zAxis, true, -1);
-                //    cube.Rotate(Axis.yAxis, true, middletwo.Y);
-                //}
-                //else if (!middleone.A.Val.Equals(piece.A.Val) || !middletwo.B.Val.Equals(piece.B.Val) || piece.Z != 1)
-                //{
-                //    cube.Rotate(Axis.yAxis, true, middletwo.Y);
-                //    cube.Rotate(Axis.zAxis, true, -1);
-                //}
-                //break;
+                if (piece.Z == 1 && (!middleone.A.Val.Equals(piece.A.Val) || !middletwo.B.Val.Equals(piece.B.Val)))
+                {
+                    cube.Rotate(rotateAxis, isNotNegative, rotateValue);
+                    cube.Rotate(Axis.zAxis, false, -1);
+                    cube.Rotate(rotateAxis, !isNotNegative, rotateValue);
+                    RotateCubeTilLowestLevelCornerMatches(piece);
+                }
+
+
             }
         }
     }

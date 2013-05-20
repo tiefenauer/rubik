@@ -226,12 +226,12 @@ namespace RubikGUI
             //rotations.Concat(one.Solve(cube));
             //PaintCurrentCube();
 
-            //PhaseTwo two = new PhaseTwo(this.cube);            
-            //rotations.Concat(two.Solve(cube));
+            PhaseTwo two = new PhaseTwo(this.cube);
+            rotations.Concat(two.Solve(cube));
             //PaintCurrentCube();
 
-            Phase5 five = new Phase5();
-            rotations.Concat(five.Solve(cube));
+            //Phase5 five = new Phase5();
+            //rotations.Concat(five.Solve(cube));
             PaintCurrentCube();
         }
 
