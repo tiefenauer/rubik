@@ -44,7 +44,7 @@ namespace Rubik
             init();
 
             // step 1: match one edge (if not already done)
-            if (matchingEdges.Count == 0){
+            if (!finished && matchingEdges.Count == 0){
                 matchOneEdge();
             }            
             // step 2: Finish cube
@@ -87,7 +87,8 @@ namespace Rubik
         private void finish()
         {
             Boolean counterclockwise = checkRotationDirection();
-            rotateEdges(counterclockwise);
+            while(!finished)
+                rotateEdges(counterclockwise);
         }
 
         /// <summary>
@@ -181,18 +182,19 @@ namespace Rubik
                 {
                     // U => D
                     cube.Rotate(Axis.zAxis, false, -1);
-                }                // L => R
-                cube.Rotate(Axis.xAxis, false, 1);
-                // Ri => Li
-                cube.Rotate(Axis.xAxis, true, -1);
-                // F => B
-                cube.Rotate(Axis.yAxis, false, -1);
-                // F => B
-                cube.Rotate(Axis.yAxis, false, -1);
-                // Li => Ri
-                cube.Rotate(Axis.xAxis, true, 1);
-                // R => L
+                }                
+                // L => L
                 cube.Rotate(Axis.xAxis, false, -1);
+                // Ri => Ri
+                cube.Rotate(Axis.xAxis, true, 1);
+                // F => B
+                cube.Rotate(Axis.yAxis, false, -1);
+                // F => B
+                cube.Rotate(Axis.yAxis, false, -1);
+                // Li => Li
+                cube.Rotate(Axis.xAxis, true, -1);
+                // R => R
+                cube.Rotate(Axis.xAxis, false, 1);
                 if (counterclockwise)
                 {
                     // Ui => Di
@@ -357,9 +359,9 @@ namespace Rubik
             if (edge.X == -1)
                 return edge.A.Val == westColor;
             if (edge.Y == 1)
-                return edge.B.Val == northColor;
+                return edge.B.Val == southColor;
 
-            return edge.B.Val == southColor;
+            return edge.B.Val == northColor;
         }
 
         /// <summary>
