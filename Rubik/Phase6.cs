@@ -76,35 +76,42 @@ namespace Rubik
                 if (firstCorner.X != secondCorner.X &&
                     firstCorner.Y != secondCorner.Y)
                 {
-                    // Ri
+                    // Ri => Li
                     cube.Rotate(Axis.xAxis, true, -1);
-                    // F
+                    // F => F
                     cube.Rotate(Axis.yAxis, false, 1);
-                    // Ri
+                    // Ri => Li
                     cube.Rotate(Axis.xAxis, true, -1);
-                    // B
+                    // B => B
                     cube.Rotate(Axis.yAxis, false, -1);
-                    // B
+                    // B => B
                     cube.Rotate(Axis.yAxis, false, -1);
-                    // R
+                    // R => L
                     cube.Rotate(Axis.xAxis, false, -1);
-                    // Fi
+                    // Fi => Fi
                     cube.Rotate(Axis.yAxis, true, 1);
-                    // Ri
+                    // Ri => Li
                     cube.Rotate(Axis.xAxis, true, -1);
-                    // B
+                    // B => B
                     cube.Rotate(Axis.yAxis, false, -1);
-                    // B
+                    // B => B
                     cube.Rotate(Axis.yAxis, false, -1);
-                    // R
+                    // R => L
                     cube.Rotate(Axis.xAxis, false, -1);
-                    // R
+                    // R => L
                     cube.Rotate(Axis.xAxis, false, -1);
-                    // Ui
+                    // Ui => Di
                     cube.Rotate(Axis.zAxis, true, -1);
+
+                    // rotate until two cornres watch
+                    while (!twoCornersMatch())
+                    {
+                        cube.Rotate(Axis.zAxis, false, -1);
+                    }
                 }
             }
-            
+
+
         }
 
         /// <summary>
@@ -122,7 +129,7 @@ namespace Rubik
             Corner secondCorner = matchingCorners.ElementAt(1);
 
             // matching corners are in the back
-            if (firstCorner.Y == secondCorner.Y && firstCorner.Y == 0)
+            if (firstCorner.Y == secondCorner.Y && firstCorner.Y == -1)
             {
                 // Ri => Li
                 cube.Rotate(Axis.xAxis, true, -1);
@@ -160,15 +167,15 @@ namespace Rubik
                 cube.Rotate(Axis.xAxis, false, -1);
                 // Ri ==> Bi
                 cube.Rotate(Axis.yAxis, true, -1);
-                //// B => R
+                // B => R
                 cube.Rotate(Axis.xAxis, false, 1);
-                //// B => R
+                // B => R
                 cube.Rotate(Axis.xAxis, false, 1);
-                //// R ==> B
+                // R ==> B
                 cube.Rotate(Axis.yAxis, false, -1);
-                //// Fi => Li
+                // Fi => Li
                 cube.Rotate(Axis.xAxis, true, -1);
-                //// Ri ==> Bi
+                // Ri ==> Bi
                 cube.Rotate(Axis.yAxis, true, -1);
                 // B => R
                 cube.Rotate(Axis.xAxis, false, 1);
@@ -184,30 +191,30 @@ namespace Rubik
             //matching corners are in the front
             else if (firstCorner.Y == secondCorner.Y && firstCorner.Y == 1)
             {
-                // Ri => Li
-                cube.Rotate(Axis.xAxis, true, -1);
+                // Ri => Ri
+                cube.Rotate(Axis.xAxis, true, 1);
                 // F => B
                 cube.Rotate(Axis.yAxis, false, -1);
-                // Ri => Li
-                cube.Rotate(Axis.xAxis, true, -1);
+                // Ri => Ri
+                cube.Rotate(Axis.xAxis, true, 1);
                 // B => F
                 cube.Rotate(Axis.yAxis, false, 1);
                 // B => F
                 cube.Rotate(Axis.yAxis, false, 1);
-                // R => L
-                cube.Rotate(Axis.xAxis, false, -1);
+                // R => R
+                cube.Rotate(Axis.xAxis, false, 1);
                 // Fi => Bi
                 cube.Rotate(Axis.yAxis, true, -1);
-                // Ri => Li
-                cube.Rotate(Axis.xAxis, true, -1);
+                // Ri => Ri
+                cube.Rotate(Axis.xAxis, true, 1);
                 // B => F
                 cube.Rotate(Axis.yAxis, false, 1);
                 // B => F
                 cube.Rotate(Axis.yAxis, false, 1);
-                // R => L
-                cube.Rotate(Axis.xAxis, false, -1);
-                // R => L
-                cube.Rotate(Axis.xAxis, false, -1);
+                // R => R
+                cube.Rotate(Axis.xAxis, false, 1);
+                // R => R
+                cube.Rotate(Axis.xAxis, false, 1);
                 // Ui = Di
                 cube.Rotate(Axis.zAxis, true, -1);
             }

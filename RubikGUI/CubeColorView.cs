@@ -161,13 +161,6 @@ namespace RubikGUI
                 pieces.Add(piece);
             }
 
-            // TO DO: XML-Serialization
-            /*
-            System.Xml.Serialization.XmlSerializer writer = new System.Xml.Serialization.XmlSerializer(typeof(List<Piece>));
-            System.IO.StreamWriter file = new System.IO.StreamWriter(@"defaultcube.xml");
-            writer.Serialize(file, pieces);
-            file.Close();
-             */
         }
 
         private void SerializeConfigToCurrentDirectory()
@@ -234,11 +227,15 @@ namespace RubikGUI
             //rotations.Concat(two.Solve(cube));
             //PaintCurrentCube();
 
-            PhaseThree three = new PhaseThree(this.cube);
-            three.Solve(cube);
+            //PhaseThree three = new PhaseThree(this.cube);
+            //three.Solve(cube);
 
             //Phase5 five = new Phase5();
             //rotations.Concat(five.Solve(cube));
+            Phase6 six = new Phase6();
+            rotations.Concat(six.Solve(cube));
+            //Phase7 seven = new Phase7();
+            //rotations.Concat(seven.Solve(cube));
             PaintCurrentCube();
         }
 

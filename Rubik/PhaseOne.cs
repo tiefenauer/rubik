@@ -7,18 +7,25 @@ using System.Threading.Tasks;
 namespace Rubik
 {
     /// <summary>
-    /// Solve Phase one of a rubik's cube by creating the cross on the top (usually white) layer
+    /// Solve Phase one of a rubik's cube:
+    /// Create the cross on the top (usually white) layer
     /// </summary>
     public class PhaseOne : IPhaseSolvable
     {
-        private Boolean stepFinished;
+        // instance of the cube to be solved
         private Cubev2 cube;
+        // color of the face on top (usually white)
         private String topColor;
+        // color in north direction
         private String northColor;
+        // color in south direction
         private String southColor;
+        // color in west direction
         private String westColor;
+        // color in east direction
         private String eastColor;
 
+        // rotations to reconstruct phase one
         private List<Rotation> rotations = new List<Rotation>();
 
         /// <summary>
@@ -31,6 +38,9 @@ namespace Rubik
             init();
         }
 
+        /// <summary>
+        /// Initialization
+        /// </summary>
         private void init()
         {
             cube.Rotated += cube_Rotated;
@@ -45,40 +55,8 @@ namespace Rubik
 
         }
 
-        public bool finished
-        {
-            get
-            {
-                List<Piece> toppieces = cube.Pieces.Where(p => p.Z == 1 && p is Edge).ToList();                
-                foreach (Piece toppiece in toppieces)
-                {
-                    //Check if topcolors match
-                    if (!toppiece.C.Val.Equals(topColor))
-                    {                        
-                        return false;
-                    }
-                    //Check if east and west values match
-                    Piece othermiddle = null; 
-                    if(toppiece.A.Key != 0){
-                        othermiddle = cube.Pieces.Where(p=> p.X == toppiece.A.Key && p is Middle).SingleOrDefault();
-                        if(!toppiece.A.Val.Equals(othermiddle.A.Val)){
-                            return false;
-                        }
-                    }else{
-                        //Check if front and back values match.
-                        othermiddle = cube.Pieces.Where(p=> p.Y == toppiece.B.Key && p is Middle).SingleOrDefault();
-                        if(!toppiece.B.Val.Equals(othermiddle.B.Val)){
-                            return false;
-                        }
-                    }                    
-
-                }
-                return false;
-            }
-        }
-
         /// <summary>
-        /// Solve this phase
+        /// Solve phase one
         /// </summary>
         public List<Rotation> Solve(Cubev2 cube)
         {
@@ -95,7 +73,7 @@ namespace Rubik
         }
 
         /// <summary>
-        /// Rotate north edge into correct position
+        /// Rotate north edge into its correct position
         /// </summary>
         /// <param name="edge"></param>
         private void rotateEdge(Edge edge)
@@ -125,7 +103,7 @@ namespace Rubik
         }
 
         /// <summary>
-        /// 
+        /// Rotate edge in top layer to bottom layer
         /// </summary>
         /// <param name="edge"></param>
         private void topToBottom(Edge edge)
@@ -138,7 +116,7 @@ namespace Rubik
         }
 
         /// <summary>
-        /// 
+        /// Rotate edge in middle layer to bottom layer
         /// </summary>
         /// <param name="edge"></param>
         private void middleToBottom(Edge edge)
@@ -159,7 +137,7 @@ namespace Rubik
         }
 
         /// <summary>
-        /// 
+        /// rotate edge in bottom layer to top layer
         /// </summary>
         /// <param name="?"></param>
         private void bottomToTop(Edge edge)
@@ -172,7 +150,7 @@ namespace Rubik
         }
 
         /// <summary>
-        /// 
+        /// check if an edge is matched against the face of the cube.
         /// </summary>
         /// <param name="edge"></param>
         /// <returns></returns>
@@ -190,6 +168,11 @@ namespace Rubik
             return false;
         }
 
+        /// <summary>
+        /// Check if edge is in position
+        /// </summary>
+        /// <param name="edge"></param>
+        /// <returns></returns>
         private Boolean edgeColorsMatch(Edge edge)
         {
             if (edge.C.Val == topColor){
@@ -210,7 +193,7 @@ namespace Rubik
         }
 
         /// <summary>
-        /// Match edge in top Layer with the correct side
+        /// Match edge in bottom Layer with the correct side. Colors do not have to align.
         /// </summary>
         /// <param name="edge"></param>
         private void matchEdge(Edge edge)
@@ -222,7 +205,7 @@ namespace Rubik
         }
 
         /// <summary>
-        /// Swap colors of an edge that is already
+        /// Swap colors of an edge that is already in top layer, but with wrong orientation
         /// </summary>
         /// <param name="edge"></param>
         private void swapColors(Edge edge)
@@ -249,7 +232,7 @@ namespace Rubik
         }
 
         /// <summary>
-        /// Get edges for toplayer
+        /// Get all four edges for toplayer
         /// </summary>
         /// <returns></returns>
         private IList<Edge> edges
@@ -271,7 +254,7 @@ namespace Rubik
         }
 
         /// <summary>
-        /// 
+        /// Event listener
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="data"></param>
