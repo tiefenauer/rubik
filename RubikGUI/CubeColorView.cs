@@ -1,4 +1,5 @@
 ﻿using Rubik;
+using RubikController;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,8 @@ namespace RubikGUI
         public Cubev2 cube = new Cubev2();        
         private PictureBox selectedColor = null;
 
+        private RubikSolvController solver;
+
         public CubeColorView()
         {
             cube.InitPieces();
@@ -29,6 +32,7 @@ namespace RubikGUI
             PrepareMappings();            
             PaintCurrentCube();
             cube.Rotated += cube_Rotated;
+            solver = new RubikSolvController(cube);
         }
 
         void cube_Rotated(object sender, EventArgs data, Rotation rotation)
@@ -226,9 +230,12 @@ namespace RubikGUI
             //rotations.Concat(one.Solve(cube));
             //PaintCurrentCube();
 
-            PhaseTwo two = new PhaseTwo(this.cube);
-            rotations.Concat(two.Solve(cube));
+            //PhaseTwo two = new PhaseTwo(this.cube);
+            //rotations.Concat(two.Solve(cube));
             //PaintCurrentCube();
+
+            PhaseThree three = new PhaseThree(this.cube);
+            three.Solve(cube);
 
             //Phase5 five = new Phase5();
             //rotations.Concat(five.Solve(cube));
@@ -346,6 +353,56 @@ namespace RubikGUI
         {
             SaveCubeConfigToCube();
         }
+
+        private void solveCubeToolStripMenuItem_Click(object sender, EventArgs e)
+        {                        
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SaveCubeConfigToCube();
+            solver.Solve(cube);
+        }
+
+        private void Step_Click(object sender, EventArgs e)
+        {
+            Rotation rotation = solver.Step();
+            cube.Rotate(rotation);
+            Piece rotatedPiece = null;
+            switch (rotation.Axis)
+            {
+                case Axis.xAxis:
+                    rotatedPiece = cube.Pieces.Where(p=>p.X == rotation.Value && p is Middle).SingleOrDefault();
+                    break;
+                case Axis.yAxis:
+                    rotatedPiece = cube.Pieces.Where(p=>p.Y == rotation.Value && p is Middle).SingleOrDefault();
+                    break;
+                case Axis.zAxis:
+                    rotatedPiece = cube.Pieces.Where(p=>p.Z == rotation.Value && p is Middle).SingleOrDefault();
+                    break;
+            }
+            pictureBox65.BackColor = colormappings[rotatedPiece.GetColors()[0]];
+        }
+
+        private void stepback_Click(object sender, EventArgs e)
+        {
+            Rotation rotation = solver.PrevStep();
+            cube.Rotate(rotation);
+            Piece rotatedPiece = null;
+            switch (rotation.Axis)
+            {
+                case Axis.xAxis:
+                    rotatedPiece = cube.Pieces.Where(p => p.X == rotation.Value && p is Middle).SingleOrDefault();
+                    break;
+                case Axis.yAxis:
+                    rotatedPiece = cube.Pieces.Where(p => p.Y == rotation.Value && p is Middle).SingleOrDefault();
+                    break;
+                case Axis.zAxis:
+                    rotatedPiece = cube.Pieces.Where(p => p.Z == rotation.Value && p is Middle).SingleOrDefault();
+                    break;
+            }
+            pictureBox65.BackColor = colormappings[rotatedPiece.GetColors()[0]];
+        }        
 
         
     }

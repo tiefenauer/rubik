@@ -45,6 +45,8 @@
     <Compile Include="IPhaseSolvable.cs" />
     <Compile Include="Middle.cs" />
     <Compile Include="Phase5.cs" />
+    <Compile Include="Phase6.cs" />
+    <Compile Include="Phase7.cs" />
     <Compile Include="PhaseOne.cs" />
     <Compile Include="PhaseThree.cs" />
     <Compile Include="PhaseTwo.cs" />
@@ -52,6 +54,9 @@
     <Compile Include="PositionValue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rotation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

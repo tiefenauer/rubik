@@ -107,6 +107,18 @@
             this.saveCubeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadCubeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSave = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox61 = new System.Windows.Forms.PictureBox();
+            this.pictureBox62 = new System.Windows.Forms.PictureBox();
+            this.pictureBox63 = new System.Windows.Forms.PictureBox();
+            this.pictureBox64 = new System.Windows.Forms.PictureBox();
+            this.pictureBox65 = new System.Windows.Forms.PictureBox();
+            this.pictureBox66 = new System.Windows.Forms.PictureBox();
+            this.pictureBox67 = new System.Windows.Forms.PictureBox();
+            this.pictureBox68 = new System.Windows.Forms.PictureBox();
+            this.pictureBox69 = new System.Windows.Forms.PictureBox();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -168,6 +180,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox59)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox60)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox61)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox62)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox63)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox64)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox65)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox66)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox67)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox68)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox69)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -878,20 +899,20 @@
             // saveCubeToolStripMenuItem
             // 
             this.saveCubeToolStripMenuItem.Name = "saveCubeToolStripMenuItem";
-            this.saveCubeToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.saveCubeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveCubeToolStripMenuItem.Text = "Save Cube";
             this.saveCubeToolStripMenuItem.Click += new System.EventHandler(this.saveCubeToolStripMenuItem_Click);
             // 
             // loadCubeToolStripMenuItem
             // 
             this.loadCubeToolStripMenuItem.Name = "loadCubeToolStripMenuItem";
-            this.loadCubeToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.loadCubeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.loadCubeToolStripMenuItem.Text = "Load Cube";
             this.loadCubeToolStripMenuItem.Click += new System.EventHandler(this.loadCubeToolStripMenuItem_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(519, 309);
+            this.btnSave.Location = new System.Drawing.Point(519, 321);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(161, 23);
             this.btnSave.TabIndex = 66;
@@ -899,11 +920,133 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(197, 505);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(128, 23);
+            this.button2.TabIndex = 77;
+            this.button2.Text = "previous step";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.stepback_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(197, 471);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 23);
+            this.button1.TabIndex = 76;
+            this.button1.Text = "next step";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Step_Click);
+            // 
+            // pictureBox61
+            // 
+            this.pictureBox61.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.pictureBox61.Location = new System.Drawing.Point(92, 500);
+            this.pictureBox61.Name = "pictureBox61";
+            this.pictureBox61.Size = new System.Drawing.Size(28, 28);
+            this.pictureBox61.TabIndex = 75;
+            this.pictureBox61.TabStop = false;
+            // 
+            // pictureBox62
+            // 
+            this.pictureBox62.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.pictureBox62.Location = new System.Drawing.Point(92, 466);
+            this.pictureBox62.Name = "pictureBox62";
+            this.pictureBox62.Size = new System.Drawing.Size(28, 28);
+            this.pictureBox62.TabIndex = 74;
+            this.pictureBox62.TabStop = false;
+            // 
+            // pictureBox63
+            // 
+            this.pictureBox63.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.pictureBox63.Location = new System.Drawing.Point(92, 432);
+            this.pictureBox63.Name = "pictureBox63";
+            this.pictureBox63.Size = new System.Drawing.Size(28, 28);
+            this.pictureBox63.TabIndex = 73;
+            this.pictureBox63.TabStop = false;
+            // 
+            // pictureBox64
+            // 
+            this.pictureBox64.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.pictureBox64.Location = new System.Drawing.Point(58, 500);
+            this.pictureBox64.Name = "pictureBox64";
+            this.pictureBox64.Size = new System.Drawing.Size(28, 28);
+            this.pictureBox64.TabIndex = 72;
+            this.pictureBox64.TabStop = false;
+            // 
+            // pictureBox65
+            // 
+            this.pictureBox65.Location = new System.Drawing.Point(58, 466);
+            this.pictureBox65.Name = "pictureBox65";
+            this.pictureBox65.Size = new System.Drawing.Size(28, 28);
+            this.pictureBox65.TabIndex = 71;
+            this.pictureBox65.TabStop = false;
+            // 
+            // pictureBox66
+            // 
+            this.pictureBox66.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.pictureBox66.Location = new System.Drawing.Point(58, 432);
+            this.pictureBox66.Name = "pictureBox66";
+            this.pictureBox66.Size = new System.Drawing.Size(28, 28);
+            this.pictureBox66.TabIndex = 70;
+            this.pictureBox66.TabStop = false;
+            // 
+            // pictureBox67
+            // 
+            this.pictureBox67.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.pictureBox67.Location = new System.Drawing.Point(22, 500);
+            this.pictureBox67.Name = "pictureBox67";
+            this.pictureBox67.Size = new System.Drawing.Size(28, 28);
+            this.pictureBox67.TabIndex = 69;
+            this.pictureBox67.TabStop = false;
+            // 
+            // pictureBox68
+            // 
+            this.pictureBox68.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.pictureBox68.Location = new System.Drawing.Point(22, 466);
+            this.pictureBox68.Name = "pictureBox68";
+            this.pictureBox68.Size = new System.Drawing.Size(28, 28);
+            this.pictureBox68.TabIndex = 68;
+            this.pictureBox68.TabStop = false;
+            // 
+            // pictureBox69
+            // 
+            this.pictureBox69.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.pictureBox69.Location = new System.Drawing.Point(22, 432);
+            this.pictureBox69.Name = "pictureBox69";
+            this.pictureBox69.Size = new System.Drawing.Size(28, 28);
+            this.pictureBox69.TabIndex = 67;
+            this.pictureBox69.TabStop = false;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(197, 437);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(128, 23);
+            this.button3.TabIndex = 78;
+            this.button3.Text = "solve cube";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // CubeColorView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(716, 397);
+            this.ClientSize = new System.Drawing.Size(716, 543);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.pictureBox61);
+            this.Controls.Add(this.pictureBox62);
+            this.Controls.Add(this.pictureBox63);
+            this.Controls.Add(this.pictureBox64);
+            this.Controls.Add(this.pictureBox65);
+            this.Controls.Add(this.pictureBox66);
+            this.Controls.Add(this.pictureBox67);
+            this.Controls.Add(this.pictureBox68);
+            this.Controls.Add(this.pictureBox69);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.rotateFi);
             this.Controls.Add(this.rotateF);
@@ -1045,6 +1188,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox60)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox61)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox62)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox63)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox64)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox65)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox66)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox67)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox68)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox69)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1131,5 +1283,17 @@
         private System.Windows.Forms.ToolStripMenuItem saveCubeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadCubeToolStripMenuItem;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox61;
+        private System.Windows.Forms.PictureBox pictureBox62;
+        private System.Windows.Forms.PictureBox pictureBox63;
+        private System.Windows.Forms.PictureBox pictureBox64;
+        private System.Windows.Forms.PictureBox pictureBox65;
+        private System.Windows.Forms.PictureBox pictureBox66;
+        private System.Windows.Forms.PictureBox pictureBox67;
+        private System.Windows.Forms.PictureBox pictureBox68;
+        private System.Windows.Forms.PictureBox pictureBox69;
+        private System.Windows.Forms.Button button3;
     }
 }
