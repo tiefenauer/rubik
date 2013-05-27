@@ -10,7 +10,7 @@ namespace Rubik
     /// Solve Phase one of a rubik's cube:
     /// Create the cross on the top (usually white) layer
     /// </summary>
-    public class PhaseOne : IPhaseSolvable
+    public class Phase1 : IPhaseSolvable
     {
         // instance of the cube to be solved
         private Cubev2 cube;
@@ -32,7 +32,7 @@ namespace Rubik
         /// Constructor
         /// </summary>
         /// <param name="cube"></param>
-        public PhaseOne(Cubev2 cube)
+        public Phase1(Cubev2 cube)
         {
             this.cube = cube;
             init();

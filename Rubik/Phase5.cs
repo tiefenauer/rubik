@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rubik
 {
-    public class Phase5 : IPhaseSolvable
+    public class Phase4 : IPhaseSolvable
     {
         private Cubev2 cube;
         private List<Rotation> rotations = new List<Rotation>();

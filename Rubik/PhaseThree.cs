@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Rubik
 {
-    public class PhaseThree: IPhaseSolvable
+    /// <summary>
+    /// Phase 3: Finish middle layer
+    /// </summary>
+    public class Phase3: IPhaseSolvable
     {
         Cubev2 cube = null;
         private String topColor;
@@ -17,7 +20,7 @@ namespace Rubik
         private string bottomColor;
         private List<Rotation> rotations = new List<Rotation>();
 
-        public PhaseThree(Cubev2 cube)
+        public Phase3(Cubev2 cube)
         {
             this.cube = cube;
             init();

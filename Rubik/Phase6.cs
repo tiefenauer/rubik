@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rubik
 {
-    public class Phase6 : IPhaseSolvable
+    public class Phase5 : IPhaseSolvable
     {
 
         private Cubev2 cube;
