@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Rubik
 {
-    public class Phase4 : IPhaseSolvable
+    public class Phase5 : IPhaseSolvable
     {
+
         private Cubev2 cube;
         private List<Rotation> rotations = new List<Rotation>();
 
@@ -43,299 +44,243 @@ namespace Rubik
             this.cube = cube;
             init();
 
-            // step 1: Make cross
-            makeCross();
+            // step 1: adjust corners
+            adjustCorners();
             // step 2: Finish corners
-            finishCorners();
+            finish();
 
             return rotations;
         }
 
         /// <summary>
-        /// Step 1 of Phase 5: make cross in bottom layer
+        /// rotate bottom so that two corners match
         /// </summary>
-        private void makeCross()
+        private void adjustCorners()
         {
-            // case 1: bottom cross is already there
-            while (!bottomCrossCreated())
-            {
-                // case 4: according to pdf page 6: Muss vor check auf Fall 3 kommen, da bei drei bereits plazierten Kreuzteilen Phase 4 und nicht Phase 3 besteht!
-                if (case4())
+            // Step 1: rotate bottom until two corners match
+            while (!twoCornersMatch()){
+                cube.Rotate(Axis.zAxis, false, -1);
+            }
+
+            List<Corner> matchingCorners = new List<Corner>();
+            foreach (Corner corner in corners){
+                if (cornerMatches(corner))
+                    matchingCorners.Add(corner);
+            }
+            
+            // step 2: check if extra step has to be performed (if matching corners are diagonal)
+            if (matchingCorners.Count() == 2){
+                Corner firstCorner = matchingCorners.ElementAt(0);
+                Corner secondCorner = matchingCorners.ElementAt(1);
+
+                if (firstCorner.X != secondCorner.X &&
+                    firstCorner.Y != secondCorner.Y)
                 {
-                    crossFromCase4();
-                }
-                // case 3: according to pdf page 6
-                else if (case3())
-                {
-                    crossFromCase3();
-                }
-                // case 2: according to pdf page 6 it must be this case if all other failed!
-                else {
-                    crossFromCase2();
+                    // Ri => Li
+                    cube.Rotate(Axis.xAxis, true, -1);
+                    // F => F
+                    cube.Rotate(Axis.yAxis, false, 1);
+                    // Ri => Li
+                    cube.Rotate(Axis.xAxis, true, -1);
+                    // B => B
+                    cube.Rotate(Axis.yAxis, false, -1);
+                    // B => B
+                    cube.Rotate(Axis.yAxis, false, -1);
+                    // R => L
+                    cube.Rotate(Axis.xAxis, false, -1);
+                    // Fi => Fi
+                    cube.Rotate(Axis.yAxis, true, 1);
+                    // Ri => Li
+                    cube.Rotate(Axis.xAxis, true, -1);
+                    // B => B
+                    cube.Rotate(Axis.yAxis, false, -1);
+                    // B => B
+                    cube.Rotate(Axis.yAxis, false, -1);
+                    // R => L
+                    cube.Rotate(Axis.xAxis, false, -1);
+                    // R => L
+                    cube.Rotate(Axis.xAxis, false, -1);
+                    // Ui => Di
+                    cube.Rotate(Axis.zAxis, true, -1);
+
+                    // rotate until two cornres watch
+                    while (!twoCornersMatch())
+                    {
+                        cube.Rotate(Axis.zAxis, false, -1);
+                    }
                 }
             }
+
+
         }
 
         /// <summary>
-        ///  step 2 of Phase 5: Finish Corners
+        /// Rotate cube according to page 8
         /// </summary>
-        private void finishCorners()
+        private void finish()
         {
-            while (!finished)
+            List<Corner> matchingCorners = new List<Corner>();
+            foreach (Corner corner in corners){
+                if (cornerMatches(corner))
+                    matchingCorners.Add(corner);
+            }
+
+            Corner firstCorner = matchingCorners.ElementAt(0);
+            Corner secondCorner = matchingCorners.ElementAt(1);
+
+            // matching corners are in the back
+            if (firstCorner.Y == secondCorner.Y && firstCorner.Y == -1)
             {
-                adjustBottomLayer();
-                // R
-                cube.Rotate(Axis.xAxis, false, -1);
-                // U
-                cube.Rotate(Axis.zAxis, false, -1);
-                // Ri
+                // Ri => Li
                 cube.Rotate(Axis.xAxis, true, -1);
-                // U
-                cube.Rotate(Axis.zAxis, false, -1);
-                // R
-                cube.Rotate(Axis.xAxis, false, -1);
-                // U
-                cube.Rotate(Axis.zAxis, false, -1);
-                // U
-                cube.Rotate(Axis.zAxis, false, -1);
-                // Ri
+                // F
+                cube.Rotate(Axis.yAxis, false, 1);
+                // Ri => Li
                 cube.Rotate(Axis.xAxis, true, -1);
-
+                // B
+                cube.Rotate(Axis.yAxis, false, -1);
+                // B
+                cube.Rotate(Axis.yAxis, false, -1);
+                // R => Li
+                cube.Rotate(Axis.xAxis, false, -1);
+                // Fi
+                cube.Rotate(Axis.yAxis, true, 1);
+                // Ri => Li
+                cube.Rotate(Axis.xAxis, true, -1);
+                // B
+                cube.Rotate(Axis.yAxis, false, -1);
+                // B
+                cube.Rotate(Axis.yAxis, false, -1);
+                // R => L
+                cube.Rotate(Axis.xAxis, false, -1);
+                // R => L
+                cube.Rotate(Axis.xAxis, false, -1);
+                // Ui => Di
+                cube.Rotate(Axis.zAxis, true, -1);
+            }
+            //matching corners are to the right
+            else if (firstCorner.X == secondCorner.X && firstCorner.X == 1)
+            {
+                // Ri ==> Bi
+                cube.Rotate(Axis.yAxis, true, -1);
+                // F ==> L
+                cube.Rotate(Axis.xAxis, false, -1);
+                // Ri ==> Bi
+                cube.Rotate(Axis.yAxis, true, -1);
+                // B => R
+                cube.Rotate(Axis.xAxis, false, 1);
+                // B => R
+                cube.Rotate(Axis.xAxis, false, 1);
+                // R ==> B
+                cube.Rotate(Axis.yAxis, false, -1);
+                // Fi => Li
+                cube.Rotate(Axis.xAxis, true, -1);
+                // Ri ==> Bi
+                cube.Rotate(Axis.yAxis, true, -1);
+                // B => R
+                cube.Rotate(Axis.xAxis, false, 1);
+                // B => R
+                cube.Rotate(Axis.xAxis, false, 1);
+                // R ==> B
+                cube.Rotate(Axis.yAxis, false, -1);
+                // R ==> B
+                cube.Rotate(Axis.yAxis, false, -1);
+                // Ui => Di
+                cube.Rotate(Axis.zAxis, true, -1);
+            }
+            //matching corners are in the front
+            else if (firstCorner.Y == secondCorner.Y && firstCorner.Y == 1)
+            {
+                // Ri => Ri
+                cube.Rotate(Axis.xAxis, true, 1);
+                // F => B
+                cube.Rotate(Axis.yAxis, false, -1);
+                // Ri => Ri
+                cube.Rotate(Axis.xAxis, true, 1);
+                // B => F
+                cube.Rotate(Axis.yAxis, false, 1);
+                // B => F
+                cube.Rotate(Axis.yAxis, false, 1);
+                // R => R
+                cube.Rotate(Axis.xAxis, false, 1);
+                // Fi => Bi
+                cube.Rotate(Axis.yAxis, true, -1);
+                // Ri => Ri
+                cube.Rotate(Axis.xAxis, true, 1);
+                // B => F
+                cube.Rotate(Axis.yAxis, false, 1);
+                // B => F
+                cube.Rotate(Axis.yAxis, false, 1);
+                // R => R
+                cube.Rotate(Axis.xAxis, false, 1);
+                // R => R
+                cube.Rotate(Axis.xAxis, false, 1);
+                // Ui = Di
+                cube.Rotate(Axis.zAxis, true, -1);
+            }
+            //matching corners are to the left
+            else if (firstCorner.X == secondCorner.X && firstCorner.X == -1)
+            {
+                // Ri => Fi
+                cube.Rotate(Axis.yAxis, true, 1);
+                // F => R
+                cube.Rotate(Axis.xAxis, false, 1);
+                // Ri => Fi
+                cube.Rotate(Axis.yAxis, true, 1);
+                // B ==> L
+                cube.Rotate(Axis.xAxis, false, -1);
+                // B ==> L
+                cube.Rotate(Axis.xAxis, false, -1);
+                // R => F
+                cube.Rotate(Axis.yAxis, false, 1);
+                // Fi => Ri
+                cube.Rotate(Axis.xAxis, true, 1);
+                // Ri => Fi
+                cube.Rotate(Axis.yAxis, true, 1);
+                // B ==> L
+                cube.Rotate(Axis.xAxis, false, -1);
+                // B ==> L
+                cube.Rotate(Axis.xAxis, false, -1);
+                // R => F
+                cube.Rotate(Axis.yAxis, false, 1);
+                // R => F
+                cube.Rotate(Axis.yAxis, false, 1);
+                // Ui
+                cube.Rotate(Axis.zAxis, true, -1);
             }
         }
 
-        /// <summary>
-        /// Rotate bottom layer until one of the positions on p. 7 is reached
-        /// </summary>
-        private void adjustBottomLayer()
+        private Boolean twoCornersMatch()
         {
-            Corner southRightCorner = corners.Where(p => p.X == 1 && p.Y == 1 & p.Z == -1).SingleOrDefault();
-
-            IEnumerable<Corner> finishedCorners = corners.Where(p => p.C.Val == bottomColor);
-            switch (finishedCorners.Count())
-            {
-                // Position 1 erstellen
-                case 0:
-                    while (southRightCorner.B.Val != eastColor)
-                    {
-                        cube.Rotate(Axis.zAxis, false, -1);
-                        southRightCorner = corners.Where(p => p.X == 1 && p.Y == 1 & p.Z == -1).SingleOrDefault();
-                    }
-                    break;
-
-                // Position 2 erstellen
-                case 1:
-                    while (southRightCorner.C.Val != bottomColor)
-                    {
-                        cube.Rotate(Axis.zAxis, false, -1);
-                        southRightCorner = corners.Where(p => p.X == 1 && p.Y == 1 & p.Z == -1).SingleOrDefault();
-                    }
-
-                    break;
-
-                // Position 3 erstellen
-                case 2:
-                    while (southRightCorner.B.Val != bottomColor)
-                    {
-                        cube.Rotate(Axis.zAxis, false, -1);
-                        southRightCorner = corners.Where(p => p.X == 1 && p.Y == 1 & p.Z == -1).SingleOrDefault();
-                    }
-
-                    break;
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        private Boolean bottomCrossCreated()
-        {
-            foreach (Edge edge in edges)
-            {
-                if (edge.C.Val != bottomColor)
-                    return false;
-            }
-            return true;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        private Boolean case2()
-        {
-            IEnumerable<Piece> topLayerPieces = cube.Pieces.Where(p => p.Z == -1 && !(p is Middle));
-            foreach (Piece piece in topLayerPieces)
-            {
-                if (piece.C.Val == bottomColor)
-                    return false;
-            }
-            return true;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        private Boolean case3()
-        {
-            foreach (Edge edge in edges)
-            {
-                if (edge.C.Val == bottomColor)
+            int matches = 0;
+            foreach (Corner corner in corners){
+                if (cornerMatches(corner))
                 {
-                    IEnumerable<Edge> otherEdges;
-                    if (edge.X == 0)
-                    {
-                        otherEdges = edges.Where(p => p.C.Val == bottomColor && p.Y == 0 && (p.X == -1 || p.X == 1));
-                    }
-                    else
-                    {
-                        otherEdges = edges.Where(p => p.C.Val == bottomColor && p.X == 0 && (p.Y == -1 || p.Y == 1));
-                    }
-                    if (otherEdges.Count() != 0)
-                        return true;
-
+                    matches++;
                 }
+            }
+            return matches >= 2;
+        }
+
+        /// <summary>
+        /// Helper function to determine if a corner is in the right position
+        /// </summary>
+        /// <param name="corner"></param>
+        /// <returns></returns>
+        private Boolean cornerMatches(Corner corner)
+        {
+            if (corner.C.Val == bottomColor)  {
+                if (corner.X == 1 && corner.Y == -1)
+                    return corner.A.Val == eastColor && corner.B.Val == northColor;
+                if (corner.X == 1 && corner.Y == 1)
+                    return corner.A.Val == eastColor && corner.B.Val == southColor;
+                if (corner.X == -1 && corner.Y == -1)
+                    return corner.A.Val == westColor && corner.B.Val == northColor;
+                if (corner.X == -1 && corner.Y == 1)
+                    return corner.A.Val == westColor && corner.B.Val == southColor;
+                                        
             }
             return false;
-        }
-
-        private Boolean case4()
-        {
-            int x = 0;
-            int y = 0;
-            foreach (Edge edge in edges)
-            {
-                if (edge.X == 0 && edge.C.Val == bottomColor)
-                    x++;
-                if (edge.Y == 0 && edge.C.Val == bottomColor)
-                    y++;
-            }
-            return (x == 2 || y == 2);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        private void crossFromCase2()
-        {
-            // F
-            cube.Rotate(Axis.yAxis, false, 1);
-            // R
-            cube.Rotate(Axis.xAxis, false, -1);
-            // U
-            cube.Rotate(Axis.zAxis, false, -1);
-            // Ri
-            cube.Rotate(Axis.xAxis, true, -1);
-            // Ui
-            cube.Rotate(Axis.zAxis, true, -1);
-            // Fi
-            cube.Rotate(Axis.yAxis, true, 1);
-
-            if (case3())
-            {
-                crossFromCase3();
-            }
-            else if (case4())
-            {
-                crossFromCase4();
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        private void crossFromCase3()
-        {
-            // Boden rotieren bis Winkel wie in Fall 3 S. 6 ist
-            Edge firstEdge = edges.Where(p => p.C.Val == bottomColor).First(); // first edge
-            Edge secondEdge = edges.Where(p => p.C.Val == bottomColor && p != firstEdge).First(); // second edge. NOTE: a third edge cannot exist, because then it would be case 4!
-            while (!(firstEdge.X == -1 && secondEdge.Y == 1) &&
-                   !(secondEdge.X == -1 && firstEdge.Y == 1)
-                   )
-            {
-                cube.Rotate(Axis.zAxis, false, -1);
-            }
-
-            //// Step 1: f => B
-            cube.Rotate(Axis.yAxis, false, -1);
-            // step 2: R => B
-            cube.Rotate(Axis.zAxis, false, -1);
-            // step 3: U => R
-            cube.Rotate(Axis.xAxis, false, 1);
-            // step 4: Ri => Bi
-            cube.Rotate(Axis.zAxis, true, -1);
-            // step 5: Ui => Ri
-            cube.Rotate(Axis.xAxis, true, 1);
-            // step 6: fi => Bi
-            cube.Rotate(Axis.yAxis, true, -1);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        private void crossFromCase4()
-        {
-            // Boden rotieren bis Gerade wie in Fall 4 S. 6 ist
-            int x = 0;
-            int y = 0;
-            foreach (Edge edge in edges)
-            {
-                if (edge.X == 0 && edge.C.Val == bottomColor)
-                    x++;
-                if (edge.Y == 0 && edge.C.Val == bottomColor)
-                    y++;
-            }
-
-            if (x == 2)
-            {
-                cube.Rotate(Axis.zAxis, false, -1);
-            }
-
-            // F
-            cube.Rotate(Axis.yAxis, false, 1);
-            // R 
-            cube.Rotate(Axis.xAxis, false, -1);
-            // U
-            cube.Rotate(Axis.zAxis, false, -1);
-            // Ri
-            cube.Rotate(Axis.xAxis, true, -1);
-            // Ui
-            cube.Rotate(Axis.zAxis, true, -1);
-            // Fi
-            cube.Rotate(Axis.yAxis, true, 1);
-        }
-
-        /// <summary>
-        /// Event handler for cube rotation
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="data"></param>
-        /// <param name="rotation"></param>
-        void cube_Rotated(object sender, EventArgs data, Rotation rotation)
-        {
-            rotations.Add(rotation);
-        }
-
-        /// <summary>
-        /// Get edges for bottom layer
-        /// </summary>
-        /// <returns></returns>
-        private IList<Edge> edges
-        {
-            get
-            {
-                IEnumerable<Edge> allEdges = getPieces<Edge>(cube); //.Where(p => (p.A != null && p.A.Val.Equals(topColor)) || (p.B != null && p.B.Val.Equals(topColor)) || (p.C != null && p.C.Val.Equals(topColor)));
-                // in foreach-loop ausgelagert für bessere Lesbarkeit
-                List<Edge> result = new List<Edge>();
-                foreach (Edge edge in allEdges)
-                {
-                    if (edge.Z == -1)
-                        result.Add(edge);
-                }
-                return result;
-            }
         }
 
         private IList<T> getPieces<T>(Cubev2 cube) where T : Piece
@@ -361,13 +306,28 @@ namespace Rubik
 
         }
 
+        /// <summary>
+        /// Event handler for cube rotation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="data"></param>
+        /// <param name="rotation"></param>
+        void cube_Rotated(object sender, EventArgs data, Rotation rotation)
+        {
+            rotations.Add(rotation);
+        }
+
         private Boolean finished
         {
-            get
-            {
-                return cube.Pieces.Where(p => p.Z == -1 && p.C.Val == bottomColor).Count() == 9;
+            get{
+                foreach(Corner corner in corners){
+                    if(!cornerMatches(corner))
+                        return false;
+                }
+                return true;
             }
         }
-    }
 
+
+    }
 }
