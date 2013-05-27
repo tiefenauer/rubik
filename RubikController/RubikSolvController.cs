@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace RubikController
 {
+    /// <summary>
+    /// Solver Controller for Rubiks cube.
+    /// </summary>
     public class RubikSolvController
     {
         private Cubev2 cube;
@@ -26,6 +29,10 @@ namespace RubikController
             phases.Add(new Phase7());
         }
 
+        /// <summary>
+        /// Solves each of the phases and concatenates the results into one Result List
+        /// </summary>
+        /// <param name="cube"></param>
         public void Solve(Cubev2 cube)
         {
             rotations = new List<Rotation>();
@@ -37,6 +44,10 @@ namespace RubikController
             }
         }
 
+        /// <summary>
+        /// Gets the next Rotation in the List
+        /// </summary>
+        /// <returns></returns>
         public Rotation Step()
         {
             if (counter < rotations.Count)
@@ -48,6 +59,10 @@ namespace RubikController
             return null;
         }
 
+        /// <summary>
+        /// Gets the previous rotation in the list.
+        /// </summary>
+        /// <returns></returns>
         public Rotation PrevStep()
         {
             if (counter < rotations.Count)

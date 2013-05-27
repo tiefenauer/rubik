@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Rubik
 {
+    /// <summary>
+    /// Class that saves a value and a Position of a face of a piece.
+    /// </summary>
     public class PositionValue
     {
         private string val;

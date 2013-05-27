@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Rubik
 {
+    /// <summary>
+    /// Wrapper for a Rotation that contains an axis, a boolean and the value on which to rotate
+    /// </summary>
     public class Rotation
     {
         public Rotation(Axis axis, bool counterclockwise, int val)
@@ -14,6 +17,7 @@ namespace Rubik
             this.Counterclockwise = counterclockwise;
             this.Value = val;
         }
+
 
         private int value;
 

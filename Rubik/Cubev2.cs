@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Rubik
 {
+    /// <summary>
+    /// Axis Enum
+    /// </summary>
     public enum Axis
     {
         xAxis,
@@ -14,12 +17,21 @@ namespace Rubik
     };
 
     public delegate void ChangedEventHandler(object sender, EventArgs e);
+    /// <summary>
+    /// Event that is fired if the cube performs a rotation.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="data"></param>
+    /// <param name="rotation"></param>
     public delegate void RotatedEventHandler (object sender,  EventArgs data, Rotation rotation);
   
 
     [Serializable]
     public class Cubev2 : ICloneable
-    {        
+    {       
+        /// <summary>
+        /// Rotation event.
+        /// </summary>
         public event RotatedEventHandler Rotated;
         protected void OnRotated(object sender, EventArgs e, Rotation rotation)
         {            
@@ -36,6 +48,9 @@ namespace Rubik
                 Changed(this, e);
         }
 
+        /// <summary>
+        /// List that contains all of the 26 pieces of the cube
+        /// </summary>
         List<Piece> pieces = new List<Piece>();
 
         
@@ -54,7 +69,7 @@ namespace Rubik
 
         /// <summary>
         /// Init Method instead of a constructor.
-        /// Because else we get doubled values for pieces (because constructor runs anyways)
+        /// Because else we get doubled values for pieces on deserialization (because constructor runs anyways)
         /// </summary>
         public void InitPieces()
         {
@@ -205,7 +220,10 @@ namespace Rubik
             OnRotated(this, EventArgs.Empty,rotation);
         }
 
-        //Todo
+        /// <summary>
+        /// Clones the cube. (Implements IClonable Interface)
+        /// </summary>
+        /// <returns></returns>
         public object Clone()
         {
             Cubev2 cube = new Cubev2();

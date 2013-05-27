@@ -14,6 +14,9 @@ namespace Rubik
         {
         }
 
+        /// <summary>
+        /// Empty Constructor for Serialization
+        /// </summary>
         public Middle()
         {
         }

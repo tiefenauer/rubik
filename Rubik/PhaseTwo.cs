@@ -80,11 +80,21 @@ namespace Rubik
             return rotations;
         }
 
+        /// <summary>
+        /// Eventhandler that adds the rotations to this handler whenever it happens.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="data"></param>
+        /// <param name="rotation"></param>
         void cube_Rotated(object sender, EventArgs data, Rotation rotation)
         {
             rotations.Add(rotation);
         }
 
+        /// <summary>
+        /// Get if avaiable the Corner on LowestLevel which belongs on top.
+        /// </summary>
+        /// <returns></returns>
         private Piece GetCornerOnLowestLevel()
         {
             try
@@ -97,6 +107,10 @@ namespace Rubik
             return null;
         }
 
+        /// <summary>
+        /// Get Corners that are wrong on the Toplevel.
+        /// </summary>
+        /// <returns></returns>
         private Piece GetCornerWrongOnTopLevel()
         {
             try
@@ -109,6 +123,11 @@ namespace Rubik
             return null;
         }
 
+        /// <summary>
+        /// checks if a piece is correct on top
+        /// </summary>
+        /// <param name="piece"></param>
+        /// <returns></returns>
         private bool isCorrectOnTop(Piece piece)
         {
             Piece middleone = this.cube.Pieces.Where(p => p.X == piece.X && p is Middle).SingleOrDefault();
@@ -122,6 +141,11 @@ namespace Rubik
             return false;
         }
 
+        /// <summary>
+        /// Rotates the piece on lowest level till it has reached the correct position
+        /// Where its faces match the two sides
+        /// </summary>
+        /// <param name="piece"></param>
         private void RotateCubeTilLowestLevelCornerMatches(Piece piece)
         {
             List<string> colorsOfPiece = piece.GetColors();
@@ -135,6 +159,10 @@ namespace Rubik
             }
         }
 
+        /// <summary>
+        /// Rotates a corner to the top
+        /// </summary>
+        /// <param name="piece"></param>
         private void RotateToTop(Piece piece)
         {
             Piece middleone = this.cube.Pieces.Where(p => p.X == piece.X && p is Middle).SingleOrDefault();

@@ -16,6 +16,9 @@ namespace Rubik
     [XmlInclude(typeof(Edge))]
     public abstract class Piece
     {
+        /// <summary>
+        /// Empty Constructor for Serialization
+        /// </summary>
         public Piece()
         {
         }

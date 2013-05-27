@@ -13,6 +13,9 @@ namespace Rubik
         {
         }
 
+        /// <summary>
+        /// Empty constructor for Serialization
+        /// </summary>
         public Edge()
         {
         }

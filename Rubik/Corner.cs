@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Rubik
 {
+    /// <summary>
+    /// Class that resembles a corner piece of the cube.
+    /// </summary>
     [Serializable]
     public class Corner: Piece
     {
