@@ -59,13 +59,8 @@ namespace Rubik
             // case 1: bottom cross is already there
             while (!bottomCrossCreated())
             {
-                // case 2: according to pdf page 6
-                if (case2())
-                {
-                    crossFromCase2();
-                }
                 // case 4: according to pdf page 6: Muss vor check auf Fall 3 kommen, da bei drei bereits plazierten Kreuzteilen Phase 4 und nicht Phase 3 besteht!
-                else if (case4())
+                if (case4())
                 {
                     crossFromCase4();
                 }
@@ -73,6 +68,10 @@ namespace Rubik
                 else if (case3())
                 {
                     crossFromCase3();
+                }
+                // case 2: according to pdf page 6 it must be this case if all other failed!
+                else {
+                    crossFromCase2();
                 }
             }
         }
