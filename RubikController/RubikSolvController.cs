@@ -21,12 +21,12 @@ namespace RubikController
         public RubikSolvController(Cubev2 cube)
         {
             this.cube = cube;
-            phases.Add(new PhaseOne(cube));
-            phases.Add(new PhaseTwo(cube));
-            phases.Add(new PhaseThree(cube));
+            phases.Add(new Phase1(cube));
+            phases.Add(new Phase2(cube));
+            phases.Add(new Phase3(cube));
+            phases.Add(new Phase4());
             phases.Add(new Phase5());
             phases.Add(new Phase6());
-            phases.Add(new Phase7());
         }
 
         /// <summary>
