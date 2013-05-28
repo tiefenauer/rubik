@@ -18,6 +18,20 @@ namespace RubikController
         List<Rotation> rotations = new List<Rotation>();
         int counter = -1;
 
+        public int RotationsCount
+        {
+            get
+            {
+                return rotations.Count;
+            }
+        }
+
+        public int Counter
+        {
+            get { return counter; }
+            set { counter = value; }
+        }
+
         public RubikSolvController(Cubev2 cube)
         {
             this.cube = cube;

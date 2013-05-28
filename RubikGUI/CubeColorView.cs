@@ -24,6 +24,7 @@ namespace RubikGUI
         private PictureBox selectedColor = null;
 
         private RubikSolvController solver;
+        private Rotation lastRotation;
 
         public CubeColorView()
         {
@@ -197,27 +198,6 @@ namespace RubikGUI
             }
         }
 
-        private void solveButtonClick(object sender, EventArgs e)
-        {
-            //cube.Changed += new ChangedEventHandler(CubeChanged);
-            //cube.solveStep();
-            List<Rotation> rotations = new List<Rotation>();
-
-            Phase1 one = new Phase1(cube);
-            rotations.AddRange(one.Solve(cube));
-            Phase2 two = new Phase2(this.cube);
-            rotations.AddRange(two.Solve(cube));
-            Phase3 three = new Phase3(this.cube);
-            rotations.AddRange(three.Solve(cube));
-            Phase4 four = new Phase4();
-            rotations.AddRange(four.Solve(cube));
-            Phase5 five = new Phase5();
-            rotations.AddRange(five.Solve(cube));
-            Phase6 six = new Phase6();
-            rotations.AddRange(six.Solve(cube));
-            PaintCurrentCube();
-        }
-
         private void CubeChanged(object sender, EventArgs e)
         {
             PaintCurrentCube();
@@ -340,27 +320,44 @@ namespace RubikGUI
         private void Step_Click(object sender, EventArgs e)
         {
             Rotation rotation = solver.Step();
+            if (rotation == null)
+            {
+                return;
+            }
             cube.Rotate(rotation);
-            Piece rotatedPiece = null;
+            lastRotation = rotation;
+            Piece rotatedPiece = null;            
             switch (rotation.Axis)
             {
                 case Axis.xAxis:
                     rotatedPiece = cube.Pieces.Where(p=>p.X == rotation.Value && p is Middle).SingleOrDefault();
+                    lblRotation.Text = rotatedPiece.X == 1 ? "R" : "L";
+                    lblRotation.Text += rotation.Counterclockwise ? "i" : string.Empty;
                     break;
                 case Axis.yAxis:
                     rotatedPiece = cube.Pieces.Where(p=>p.Y == rotation.Value && p is Middle).SingleOrDefault();
+                    lblRotation.Text = rotatedPiece.Y == 1 ? "F" : "B";
+                    lblRotation.Text += rotation.Counterclockwise ? "i" : string.Empty;
                     break;
                 case Axis.zAxis:
                     rotatedPiece = cube.Pieces.Where(p=>p.Z == rotation.Value && p is Middle).SingleOrDefault();
+                    lblRotation.Text = rotatedPiece.X == 1 ? "U" : "D";
+                    lblRotation.Text += rotation.Counterclockwise ? "i" : string.Empty;
                     break;
             }
             pictureBox65.BackColor = colormappings[rotatedPiece.GetColors()[0]];
+            lblStep.Text = string.Format("{0} / {1}", solver.Counter+1, solver.RotationsCount);
+            PaintCurrentCube();
         }
 
         private void stepback_Click(object sender, EventArgs e)
         {
             Rotation rotation = solver.PrevStep();
-            cube.Rotate(rotation);
+            if (rotation == null)
+            {
+                return;
+            }
+            cube.Rotate(new Rotation(lastRotation.Axis, !lastRotation.Counterclockwise, lastRotation.Value));
             Piece rotatedPiece = null;
             switch (rotation.Axis)
             {
@@ -375,6 +372,8 @@ namespace RubikGUI
                     break;
             }
             pictureBox65.BackColor = colormappings[rotatedPiece.GetColors()[0]];
+            lblStep.Text = string.Format("{0} / {1}", solver.Counter+1, solver.RotationsCount);
+            PaintCurrentCube();
         }        
 
         

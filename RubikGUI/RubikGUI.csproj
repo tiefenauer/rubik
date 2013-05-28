@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\RubikGUI.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -56,12 +57,6 @@
     <Compile Include="CubeView.Designer.cs">
       <DependentUpon>CubeView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Phase1.cs" />
-    <Compile Include="Phase2.cs" />
-    <Compile Include="Phase3.cs" />
-    <Compile Include="Phase4.cs" />
-    <Compile Include="Phase5.cs" />
-    <Compile Include="Phase6.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

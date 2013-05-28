@@ -89,7 +89,6 @@
             this.pictureBox59 = new System.Windows.Forms.PictureBox();
             this.pictureBox60 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.solveButton = new System.Windows.Forms.Button();
             this.rotateD = new System.Windows.Forms.Button();
             this.rotateDi = new System.Windows.Forms.Button();
             this.rotateR = new System.Windows.Forms.Button();
@@ -119,6 +118,10 @@
             this.pictureBox68 = new System.Windows.Forms.PictureBox();
             this.pictureBox69 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblRotation = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblStep = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -747,16 +750,6 @@
             this.label1.TabIndex = 61;
             this.label1.Text = "Click a tile and click here to set the color";
             // 
-            // solveButton
-            // 
-            this.solveButton.Location = new System.Drawing.Point(519, 279);
-            this.solveButton.Name = "solveButton";
-            this.solveButton.Size = new System.Drawing.Size(161, 23);
-            this.solveButton.TabIndex = 62;
-            this.solveButton.Text = "Solve Cube (Stepwise)";
-            this.solveButton.UseVisualStyleBackColor = true;
-            this.solveButton.Click += new System.EventHandler(this.solveButtonClick);
-            // 
             // rotateD
             // 
             this.rotateD.Location = new System.Drawing.Point(519, 180);
@@ -899,30 +892,30 @@
             // saveCubeToolStripMenuItem
             // 
             this.saveCubeToolStripMenuItem.Name = "saveCubeToolStripMenuItem";
-            this.saveCubeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveCubeToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.saveCubeToolStripMenuItem.Text = "Save Cube";
             this.saveCubeToolStripMenuItem.Click += new System.EventHandler(this.saveCubeToolStripMenuItem_Click);
             // 
             // loadCubeToolStripMenuItem
             // 
             this.loadCubeToolStripMenuItem.Name = "loadCubeToolStripMenuItem";
-            this.loadCubeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loadCubeToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.loadCubeToolStripMenuItem.Text = "Load Cube";
             this.loadCubeToolStripMenuItem.Click += new System.EventHandler(this.loadCubeToolStripMenuItem_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(519, 321);
+            this.btnSave.Location = new System.Drawing.Point(253, 418);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(161, 23);
+            this.btnSave.Size = new System.Drawing.Size(127, 23);
             this.btnSave.TabIndex = 66;
-            this.btnSave.Text = "Save to Data Structure";
+            this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(197, 505);
+            this.button2.Location = new System.Drawing.Point(252, 505);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(128, 23);
             this.button2.TabIndex = 77;
@@ -932,7 +925,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(197, 471);
+            this.button1.Location = new System.Drawing.Point(252, 476);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 23);
             this.button1.TabIndex = 76;
@@ -943,7 +936,7 @@
             // pictureBox61
             // 
             this.pictureBox61.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.pictureBox61.Location = new System.Drawing.Point(92, 500);
+            this.pictureBox61.Location = new System.Drawing.Point(96, 495);
             this.pictureBox61.Name = "pictureBox61";
             this.pictureBox61.Size = new System.Drawing.Size(28, 28);
             this.pictureBox61.TabIndex = 75;
@@ -952,7 +945,7 @@
             // pictureBox62
             // 
             this.pictureBox62.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.pictureBox62.Location = new System.Drawing.Point(92, 466);
+            this.pictureBox62.Location = new System.Drawing.Point(96, 461);
             this.pictureBox62.Name = "pictureBox62";
             this.pictureBox62.Size = new System.Drawing.Size(28, 28);
             this.pictureBox62.TabIndex = 74;
@@ -961,7 +954,7 @@
             // pictureBox63
             // 
             this.pictureBox63.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.pictureBox63.Location = new System.Drawing.Point(92, 432);
+            this.pictureBox63.Location = new System.Drawing.Point(96, 427);
             this.pictureBox63.Name = "pictureBox63";
             this.pictureBox63.Size = new System.Drawing.Size(28, 28);
             this.pictureBox63.TabIndex = 73;
@@ -970,7 +963,7 @@
             // pictureBox64
             // 
             this.pictureBox64.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.pictureBox64.Location = new System.Drawing.Point(58, 500);
+            this.pictureBox64.Location = new System.Drawing.Point(62, 495);
             this.pictureBox64.Name = "pictureBox64";
             this.pictureBox64.Size = new System.Drawing.Size(28, 28);
             this.pictureBox64.TabIndex = 72;
@@ -978,7 +971,7 @@
             // 
             // pictureBox65
             // 
-            this.pictureBox65.Location = new System.Drawing.Point(58, 466);
+            this.pictureBox65.Location = new System.Drawing.Point(62, 461);
             this.pictureBox65.Name = "pictureBox65";
             this.pictureBox65.Size = new System.Drawing.Size(28, 28);
             this.pictureBox65.TabIndex = 71;
@@ -987,7 +980,7 @@
             // pictureBox66
             // 
             this.pictureBox66.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.pictureBox66.Location = new System.Drawing.Point(58, 432);
+            this.pictureBox66.Location = new System.Drawing.Point(62, 427);
             this.pictureBox66.Name = "pictureBox66";
             this.pictureBox66.Size = new System.Drawing.Size(28, 28);
             this.pictureBox66.TabIndex = 70;
@@ -996,7 +989,7 @@
             // pictureBox67
             // 
             this.pictureBox67.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.pictureBox67.Location = new System.Drawing.Point(22, 500);
+            this.pictureBox67.Location = new System.Drawing.Point(26, 495);
             this.pictureBox67.Name = "pictureBox67";
             this.pictureBox67.Size = new System.Drawing.Size(28, 28);
             this.pictureBox67.TabIndex = 69;
@@ -1005,7 +998,7 @@
             // pictureBox68
             // 
             this.pictureBox68.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.pictureBox68.Location = new System.Drawing.Point(22, 466);
+            this.pictureBox68.Location = new System.Drawing.Point(26, 461);
             this.pictureBox68.Name = "pictureBox68";
             this.pictureBox68.Size = new System.Drawing.Size(28, 28);
             this.pictureBox68.TabIndex = 68;
@@ -1014,7 +1007,7 @@
             // pictureBox69
             // 
             this.pictureBox69.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.pictureBox69.Location = new System.Drawing.Point(22, 432);
+            this.pictureBox69.Location = new System.Drawing.Point(26, 427);
             this.pictureBox69.Name = "pictureBox69";
             this.pictureBox69.Size = new System.Drawing.Size(28, 28);
             this.pictureBox69.TabIndex = 67;
@@ -1022,7 +1015,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(197, 437);
+            this.button3.Location = new System.Drawing.Point(252, 447);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(128, 23);
             this.button3.TabIndex = 78;
@@ -1030,11 +1023,49 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(137, 442);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.TabIndex = 79;
+            this.label2.Text = "Rotation:";
+            // 
+            // lblRotation
+            // 
+            this.lblRotation.AutoSize = true;
+            this.lblRotation.Location = new System.Drawing.Point(197, 442);
+            this.lblRotation.Name = "lblRotation";
+            this.lblRotation.Size = new System.Drawing.Size(0, 13);
+            this.lblRotation.TabIndex = 80;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(155, 476);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.TabIndex = 81;
+            this.label3.Text = "Step:";
+            // 
+            // lblStep
+            // 
+            this.lblStep.AutoSize = true;
+            this.lblStep.Location = new System.Drawing.Point(197, 476);
+            this.lblStep.Name = "lblStep";
+            this.lblStep.Size = new System.Drawing.Size(0, 13);
+            this.lblStep.TabIndex = 82;
+            // 
             // CubeColorView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 543);
+            this.Controls.Add(this.lblStep);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblRotation);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -1060,7 +1091,6 @@
             this.Controls.Add(this.rotateDi);
             this.Controls.Add(this.rotateL);
             this.Controls.Add(this.rotateD);
-            this.Controls.Add(this.solveButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox58);
             this.Controls.Add(this.pictureBox59);
@@ -1265,7 +1295,6 @@
         private System.Windows.Forms.PictureBox pictureBox59;
         private System.Windows.Forms.PictureBox pictureBox60;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button solveButton;
         private System.Windows.Forms.Button rotateD;
         private System.Windows.Forms.Button rotateDi;
         private System.Windows.Forms.Button rotateR;
@@ -1295,5 +1324,9 @@
         private System.Windows.Forms.PictureBox pictureBox68;
         private System.Windows.Forms.PictureBox pictureBox69;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblRotation;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblStep;
     }
 }
