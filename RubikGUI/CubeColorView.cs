@@ -181,22 +181,6 @@ namespace RubikGUI
             }
         }
 
-        private void DeSerializeConfigToCurrentDirectory()
-        {
-            XmlSerializer reader = new XmlSerializer(typeof(Cubev2), new Type[] { typeof(List<Piece>), typeof(Edge), typeof(Middle), typeof(Corner) });
-            using (XmlReader file = new XmlTextReader(@"defaultcube.xml"))
-            {
-                try
-                {
-                   this.cube = (Cubev2) reader.Deserialize(file);                    
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message + ": " + ex.StackTrace);
-                }
-            }            
-        }
-
         private void DeSerializeConfigFromDirectory(string filename)
         {
             XmlSerializer reader = new XmlSerializer(typeof(Cubev2), new Type[] { typeof(List<Piece>), typeof(Edge), typeof(Middle), typeof(Corner) });
@@ -344,10 +328,6 @@ namespace RubikGUI
         private void btnSave_Click(object sender, EventArgs e)
         {
             SaveCubeConfigToCube();
-        }
-
-        private void solveCubeToolStripMenuItem_Click(object sender, EventArgs e)
-        {                        
         }
 
         private void button3_Click(object sender, EventArgs e)
