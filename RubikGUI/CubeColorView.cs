@@ -315,6 +315,9 @@ namespace RubikGUI
             SaveCubeConfigToCube();
             solver.Solve(cube);
             PaintCurrentCube();
+            dgvRotations.DataSource = solver.Rotations;
+            dgvRotations.Columns[2].HeaderText = "i";
+            dgvRotations.AutoResizeColumns();
         }
 
         private void Step_Click(object sender, EventArgs e)
@@ -373,6 +376,42 @@ namespace RubikGUI
             }
             pictureBox65.BackColor = colormappings[rotatedPiece.GetColors()[0]];
             lblStep.Text = string.Format("{0} / {1}", solver.Counter+1, solver.RotationsCount);
+            PaintCurrentCube();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Rotation rotation = solver.Step();
+            Piece rotatedPiece = null;
+            while (rotation != null)
+            {
+                cube.Rotate(rotation);
+                lastRotation = rotation;                
+                switch (rotation.Axis)
+                {
+                    case Axis.xAxis:
+                        rotatedPiece = cube.Pieces.Where(p => p.X == rotation.Value && p is Middle).SingleOrDefault();
+                        lblRotation.Text = rotatedPiece.X == 1 ? "R" : "L";
+                        lblRotation.Text += rotation.Counterclockwise ? "i" : string.Empty;
+                        break;
+                    case Axis.yAxis:
+                        rotatedPiece = cube.Pieces.Where(p => p.Y == rotation.Value && p is Middle).SingleOrDefault();
+                        lblRotation.Text = rotatedPiece.Y == 1 ? "F" : "B";
+                        lblRotation.Text += rotation.Counterclockwise ? "i" : string.Empty;
+                        break;
+                    case Axis.zAxis:
+                        rotatedPiece = cube.Pieces.Where(p => p.Z == rotation.Value && p is Middle).SingleOrDefault();
+                        lblRotation.Text = rotatedPiece.X == 1 ? "U" : "D";
+                        lblRotation.Text += rotation.Counterclockwise ? "i" : string.Empty;
+                        break;
+                }
+                rotation = solver.Step();
+            }
+            if (rotatedPiece != null)
+            {
+                pictureBox65.BackColor = colormappings[rotatedPiece.GetColors()[0]];
+            }
+            lblStep.Text = string.Format("{0} / {1}", solver.Counter + 1, solver.RotationsCount);
             PaintCurrentCube();
         }        
 

@@ -122,6 +122,8 @@
             this.lblRotation = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblStep = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.dgvRotations = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -192,6 +194,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox67)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox68)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox69)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRotations)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -909,7 +912,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(127, 23);
             this.btnSave.TabIndex = 66;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -1057,11 +1060,32 @@
             this.lblStep.Size = new System.Drawing.Size(0, 13);
             this.lblStep.TabIndex = 82;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(386, 476);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(127, 23);
+            this.button4.TabIndex = 83;
+            this.button4.Text = "go to end";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // dgvRotations
+            // 
+            this.dgvRotations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRotations.Location = new System.Drawing.Point(519, 275);
+            this.dgvRotations.Name = "dgvRotations";
+            this.dgvRotations.ReadOnly = true;
+            this.dgvRotations.Size = new System.Drawing.Size(197, 266);
+            this.dgvRotations.TabIndex = 84;
+            // 
             // CubeColorView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 543);
+            this.Controls.Add(this.dgvRotations);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.lblStep);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblRotation);
@@ -1227,6 +1251,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox67)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox68)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox69)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRotations)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1328,5 +1353,7 @@
         private System.Windows.Forms.Label lblRotation;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblStep;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridView dgvRotations;
     }
 }

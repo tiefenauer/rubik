@@ -16,6 +16,11 @@ namespace RubikController
         Cubev2 clonedCube;
         private List<IPhaseSolvable> phases = new List<IPhaseSolvable>();
         List<Rotation> rotations = new List<Rotation>();
+
+        public List<Rotation> Rotations
+        {
+            get { return rotations; }            
+        }
         int counter = -1;
 
         public int RotationsCount
