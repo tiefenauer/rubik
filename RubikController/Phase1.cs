@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rubik
+namespace RubikModel
 {
     /// <summary>
     /// Solve Phase one of a rubik's cube:

@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="d5fce5cc-7908-4c3d-b037-d9bf5d3b32a2" Title="RubikController Namespace" Url="html/d0d779e8-951a-b148-837e-162bd8f8f344.htm">
+    <HelpTOCNode Id="7aceb1b8-057b-4261-9de6-7c92ddf261eb" Title="RubikSolvController Class" Url="html/6935d010-0336-5adf-8d89-831820acbb01.htm">
+      <HelpTOCNode Title="RubikSolvController Members" Url="html/a228e574-c33d-5962-092b-4190fdde52b1.htm" />
+      <HelpTOCNode Title="RubikSolvController Constructor " Url="html/5e25268f-4952-7f61-f92b-bcc46ff2742e.htm" />
+      <HelpTOCNode Id="19fe8c01-0a53-4ee8-8d3e-3ce3236e9b62" Title="RubikSolvController Methods" Url="html/849a4654-1b03-c5b8-34d1-bc87bb43f661.htm">
+        <HelpTOCNode Title="PrevStep Method " Url="html/5b8fba89-8335-3665-b4eb-c6e17a55d4c2.htm" />
+        <HelpTOCNode Title="Solve Method " Url="html/df444bc0-d167-0164-0db7-d12ce87ff7af.htm" />
+        <HelpTOCNode Title="Step Method " Url="html/267b4d62-53d8-be42-e30c-241bb2cd249e.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="9045b08d-13c1-4d5f-9edd-5a3e24b491f5" Title="RubikSolvController Properties" Url="html/55ac7143-2088-d888-a9a6-e1313247b273.htm">
+        <HelpTOCNode Title="Counter Property " Url="html/efe5f84e-e409-3028-39a4-f3f5023207fa.htm" />
+        <HelpTOCNode Title="Rotations Property " Url="html/6f9925af-827b-2349-ff67-2a35c17125a9.htm" />
+        <HelpTOCNode Title="RotationsCount Property " Url="html/58ba8205-a3f3-ea7d-b715-323ad3b75c92.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="25d7b61d-0421-4a02-af4e-cbc81709db24" Title="RubikGUI Namespace" Url="html/0139ebef-23a2-3e59-a452-3e9eb5b136c1.htm">
+    <HelpTOCNode Id="5deac496-1b9c-43d5-8fe0-5503bda687bb" Title="CubeColorView Class" Url="html/db82cb75-853f-cd7a-ab3a-0ed67e55b37d.htm">
+      <HelpTOCNode Title="CubeColorView Members" Url="html/9a43545f-fb1e-dc15-6d73-73fcf8074c6b.htm" />
+      <HelpTOCNode Title="CubeColorView Constructor " Url="html/2f8abe93-2b2f-1bd9-aaf3-19ca1e30ce57.htm" />
+      <HelpTOCNode Id="ab12c436-d148-4525-9806-1050617108ed" Title="CubeColorView Fields" Url="html/1a71a03b-6bf7-0145-f275-7ab4b94992b5.htm">
+        <HelpTOCNode Title="colormappings Field" Url="html/681f2aff-07b1-9c3e-d2e5-18f4a687a64d.htm" />
+        <HelpTOCNode Title="cube Field" Url="html/985add93-0386-cb09-c527-18ccda4b316e.htm" />
+        <HelpTOCNode Title="positionmappings Field" Url="html/fedbedbf-90ef-e87e-ae1e-e024ab08bc49.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="4320a147-b646-40b0-a1fe-10da46c9110a" Title="CubeColorView Methods" Url="html/08395b65-5664-9cc3-4efa-e58b92aae60b.htm">
+        <HelpTOCNode Id="3244be08-16e1-4bcc-832f-90748fb68a58" Title="Dispose Method " Url="html/4cf9d46f-5b18-1fcf-3476-94b736ea0788.htm">
+          <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/ed908ee1-d87e-1b1a-bf32-625c5c59f13f.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="PaintCurrentCube Method " Url="html/22ddafbe-7ad4-950b-94e4-107742780fda.htm" />
+        <HelpTOCNode Title="PrepareMappings Method " Url="html/72f19496-d4be-26ef-2cbf-d1f26ddd8e85.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="CubeColorView Properties" Url="html/040c3cb8-336f-468a-dadb-4b0eae885b56.htm" />
+      <HelpTOCNode Title="CubeColorView Events" Url="html/e2c15ea7-9b57-2b24-b311-aab42cb43068.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="f6bd02ea-9b51-4783-ac2c-07d7bda3cbde" Title="CubeView Class" Url="html/404ec6c5-7540-e403-480b-9bb0901ee7da.htm">
+      <HelpTOCNode Title="CubeView Members" Url="html/6bd16bc4-0a57-94ad-dcde-729aa9d63918.htm" />
+      <HelpTOCNode Title="CubeView Constructor " Url="html/f9379542-0a71-95ca-23cf-a0f30d1a0f87.htm" />
+      <HelpTOCNode Id="991a539f-bec4-44c5-9325-ea6c72273429" Title="CubeView Methods" Url="html/fe20d0bb-ba7c-c802-98d4-a49d5db7f593.htm">
+        <HelpTOCNode Id="d58ba25c-7bc5-4900-b5a9-f56b7b50cf38" Title="Dispose Method " Url="html/9be8e363-1eef-ea60-491d-ec8e20c64695.htm">
+          <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/f2d65ed5-2e6a-995c-a8ab-41edd4dea91b.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="CubeView Properties" Url="html/9117713d-131d-e9d7-e53d-d8ad53fd2e1a.htm" />
+      <HelpTOCNode Title="CubeView Events" Url="html/33d69465-1dc2-6288-a262-42876785602a.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="abe9bcdb-0403-4b5b-9bab-c7c08608b865" Title="Position Class" Url="html/ae516810-4124-e8eb-7155-a5b541ac815a.htm">
+      <HelpTOCNode Title="Position Members" Url="html/d8b2607d-6008-669d-7d57-8bc11e04a280.htm" />
+      <HelpTOCNode Title="Position Constructor " Url="html/67b4123a-5e7f-9a03-34f6-cbf0877118c1.htm" />
+      <HelpTOCNode Title="Position Methods" Url="html/17228ad3-9b4f-6189-79b2-f4898f2b128b.htm" />
+      <HelpTOCNode Id="2e4341bf-2d01-46f8-940b-6699bc065462" Title="Position Properties" Url="html/19e6fd9c-07ad-082d-9af1-255e9515e873.htm">
+        <HelpTOCNode Title="Axis Property " Url="html/6cfda193-dcca-e0e1-3942-dffeedeb9096.htm" />
+        <HelpTOCNode Title="X Property " Url="html/4b6cdf4c-046a-2624-0fdb-24fdc381a267.htm" />
+        <HelpTOCNode Title="Y Property " Url="html/9ad50a13-6770-02a6-fb7b-454e361fea16.htm" />
+        <HelpTOCNode Title="Z Property " Url="html/7f26f6b5-4b5a-a290-b422-f29290140998.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="7823eb50-cd9f-4b32-9a03-0ca440f69400" Title="RubikModel Namespace" Url="html/42d08270-8ad0-d158-6ffa-2356520d5381.htm">
+    <HelpTOCNode Title="Axis Enumeration" Url="html/68fa9302-44a6-6d79-072e-01ec00dbfc66.htm" />
+    <HelpTOCNode Title="ChangedEventHandler Delegate" Url="html/6d86333d-a86c-f62a-06b6-9920167c0c44.htm" />
+    <HelpTOCNode Id="f1eed2be-d529-4614-93bb-963fafaf8dfd" Title="Corner Class" Url="html/379ef623-32b8-f287-d5de-1d4237ed6f78.htm">
+      <HelpTOCNode Title="Corner Members" Url="html/0bb61359-346f-a418-e846-fe38871e3a7c.htm" />
+      <HelpTOCNode Id="302ed4ce-529d-46e6-b507-f1b80f67dc6e" Title="Corner Constructor " Url="html/ba3ab7cb-8a83-e1ec-4cae-19e80234f5db.htm">
+        <HelpTOCNode Title="Corner Constructor " Url="html/4712e822-d8ba-e347-1b97-8e8ffa84eaaa.htm" />
+        <HelpTOCNode Title="Corner Constructor (Int32, Int32, Int32, PositionValue, PositionValue, PositionValue)" Url="html/0ab7ac64-1006-5830-588c-51c573a5c3a5.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="a3245c2e-325c-46ba-a734-2ab141279fde" Title="Corner Methods" Url="html/03b7bb08-79fa-eaba-3134-3a31e6522cf1.htm">
+        <HelpTOCNode Title="Rotate Method " Url="html/024c220e-8955-08ed-a198-9ddb9a104dbf.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Corner Properties" Url="html/cd2df00d-7a5a-9a8a-a362-7806a168f173.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="7d980724-3d61-4d5e-be5f-686abd4eed81" Title="Cubev2 Class" Url="html/3379c58f-2566-8dbf-ae46-eb559717d285.htm">
+      <HelpTOCNode Title="Cubev2 Members" Url="html/788f4e0b-bb11-9256-1656-4cc223c5b6e0.htm" />
+      <HelpTOCNode Title="Cubev2 Constructor " Url="html/97ca75c4-e4ad-6944-92fa-d14cdeea06c9.htm" />
+      <HelpTOCNode Id="21f02e0c-9cc4-4b8e-90fc-3c7191cb3267" Title="Cubev2 Methods" Url="html/249bc5a3-9365-74b1-cdd9-075c3be32217.htm">
+        <HelpTOCNode Title="Clone Method " Url="html/8549fc3d-a738-7e62-8dcd-2c2d73ffcf99.htm" />
+        <HelpTOCNode Title="InitPieces Method " Url="html/ca96dadb-559a-d228-e8c7-f96dd722bee3.htm" />
+        <HelpTOCNode Title="OnChanged Method " Url="html/87846ed6-c7c8-5122-7090-affea4a2e78c.htm" />
+        <HelpTOCNode Title="OnRotated Method " Url="html/14df5b96-79d5-bd8e-b679-0b6c2b08d1c9.htm" />
+        <HelpTOCNode Id="3e2b936a-f604-41f4-b5e2-c151f3d1f928" Title="Rotate Method " Url="html/036729e8-c39a-55ae-cf82-a1a84d277ba5.htm">
+          <HelpTOCNode Title="Rotate Method (Rotation)" Url="html/b7ba83a0-45b1-d2eb-d675-6aad943cfb71.htm" />
+          <HelpTOCNode Title="Rotate Method (Axis, Boolean, Int32)" Url="html/fe950b88-7193-cd82-dae4-a95409d510ac.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="8208be03-b906-4b00-8320-cbeb9055af8c" Title="Cubev2 Properties" Url="html/61925dc3-7e80-286c-f864-1bbc8d1d799b.htm">
+        <HelpTOCNode Title="Pieces Property " Url="html/1e48bf66-e6e5-38b6-730c-c50776a7fe2c.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="95c508be-10cc-4436-af04-1e2cc44a1086" Title="Cubev2 Events" Url="html/4c0e14a4-c228-e8a8-3150-ced91f0f823d.htm">
+        <HelpTOCNode Title="Changed Event" Url="html/fec494a1-5f71-359f-8816-c0378c16ec29.htm" />
+        <HelpTOCNode Title="Rotated Event" Url="html/89e8f172-5ab3-f6f8-71b4-577e94f6eff0.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="8c742d51-e5b3-49d4-b619-85f2b5d19436" Title="Edge Class" Url="html/b00d0715-f801-d399-ab45-e3569c600d0d.htm">
+      <HelpTOCNode Title="Edge Members" Url="html/75998a22-18eb-387e-6391-b86fb083e644.htm" />
+      <HelpTOCNode Id="9f511372-0ea9-4c2d-a339-864c66c27452" Title="Edge Constructor " Url="html/24159733-9561-d555-f23d-e18be6f61ce1.htm">
+        <HelpTOCNode Title="Edge Constructor " Url="html/fd940fbb-c10c-2ddc-7cc9-f66235833e5f.htm" />
+        <HelpTOCNode Title="Edge Constructor (Int32, Int32, Int32, PositionValue, PositionValue, PositionValue)" Url="html/151b0267-1bd5-27ad-5a9c-b9a801fdf24e.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="9b555581-ef85-4c49-b82e-444132361a44" Title="Edge Methods" Url="html/d83269b5-4854-b590-a3b8-d251326a58c4.htm">
+        <HelpTOCNode Title="Rotate Method " Url="html/41c28037-30e6-107a-f86d-1975aec727c2.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Edge Properties" Url="html/9121b7f4-32e2-eb02-c4c0-da7e706d7cbd.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="9a51e7d8-8d28-4242-a7b5-a867e6ae5c3c" Title="IPhaseSolvable Interface" Url="html/8d8dd835-d39c-c7ff-bcc9-e525247761cd.htm">
+      <HelpTOCNode Title="IPhaseSolvable Members" Url="html/7787f231-d484-83d5-250b-8f8a82000f76.htm" />
+      <HelpTOCNode Id="0dd49c32-fcda-43ad-a181-2f95f8ba13d0" Title="IPhaseSolvable Methods" Url="html/f2e0d197-ba76-fe03-471b-cdb2f92aa297.htm">
+        <HelpTOCNode Title="Solve Method " Url="html/9e11806d-41a4-2918-c171-1b852d5524d7.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="f53b7fbf-f408-4231-82b0-012dfc9b2e17" Title="Middle Class" Url="html/d72a3a42-2657-b293-7397-d8390d4ca017.htm">
+      <HelpTOCNode Title="Middle Members" Url="html/24efc636-0c70-7007-87ef-026fb3a1e8af.htm" />
+      <HelpTOCNode Id="c32e2b99-0a10-4cc4-85d5-e344deb2f2ab" Title="Middle Constructor " Url="html/8e53c6d4-a2c9-ec8f-1300-8cd38f238975.htm">
+        <HelpTOCNode Title="Middle Constructor " Url="html/ff8c03e7-8643-91a7-c647-48904df29879.htm" />
+        <HelpTOCNode Title="Middle Constructor (Int32, Int32, Int32, PositionValue, PositionValue, PositionValue)" Url="html/18dcf235-7d3f-a1fb-dfb7-7612d0277a98.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="0e18afba-50e9-4d05-a563-32778e106129" Title="Middle Methods" Url="html/880e357c-75ca-0a65-5728-e384f6196ebd.htm">
+        <HelpTOCNode Title="Rotate Method " Url="html/56385c00-8372-49e7-5891-dbe75d9177a9.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Middle Properties" Url="html/eb9ff6b3-e387-3da6-3abf-fcbb2f1c3966.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="c8a8e8d4-de56-44ce-9053-c901c60c8f5a" Title="Phase1 Class" Url="html/b7bafd11-92bb-228d-276b-15ca7d2ec24a.htm">
+      <HelpTOCNode Title="Phase1 Members" Url="html/007db95d-6295-56db-d887-99a75162ea7b.htm" />
+      <HelpTOCNode Title="Phase1 Constructor " Url="html/ae7cb033-9128-9990-c6fd-05de21cab269.htm" />
+      <HelpTOCNode Id="980ffc85-b786-47da-b9a8-dd30adde80de" Title="Phase1 Methods" Url="html/3f4f299f-cbca-8ab5-bb2c-de87bf8552ef.htm">
+        <HelpTOCNode Title="Solve Method " Url="html/1a53e2e2-00db-fe85-e323-3b091e469703.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="7ea23d98-cbf8-4c35-b18b-19ccc7fecdba" Title="Phase2 Class" Url="html/4687cc0d-cc0b-cf29-70da-977716ab5521.htm">
+      <HelpTOCNode Title="Phase2 Members" Url="html/4146acea-2705-2c24-c369-403f0a32fb5f.htm" />
+      <HelpTOCNode Title="Phase2 Constructor " Url="html/c9fa1efb-672c-6d78-0058-41ce2366e38e.htm" />
+      <HelpTOCNode Id="7bb9f0f9-44c9-486a-92d9-ca9a76a1fbf9" Title="Phase2 Methods" Url="html/c431f3bd-86b4-19f6-0291-bf17840a2366.htm">
+        <HelpTOCNode Title="Solve Method " Url="html/c407104b-7e61-be71-79a9-4025bb573cfc.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="b50439a2-064b-4eeb-8c75-f875533a26e9" Title="Phase3 Class" Url="html/ebdff7bf-0940-e878-45cc-594f9f23e6f4.htm">
+      <HelpTOCNode Title="Phase3 Members" Url="html/778670b0-2bb8-8d54-6483-f4d83adaa8d6.htm" />
+      <HelpTOCNode Title="Phase3 Constructor " Url="html/315f7c33-c727-4f86-4c26-0d1162ce1b5b.htm" />
+      <HelpTOCNode Id="c28f6dfb-03b1-4704-950c-5830cf9046ee" Title="Phase3 Methods" Url="html/7ca12048-a329-98f8-3804-34b6792c0aa7.htm">
+        <HelpTOCNode Title="Solve Method " Url="html/a572b2f1-c1b7-819d-3340-3c84ee3a20cd.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="f5ee0d04-ce81-4ba3-ab26-caed70505ee5" Title="Phase3 Properties" Url="html/c2a9e9b0-6448-4faa-bd39-80eb9a42a850.htm">
+        <HelpTOCNode Title="finished Property " Url="html/36acb63d-7ed8-f4e3-e849-fcde603ae770.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="cd7c6fc2-2aa0-4215-8ea5-571efe3a5ef0" Title="Phase4 Class" Url="html/d491e57b-05fa-f04d-f40f-48d34cd46cab.htm">
+      <HelpTOCNode Title="Phase4 Members" Url="html/3d878d4a-b57f-8817-e7bc-ab5ece0ec632.htm" />
+      <HelpTOCNode Title="Phase4 Constructor " Url="html/f1a18156-6c1b-55dc-b7e2-b396de40927b.htm" />
+      <HelpTOCNode Id="3191f624-22bc-40df-8d17-2b6ff7d34d48" Title="Phase4 Methods" Url="html/3098af7f-2b20-a791-ea64-966c1756607f.htm">
+        <HelpTOCNode Title="Solve Method " Url="html/5bbac5e9-03dc-50ff-3b78-182ed74e8afb.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="d0661131-479f-4a33-b946-c369158e47ce" Title="Phase5 Class" Url="html/79d35d36-ebef-f6dc-8469-7340328affac.htm">
+      <HelpTOCNode Title="Phase5 Members" Url="html/b05d485c-f319-5feb-b45f-3018265b8582.htm" />
+      <HelpTOCNode Title="Phase5 Constructor " Url="html/d7440bb6-f430-c1a1-a86a-b58c16ba4b0e.htm" />
+      <HelpTOCNode Id="bbabe8c6-1418-4d74-9f46-c892092fe0a8" Title="Phase5 Methods" Url="html/ddf8fa03-0e14-74d9-179f-a47ff13bf62a.htm">
+        <HelpTOCNode Title="Solve Method " Url="html/9952ef72-c370-6ea5-543d-f19bffaaab91.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="44490ff9-cb63-47d6-95da-8104912dfdc6" Title="Phase6 Class" Url="html/391107ba-f71d-5ddf-12dd-3aba337707eb.htm">
+      <HelpTOCNode Title="Phase6 Members" Url="html/e5cad3d8-0d0b-b4aa-aade-8961c8276f4f.htm" />
+      <HelpTOCNode Title="Phase6 Constructor " Url="html/7f4d41fd-3f61-218d-4543-8b063c14a396.htm" />
+      <HelpTOCNode Id="8f00bb55-281a-4d77-a85d-f0422851b66a" Title="Phase6 Methods" Url="html/fefab63d-a2eb-7955-33dc-64279bb052f9.htm">
+        <HelpTOCNode Title="Solve Method " Url="html/1d1d9c86-2456-224e-7905-9cbe33542c02.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="6f3ae77c-cb8a-433f-96e3-136f4c4edf4e" Title="Piece Class" Url="html/2dd45898-93a1-535c-6511-58c33d91338a.htm">
+      <HelpTOCNode Title="Piece Members" Url="html/d15927bb-e8b6-4a6d-fc2e-d5e3f20ffb80.htm" />
+      <HelpTOCNode Id="27385ec8-d91e-47a3-9df0-220981b350af" Title="Piece Constructor " Url="html/09a8129a-fe4d-9a73-e6cc-7c75e736f384.htm">
+        <HelpTOCNode Title="Piece Constructor " Url="html/4b587afa-2f1f-f17c-4f6e-348ccf8c032e.htm" />
+        <HelpTOCNode Title="Piece Constructor (Int32, Int32, Int32, PositionValue, PositionValue, PositionValue)" Url="html/08b4216f-3c7d-9bc7-3982-1f4119d4ba45.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="8b84f057-15d3-4a9b-bf17-20500e02652d" Title="Piece Methods" Url="html/3e1693bd-1d6a-20f3-0ce1-b84376729824.htm">
+        <HelpTOCNode Title="ContainsColor Method " Url="html/51455ca4-17db-1669-ff28-f6384afea19a.htm" />
+        <HelpTOCNode Title="GetColors Method " Url="html/2ed53967-d6de-5052-c1e9-fd6d33fee732.htm" />
+        <HelpTOCNode Title="Rotate Method " Url="html/dded0ea9-00e4-ec91-41af-e6f02d362bab.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="d5625892-09ad-4a80-8935-e22ceaa388c7" Title="Piece Properties" Url="html/47bb470c-f7f5-23d5-2975-5040fbc75d3f.htm">
+        <HelpTOCNode Title="A Property " Url="html/2b59a0fd-4a60-9da9-7baf-03237be5a20e.htm" />
+        <HelpTOCNode Title="B Property " Url="html/645c3bff-718e-0eee-fd12-99644c03b2fc.htm" />
+        <HelpTOCNode Title="C Property " Url="html/0041fa85-65c3-85ed-5197-0985185714d1.htm" />
+        <HelpTOCNode Title="X Property " Url="html/eb6388a6-a737-c905-4afa-38989ae7fcad.htm" />
+        <HelpTOCNode Title="Y Property " Url="html/8ccacf6d-20ce-b43a-c24a-d9e120cfb7ed.htm" />
+        <HelpTOCNode Title="Z Property " Url="html/44ebed12-fa11-1aed-5eed-187e9ceeb5bc.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="21aeb724-6939-440b-930d-62f8a442d91f" Title="PositionValue Class" Url="html/f32fdc8a-e0ed-ca12-3c74-39338144aa84.htm">
+      <HelpTOCNode Title="PositionValue Members" Url="html/530430a4-a4eb-8ca4-7585-33662554159b.htm" />
+      <HelpTOCNode Id="2822f938-5f3f-4295-b9b6-f5edb4de654c" Title="PositionValue Constructor " Url="html/dd1fe153-6db2-d668-820e-66a962fdb703.htm">
+        <HelpTOCNode Title="PositionValue Constructor " Url="html/5eaece13-baf7-80a6-9e24-dd940b0f9d05.htm" />
+        <HelpTOCNode Title="PositionValue Constructor (Int32, String)" Url="html/aca283d5-aa77-4c0c-6751-e5458e1176b4.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="PositionValue Methods" Url="html/a948e8da-52cf-8648-ebfe-4ce554df5eff.htm" />
+      <HelpTOCNode Id="95e4e615-9eda-4f1d-817f-5df3e1cd0880" Title="PositionValue Properties" Url="html/28d236fb-da91-2ecb-ea8c-fc8c6d563f2a.htm">
+        <HelpTOCNode Title="Key Property " Url="html/196cbd36-1535-018f-faf8-848af7f74765.htm" />
+        <HelpTOCNode Title="Val Property " Url="html/c161a6d4-5094-f8c4-998e-b1e871c932e4.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="RotatedEventHandler Delegate" Url="html/b97e5916-9999-abaf-3a21-64e23b5f2732.htm" />
+    <HelpTOCNode Id="0a0d88e6-3337-4d77-b8f4-b999fab0e33a" Title="Rotation Class" Url="html/488f25fd-2057-43ae-2585-aa4c9e9e94c9.htm">
+      <HelpTOCNode Title="Rotation Members" Url="html/2103fbee-6271-16c2-bcc2-5d80eeeb494b.htm" />
+      <HelpTOCNode Title="Rotation Constructor " Url="html/90c8fd42-4b4a-e5c4-dda5-746370e056ab.htm" />
+      <HelpTOCNode Title="Rotation Methods" Url="html/d32a6192-83ad-5e19-19d3-9f916b347ae2.htm" />
+      <HelpTOCNode Id="5404e4ad-d73e-48bd-b236-6a8cebb067ac" Title="Rotation Properties" Url="html/b1ca6328-38bc-cbc2-b4e4-ac39c5047df5.htm">
+        <HelpTOCNode Title="Axis Property " Url="html/64d1a1d5-a393-210c-3e2c-fc2f2c2770c0.htm" />
+        <HelpTOCNode Title="Counterclockwise Property " Url="html/5e4d30a8-7899-dff7-23ac-0d6147062e44.htm" />
+        <HelpTOCNode Title="Value Property " Url="html/b1f8b0da-4f14-9a1a-1a32-5217645026c4.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="6c2bbb83-3fc6-432a-b298-f5686bf59ac3" Title="RubikTest Namespace" Url="html/59b96d98-2a6d-54e3-c20d-0554e9a39eb7.htm">
+    <HelpTOCNode Id="83a61236-b972-448c-9431-d088df42cf3b" Title="UnitTest1 Class" Url="html/4dac956a-7741-99f5-f212-b117b7b9c0db.htm">
+      <HelpTOCNode Title="UnitTest1 Members" Url="html/675eadbe-4b39-5d84-2a51-f01e6633f067.htm" />
+      <HelpTOCNode Title="UnitTest1 Constructor " Url="html/6c880a00-ead0-f7af-53e2-51e7cbcdd6d5.htm" />
+      <HelpTOCNode Id="22866689-6453-43ad-9395-e7280c0ef887" Title="UnitTest1 Methods" Url="html/f903c740-8664-0e19-da90-f1b6c69eeed0.htm">
+        <HelpTOCNode Title="TestMethod1 Method " Url="html/c5e1ac1c-ff96-b040-e669-c24d070fcff4.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>

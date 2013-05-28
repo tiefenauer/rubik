@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="A property" Url="html/2b59a0fd-4a60-9da9-7baf-03237be5a20e.htm" />
+  <HelpKINode Title="Axis enumeration" Url="html/68fa9302-44a6-6d79-072e-01ec00dbfc66.htm" />
+  <HelpKINode Title="Axis property">
+    <HelpKINode Title="Position.Axis Property " Url="html/6cfda193-dcca-e0e1-3942-dffeedeb9096.htm" />
+    <HelpKINode Title="Rotation.Axis Property " Url="html/64d1a1d5-a393-210c-3e2c-fc2f2c2770c0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="B property" Url="html/645c3bff-718e-0eee-fd12-99644c03b2fc.htm" />
+  <HelpKINode Title="C property" Url="html/0041fa85-65c3-85ed-5197-0985185714d1.htm" />
+  <HelpKINode Title="Changed event" Url="html/fec494a1-5f71-359f-8816-c0378c16ec29.htm" />
+  <HelpKINode Title="ChangedEventHandler delegate" Url="html/6d86333d-a86c-f62a-06b6-9920167c0c44.htm" />
+  <HelpKINode Title="Clone method" Url="html/8549fc3d-a738-7e62-8dcd-2c2d73ffcf99.htm" />
+  <HelpKINode Title="colormappings field" Url="html/681f2aff-07b1-9c3e-d2e5-18f4a687a64d.htm" />
+  <HelpKINode Title="ContainsColor method" Url="html/51455ca4-17db-1669-ff28-f6384afea19a.htm" />
+  <HelpKINode Title="Corner class">
+    <HelpKINode Title="Corner Class" Url="html/379ef623-32b8-f287-d5de-1d4237ed6f78.htm" />
+    <HelpKINode Title="Corner Members" Url="html/0bb61359-346f-a418-e846-fe38871e3a7c.htm" />
+    <HelpKINode Title="about Corner class" Url="html/379ef623-32b8-f287-d5de-1d4237ed6f78.htm" />
+    <HelpKINode Title="all members" Url="html/0bb61359-346f-a418-e846-fe38871e3a7c.htm" />
+    <HelpKINode Title="constructor" Url="html/ba3ab7cb-8a83-e1ec-4cae-19e80234f5db.htm" />
+    <HelpKINode Title="methods" Url="html/03b7bb08-79fa-eaba-3134-3a31e6522cf1.htm" />
+    <HelpKINode Title="properties" Url="html/cd2df00d-7a5a-9a8a-a362-7806a168f173.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Corner.Corner constructor" Url="html/ba3ab7cb-8a83-e1ec-4cae-19e80234f5db.htm" />
+  <HelpKINode Title="Corner.Rotate method" Url="html/024c220e-8955-08ed-a198-9ddb9a104dbf.htm" />
+  <HelpKINode Title="Counter property" Url="html/efe5f84e-e409-3028-39a4-f3f5023207fa.htm" />
+  <HelpKINode Title="Counterclockwise property" Url="html/5e4d30a8-7899-dff7-23ac-0d6147062e44.htm" />
+  <HelpKINode Title="cube field" Url="html/985add93-0386-cb09-c527-18ccda4b316e.htm" />
+  <HelpKINode Title="CubeColorView class">
+    <HelpKINode Title="CubeColorView Class" Url="html/db82cb75-853f-cd7a-ab3a-0ed67e55b37d.htm" />
+    <HelpKINode Title="CubeColorView Members" Url="html/9a43545f-fb1e-dc15-6d73-73fcf8074c6b.htm" />
+    <HelpKINode Title="about CubeColorView class" Url="html/db82cb75-853f-cd7a-ab3a-0ed67e55b37d.htm" />
+    <HelpKINode Title="all members" Url="html/9a43545f-fb1e-dc15-6d73-73fcf8074c6b.htm" />
+    <HelpKINode Title="constructor" Url="html/2f8abe93-2b2f-1bd9-aaf3-19ca1e30ce57.htm" />
+    <HelpKINode Title="events" Url="html/e2c15ea7-9b57-2b24-b311-aab42cb43068.htm" />
+    <HelpKINode Title="fields" Url="html/1a71a03b-6bf7-0145-f275-7ab4b94992b5.htm" />
+    <HelpKINode Title="methods" Url="html/08395b65-5664-9cc3-4efa-e58b92aae60b.htm" />
+    <HelpKINode Title="properties" Url="html/040c3cb8-336f-468a-dadb-4b0eae885b56.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CubeColorView.colormappings field" Url="html/681f2aff-07b1-9c3e-d2e5-18f4a687a64d.htm" />
+  <HelpKINode Title="CubeColorView.cube field" Url="html/985add93-0386-cb09-c527-18ccda4b316e.htm" />
+  <HelpKINode Title="CubeColorView.CubeColorView constructor" Url="html/2f8abe93-2b2f-1bd9-aaf3-19ca1e30ce57.htm" />
+  <HelpKINode Title="CubeColorView.Dispose method" Url="html/4cf9d46f-5b18-1fcf-3476-94b736ea0788.htm" />
+  <HelpKINode Title="CubeColorView.PaintCurrentCube method" Url="html/22ddafbe-7ad4-950b-94e4-107742780fda.htm" />
+  <HelpKINode Title="CubeColorView.positionmappings field" Url="html/fedbedbf-90ef-e87e-ae1e-e024ab08bc49.htm" />
+  <HelpKINode Title="CubeColorView.PrepareMappings method" Url="html/72f19496-d4be-26ef-2cbf-d1f26ddd8e85.htm" />
+  <HelpKINode Title="Cubev2 class">
+    <HelpKINode Title="Cubev2 Class" Url="html/3379c58f-2566-8dbf-ae46-eb559717d285.htm" />
+    <HelpKINode Title="Cubev2 Members" Url="html/788f4e0b-bb11-9256-1656-4cc223c5b6e0.htm" />
+    <HelpKINode Title="about Cubev2 class" Url="html/3379c58f-2566-8dbf-ae46-eb559717d285.htm" />
+    <HelpKINode Title="all members" Url="html/788f4e0b-bb11-9256-1656-4cc223c5b6e0.htm" />
+    <HelpKINode Title="constructor" Url="html/97ca75c4-e4ad-6944-92fa-d14cdeea06c9.htm" />
+    <HelpKINode Title="events" Url="html/4c0e14a4-c228-e8a8-3150-ced91f0f823d.htm" />
+    <HelpKINode Title="methods" Url="html/249bc5a3-9365-74b1-cdd9-075c3be32217.htm" />
+    <HelpKINode Title="properties" Url="html/61925dc3-7e80-286c-f864-1bbc8d1d799b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Cubev2.Changed event" Url="html/fec494a1-5f71-359f-8816-c0378c16ec29.htm" />
+  <HelpKINode Title="Cubev2.Clone method" Url="html/8549fc3d-a738-7e62-8dcd-2c2d73ffcf99.htm" />
+  <HelpKINode Title="Cubev2.Cubev2 constructor" Url="html/97ca75c4-e4ad-6944-92fa-d14cdeea06c9.htm" />
+  <HelpKINode Title="Cubev2.InitPieces method" Url="html/ca96dadb-559a-d228-e8c7-f96dd722bee3.htm" />
+  <HelpKINode Title="Cubev2.OnChanged method" Url="html/87846ed6-c7c8-5122-7090-affea4a2e78c.htm" />
+  <HelpKINode Title="Cubev2.OnRotated method" Url="html/14df5b96-79d5-bd8e-b679-0b6c2b08d1c9.htm" />
+  <HelpKINode Title="Cubev2.Pieces property" Url="html/1e48bf66-e6e5-38b6-730c-c50776a7fe2c.htm" />
+  <HelpKINode Title="Cubev2.Rotate method" Url="html/036729e8-c39a-55ae-cf82-a1a84d277ba5.htm" />
+  <HelpKINode Title="Cubev2.Rotated event" Url="html/89e8f172-5ab3-f6f8-71b4-577e94f6eff0.htm" />
+  <HelpKINode Title="CubeView class">
+    <HelpKINode Title="CubeView Class" Url="html/404ec6c5-7540-e403-480b-9bb0901ee7da.htm" />
+    <HelpKINode Title="CubeView Members" Url="html/6bd16bc4-0a57-94ad-dcde-729aa9d63918.htm" />
+    <HelpKINode Title="about CubeView class" Url="html/404ec6c5-7540-e403-480b-9bb0901ee7da.htm" />
+    <HelpKINode Title="all members" Url="html/6bd16bc4-0a57-94ad-dcde-729aa9d63918.htm" />
+    <HelpKINode Title="constructor" Url="html/f9379542-0a71-95ca-23cf-a0f30d1a0f87.htm" />
+    <HelpKINode Title="events" Url="html/33d69465-1dc2-6288-a262-42876785602a.htm" />
+    <HelpKINode Title="methods" Url="html/fe20d0bb-ba7c-c802-98d4-a49d5db7f593.htm" />
+    <HelpKINode Title="properties" Url="html/9117713d-131d-e9d7-e53d-d8ad53fd2e1a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CubeView.CubeView constructor" Url="html/f9379542-0a71-95ca-23cf-a0f30d1a0f87.htm" />
+  <HelpKINode Title="CubeView.Dispose method" Url="html/9be8e363-1eef-ea60-491d-ec8e20c64695.htm" />
+  <HelpKINode Title="Dispose method">
+    <HelpKINode Title="CubeColorView.Dispose Method " Url="html/4cf9d46f-5b18-1fcf-3476-94b736ea0788.htm" />
+    <HelpKINode Title="CubeView.Dispose Method " Url="html/9be8e363-1eef-ea60-491d-ec8e20c64695.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Edge class">
+    <HelpKINode Title="Edge Class" Url="html/b00d0715-f801-d399-ab45-e3569c600d0d.htm" />
+    <HelpKINode Title="Edge Members" Url="html/75998a22-18eb-387e-6391-b86fb083e644.htm" />
+    <HelpKINode Title="about Edge class" Url="html/b00d0715-f801-d399-ab45-e3569c600d0d.htm" />
+    <HelpKINode Title="all members" Url="html/75998a22-18eb-387e-6391-b86fb083e644.htm" />
+    <HelpKINode Title="constructor" Url="html/24159733-9561-d555-f23d-e18be6f61ce1.htm" />
+    <HelpKINode Title="methods" Url="html/d83269b5-4854-b590-a3b8-d251326a58c4.htm" />
+    <HelpKINode Title="properties" Url="html/9121b7f4-32e2-eb02-c4c0-da7e706d7cbd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Edge.Edge constructor" Url="html/24159733-9561-d555-f23d-e18be6f61ce1.htm" />
+  <HelpKINode Title="Edge.Rotate method" Url="html/41c28037-30e6-107a-f86d-1975aec727c2.htm" />
+  <HelpKINode Title="finished property" Url="html/36acb63d-7ed8-f4e3-e849-fcde603ae770.htm" />
+  <HelpKINode Title="GetColors method" Url="html/2ed53967-d6de-5052-c1e9-fd6d33fee732.htm" />
+  <HelpKINode Title="InitPieces method" Url="html/ca96dadb-559a-d228-e8c7-f96dd722bee3.htm" />
+  <HelpKINode Title="IPhaseSolvable interface">
+    <HelpKINode Title="IPhaseSolvable Interface" Url="html/8d8dd835-d39c-c7ff-bcc9-e525247761cd.htm" />
+    <HelpKINode Title="IPhaseSolvable Members" Url="html/7787f231-d484-83d5-250b-8f8a82000f76.htm" />
+    <HelpKINode Title="about IPhaseSolvable interface" Url="html/8d8dd835-d39c-c7ff-bcc9-e525247761cd.htm" />
+    <HelpKINode Title="all members" Url="html/7787f231-d484-83d5-250b-8f8a82000f76.htm" />
+    <HelpKINode Title="methods" Url="html/f2e0d197-ba76-fe03-471b-cdb2f92aa297.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IPhaseSolvable.Solve method" Url="html/9e11806d-41a4-2918-c171-1b852d5524d7.htm" />
+  <HelpKINode Title="Key property" Url="html/196cbd36-1535-018f-faf8-848af7f74765.htm" />
+  <HelpKINode Title="Middle class">
+    <HelpKINode Title="Middle Class" Url="html/d72a3a42-2657-b293-7397-d8390d4ca017.htm" />
+    <HelpKINode Title="Middle Members" Url="html/24efc636-0c70-7007-87ef-026fb3a1e8af.htm" />
+    <HelpKINode Title="about Middle class" Url="html/d72a3a42-2657-b293-7397-d8390d4ca017.htm" />
+    <HelpKINode Title="all members" Url="html/24efc636-0c70-7007-87ef-026fb3a1e8af.htm" />
+    <HelpKINode Title="constructor" Url="html/8e53c6d4-a2c9-ec8f-1300-8cd38f238975.htm" />
+    <HelpKINode Title="methods" Url="html/880e357c-75ca-0a65-5728-e384f6196ebd.htm" />
+    <HelpKINode Title="properties" Url="html/eb9ff6b3-e387-3da6-3abf-fcbb2f1c3966.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Middle.Middle constructor" Url="html/8e53c6d4-a2c9-ec8f-1300-8cd38f238975.htm" />
+  <HelpKINode Title="Middle.Rotate method" Url="html/56385c00-8372-49e7-5891-dbe75d9177a9.htm" />
+  <HelpKINode Title="OnChanged method" Url="html/87846ed6-c7c8-5122-7090-affea4a2e78c.htm" />
+  <HelpKINode Title="OnRotated method" Url="html/14df5b96-79d5-bd8e-b679-0b6c2b08d1c9.htm" />
+  <HelpKINode Title="PaintCurrentCube method" Url="html/22ddafbe-7ad4-950b-94e4-107742780fda.htm" />
+  <HelpKINode Title="Phase1 class">
+    <HelpKINode Title="Phase1 Class" Url="html/b7bafd11-92bb-228d-276b-15ca7d2ec24a.htm" />
+    <HelpKINode Title="Phase1 Members" Url="html/007db95d-6295-56db-d887-99a75162ea7b.htm" />
+    <HelpKINode Title="about Phase1 class" Url="html/b7bafd11-92bb-228d-276b-15ca7d2ec24a.htm" />
+    <HelpKINode Title="all members" Url="html/007db95d-6295-56db-d887-99a75162ea7b.htm" />
+    <HelpKINode Title="constructor" Url="html/ae7cb033-9128-9990-c6fd-05de21cab269.htm" />
+    <HelpKINode Title="methods" Url="html/3f4f299f-cbca-8ab5-bb2c-de87bf8552ef.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Phase1.Phase1 constructor" Url="html/ae7cb033-9128-9990-c6fd-05de21cab269.htm" />
+  <HelpKINode Title="Phase1.Solve method" Url="html/1a53e2e2-00db-fe85-e323-3b091e469703.htm" />
+  <HelpKINode Title="Phase2 class">
+    <HelpKINode Title="Phase2 Class" Url="html/4687cc0d-cc0b-cf29-70da-977716ab5521.htm" />
+    <HelpKINode Title="Phase2 Members" Url="html/4146acea-2705-2c24-c369-403f0a32fb5f.htm" />
+    <HelpKINode Title="about Phase2 class" Url="html/4687cc0d-cc0b-cf29-70da-977716ab5521.htm" />
+    <HelpKINode Title="all members" Url="html/4146acea-2705-2c24-c369-403f0a32fb5f.htm" />
+    <HelpKINode Title="constructor" Url="html/c9fa1efb-672c-6d78-0058-41ce2366e38e.htm" />
+    <HelpKINode Title="methods" Url="html/c431f3bd-86b4-19f6-0291-bf17840a2366.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Phase2.Phase2 constructor" Url="html/c9fa1efb-672c-6d78-0058-41ce2366e38e.htm" />
+  <HelpKINode Title="Phase2.Solve method" Url="html/c407104b-7e61-be71-79a9-4025bb573cfc.htm" />
+  <HelpKINode Title="Phase3 class">
+    <HelpKINode Title="Phase3 Class" Url="html/ebdff7bf-0940-e878-45cc-594f9f23e6f4.htm" />
+    <HelpKINode Title="Phase3 Members" Url="html/778670b0-2bb8-8d54-6483-f4d83adaa8d6.htm" />
+    <HelpKINode Title="about Phase3 class" Url="html/ebdff7bf-0940-e878-45cc-594f9f23e6f4.htm" />
+    <HelpKINode Title="all members" Url="html/778670b0-2bb8-8d54-6483-f4d83adaa8d6.htm" />
+    <HelpKINode Title="constructor" Url="html/315f7c33-c727-4f86-4c26-0d1162ce1b5b.htm" />
+    <HelpKINode Title="methods" Url="html/7ca12048-a329-98f8-3804-34b6792c0aa7.htm" />
+    <HelpKINode Title="properties" Url="html/c2a9e9b0-6448-4faa-bd39-80eb9a42a850.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Phase3.finished property" Url="html/36acb63d-7ed8-f4e3-e849-fcde603ae770.htm" />
+  <HelpKINode Title="Phase3.Phase3 constructor" Url="html/315f7c33-c727-4f86-4c26-0d1162ce1b5b.htm" />
+  <HelpKINode Title="Phase3.Solve method" Url="html/a572b2f1-c1b7-819d-3340-3c84ee3a20cd.htm" />
+  <HelpKINode Title="Phase4 class">
+    <HelpKINode Title="Phase4 Class" Url="html/d491e57b-05fa-f04d-f40f-48d34cd46cab.htm" />
+    <HelpKINode Title="Phase4 Members" Url="html/3d878d4a-b57f-8817-e7bc-ab5ece0ec632.htm" />
+    <HelpKINode Title="about Phase4 class" Url="html/d491e57b-05fa-f04d-f40f-48d34cd46cab.htm" />
+    <HelpKINode Title="all members" Url="html/3d878d4a-b57f-8817-e7bc-ab5ece0ec632.htm" />
+    <HelpKINode Title="constructor" Url="html/f1a18156-6c1b-55dc-b7e2-b396de40927b.htm" />
+    <HelpKINode Title="methods" Url="html/3098af7f-2b20-a791-ea64-966c1756607f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Phase4.Phase4 constructor" Url="html/f1a18156-6c1b-55dc-b7e2-b396de40927b.htm" />
+  <HelpKINode Title="Phase4.Solve method" Url="html/5bbac5e9-03dc-50ff-3b78-182ed74e8afb.htm" />
+  <HelpKINode Title="Phase5 class">
+    <HelpKINode Title="Phase5 Class" Url="html/79d35d36-ebef-f6dc-8469-7340328affac.htm" />
+    <HelpKINode Title="Phase5 Members" Url="html/b05d485c-f319-5feb-b45f-3018265b8582.htm" />
+    <HelpKINode Title="about Phase5 class" Url="html/79d35d36-ebef-f6dc-8469-7340328affac.htm" />
+    <HelpKINode Title="all members" Url="html/b05d485c-f319-5feb-b45f-3018265b8582.htm" />
+    <HelpKINode Title="constructor" Url="html/d7440bb6-f430-c1a1-a86a-b58c16ba4b0e.htm" />
+    <HelpKINode Title="methods" Url="html/ddf8fa03-0e14-74d9-179f-a47ff13bf62a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Phase5.Phase5 constructor" Url="html/d7440bb6-f430-c1a1-a86a-b58c16ba4b0e.htm" />
+  <HelpKINode Title="Phase5.Solve method" Url="html/9952ef72-c370-6ea5-543d-f19bffaaab91.htm" />
+  <HelpKINode Title="Phase6 class">
+    <HelpKINode Title="Phase6 Class" Url="html/391107ba-f71d-5ddf-12dd-3aba337707eb.htm" />
+    <HelpKINode Title="Phase6 Members" Url="html/e5cad3d8-0d0b-b4aa-aade-8961c8276f4f.htm" />
+    <HelpKINode Title="about Phase6 class" Url="html/391107ba-f71d-5ddf-12dd-3aba337707eb.htm" />
+    <HelpKINode Title="all members" Url="html/e5cad3d8-0d0b-b4aa-aade-8961c8276f4f.htm" />
+    <HelpKINode Title="constructor" Url="html/7f4d41fd-3f61-218d-4543-8b063c14a396.htm" />
+    <HelpKINode Title="methods" Url="html/fefab63d-a2eb-7955-33dc-64279bb052f9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Phase6.Phase6 constructor" Url="html/7f4d41fd-3f61-218d-4543-8b063c14a396.htm" />
+  <HelpKINode Title="Phase6.Solve method" Url="html/1d1d9c86-2456-224e-7905-9cbe33542c02.htm" />
+  <HelpKINode Title="Piece class">
+    <HelpKINode Title="Piece Class" Url="html/2dd45898-93a1-535c-6511-58c33d91338a.htm" />
+    <HelpKINode Title="Piece Members" Url="html/d15927bb-e8b6-4a6d-fc2e-d5e3f20ffb80.htm" />
+    <HelpKINode Title="about Piece class" Url="html/2dd45898-93a1-535c-6511-58c33d91338a.htm" />
+    <HelpKINode Title="all members" Url="html/d15927bb-e8b6-4a6d-fc2e-d5e3f20ffb80.htm" />
+    <HelpKINode Title="constructor" Url="html/09a8129a-fe4d-9a73-e6cc-7c75e736f384.htm" />
+    <HelpKINode Title="methods" Url="html/3e1693bd-1d6a-20f3-0ce1-b84376729824.htm" />
+    <HelpKINode Title="properties" Url="html/47bb470c-f7f5-23d5-2975-5040fbc75d3f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Piece.A property" Url="html/2b59a0fd-4a60-9da9-7baf-03237be5a20e.htm" />
+  <HelpKINode Title="Piece.B property" Url="html/645c3bff-718e-0eee-fd12-99644c03b2fc.htm" />
+  <HelpKINode Title="Piece.C property" Url="html/0041fa85-65c3-85ed-5197-0985185714d1.htm" />
+  <HelpKINode Title="Piece.ContainsColor method" Url="html/51455ca4-17db-1669-ff28-f6384afea19a.htm" />
+  <HelpKINode Title="Piece.GetColors method" Url="html/2ed53967-d6de-5052-c1e9-fd6d33fee732.htm" />
+  <HelpKINode Title="Piece.Piece constructor" Url="html/09a8129a-fe4d-9a73-e6cc-7c75e736f384.htm" />
+  <HelpKINode Title="Piece.Rotate method" Url="html/dded0ea9-00e4-ec91-41af-e6f02d362bab.htm" />
+  <HelpKINode Title="Piece.X property" Url="html/eb6388a6-a737-c905-4afa-38989ae7fcad.htm" />
+  <HelpKINode Title="Piece.Y property" Url="html/8ccacf6d-20ce-b43a-c24a-d9e120cfb7ed.htm" />
+  <HelpKINode Title="Piece.Z property" Url="html/44ebed12-fa11-1aed-5eed-187e9ceeb5bc.htm" />
+  <HelpKINode Title="Pieces property" Url="html/1e48bf66-e6e5-38b6-730c-c50776a7fe2c.htm" />
+  <HelpKINode Title="Position class">
+    <HelpKINode Title="Position Class" Url="html/ae516810-4124-e8eb-7155-a5b541ac815a.htm" />
+    <HelpKINode Title="Position Members" Url="html/d8b2607d-6008-669d-7d57-8bc11e04a280.htm" />
+    <HelpKINode Title="about Position class" Url="html/ae516810-4124-e8eb-7155-a5b541ac815a.htm" />
+    <HelpKINode Title="all members" Url="html/d8b2607d-6008-669d-7d57-8bc11e04a280.htm" />
+    <HelpKINode Title="constructor" Url="html/67b4123a-5e7f-9a03-34f6-cbf0877118c1.htm" />
+    <HelpKINode Title="methods" Url="html/17228ad3-9b4f-6189-79b2-f4898f2b128b.htm" />
+    <HelpKINode Title="properties" Url="html/19e6fd9c-07ad-082d-9af1-255e9515e873.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Position.Axis property" Url="html/6cfda193-dcca-e0e1-3942-dffeedeb9096.htm" />
+  <HelpKINode Title="Position.Position constructor" Url="html/67b4123a-5e7f-9a03-34f6-cbf0877118c1.htm" />
+  <HelpKINode Title="Position.X property" Url="html/4b6cdf4c-046a-2624-0fdb-24fdc381a267.htm" />
+  <HelpKINode Title="Position.Y property" Url="html/9ad50a13-6770-02a6-fb7b-454e361fea16.htm" />
+  <HelpKINode Title="Position.Z property" Url="html/7f26f6b5-4b5a-a290-b422-f29290140998.htm" />
+  <HelpKINode Title="positionmappings field" Url="html/fedbedbf-90ef-e87e-ae1e-e024ab08bc49.htm" />
+  <HelpKINode Title="PositionValue class">
+    <HelpKINode Title="PositionValue Class" Url="html/f32fdc8a-e0ed-ca12-3c74-39338144aa84.htm" />
+    <HelpKINode Title="PositionValue Members" Url="html/530430a4-a4eb-8ca4-7585-33662554159b.htm" />
+    <HelpKINode Title="about PositionValue class" Url="html/f32fdc8a-e0ed-ca12-3c74-39338144aa84.htm" />
+    <HelpKINode Title="all members" Url="html/530430a4-a4eb-8ca4-7585-33662554159b.htm" />
+    <HelpKINode Title="constructor" Url="html/dd1fe153-6db2-d668-820e-66a962fdb703.htm" />
+    <HelpKINode Title="methods" Url="html/a948e8da-52cf-8648-ebfe-4ce554df5eff.htm" />
+    <HelpKINode Title="properties" Url="html/28d236fb-da91-2ecb-ea8c-fc8c6d563f2a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PositionValue.Key property" Url="html/196cbd36-1535-018f-faf8-848af7f74765.htm" />
+  <HelpKINode Title="PositionValue.PositionValue constructor" Url="html/dd1fe153-6db2-d668-820e-66a962fdb703.htm" />
+  <HelpKINode Title="PositionValue.Val property" Url="html/c161a6d4-5094-f8c4-998e-b1e871c932e4.htm" />
+  <HelpKINode Title="PrepareMappings method" Url="html/72f19496-d4be-26ef-2cbf-d1f26ddd8e85.htm" />
+  <HelpKINode Title="PrevStep method" Url="html/5b8fba89-8335-3665-b4eb-c6e17a55d4c2.htm" />
+  <HelpKINode Title="Rotate method">
+    <HelpKINode Title="Corner.Rotate Method " Url="html/024c220e-8955-08ed-a198-9ddb9a104dbf.htm" />
+    <HelpKINode Title="Cubev2.Rotate Method " Url="html/036729e8-c39a-55ae-cf82-a1a84d277ba5.htm" />
+    <HelpKINode Title="Edge.Rotate Method " Url="html/41c28037-30e6-107a-f86d-1975aec727c2.htm" />
+    <HelpKINode Title="Middle.Rotate Method " Url="html/56385c00-8372-49e7-5891-dbe75d9177a9.htm" />
+    <HelpKINode Title="Piece.Rotate Method " Url="html/dded0ea9-00e4-ec91-41af-e6f02d362bab.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Rotated event" Url="html/89e8f172-5ab3-f6f8-71b4-577e94f6eff0.htm" />
+  <HelpKINode Title="RotatedEventHandler delegate" Url="html/b97e5916-9999-abaf-3a21-64e23b5f2732.htm" />
+  <HelpKINode Title="Rotation class">
+    <HelpKINode Title="Rotation Class" Url="html/488f25fd-2057-43ae-2585-aa4c9e9e94c9.htm" />
+    <HelpKINode Title="Rotation Members" Url="html/2103fbee-6271-16c2-bcc2-5d80eeeb494b.htm" />
+    <HelpKINode Title="about Rotation class" Url="html/488f25fd-2057-43ae-2585-aa4c9e9e94c9.htm" />
+    <HelpKINode Title="all members" Url="html/2103fbee-6271-16c2-bcc2-5d80eeeb494b.htm" />
+    <HelpKINode Title="constructor" Url="html/90c8fd42-4b4a-e5c4-dda5-746370e056ab.htm" />
+    <HelpKINode Title="methods" Url="html/d32a6192-83ad-5e19-19d3-9f916b347ae2.htm" />
+    <HelpKINode Title="properties" Url="html/b1ca6328-38bc-cbc2-b4e4-ac39c5047df5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Rotation.Axis property" Url="html/64d1a1d5-a393-210c-3e2c-fc2f2c2770c0.htm" />
+  <HelpKINode Title="Rotation.Counterclockwise property" Url="html/5e4d30a8-7899-dff7-23ac-0d6147062e44.htm" />
+  <HelpKINode Title="Rotation.Rotation constructor" Url="html/90c8fd42-4b4a-e5c4-dda5-746370e056ab.htm" />
+  <HelpKINode Title="Rotation.Value property" Url="html/b1f8b0da-4f14-9a1a-1a32-5217645026c4.htm" />
+  <HelpKINode Title="Rotations property" Url="html/6f9925af-827b-2349-ff67-2a35c17125a9.htm" />
+  <HelpKINode Title="RotationsCount property" Url="html/58ba8205-a3f3-ea7d-b715-323ad3b75c92.htm" />
+  <HelpKINode Title="RubikController namespace" Url="html/d0d779e8-951a-b148-837e-162bd8f8f344.htm" />
+  <HelpKINode Title="RubikController.RubikSolvController class">
+    <HelpKINode Title="RubikSolvController Class" Url="html/6935d010-0336-5adf-8d89-831820acbb01.htm" />
+    <HelpKINode Title="RubikSolvController Members" Url="html/a228e574-c33d-5962-092b-4190fdde52b1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RubikGUI namespace" Url="html/0139ebef-23a2-3e59-a452-3e9eb5b136c1.htm" />
+  <HelpKINode Title="RubikGUI.CubeColorView class">
+    <HelpKINode Title="CubeColorView Class" Url="html/db82cb75-853f-cd7a-ab3a-0ed67e55b37d.htm" />
+    <HelpKINode Title="CubeColorView Members" Url="html/9a43545f-fb1e-dc15-6d73-73fcf8074c6b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RubikGUI.CubeView class">
+    <HelpKINode Title="CubeView Class" Url="html/404ec6c5-7540-e403-480b-9bb0901ee7da.htm" />
+    <HelpKINode Title="CubeView Members" Url="html/6bd16bc4-0a57-94ad-dcde-729aa9d63918.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RubikGUI.Position class">
+    <HelpKINode Title="Position Class" Url="html/ae516810-4124-e8eb-7155-a5b541ac815a.htm" />
+    <HelpKINode Title="Position Members" Url="html/d8b2607d-6008-669d-7d57-8bc11e04a280.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RubikModel namespace" Url="html/42d08270-8ad0-d158-6ffa-2356520d5381.htm" />
+  <HelpKINode Title="RubikModel.Axis enumeration" Url="html/68fa9302-44a6-6d79-072e-01ec00dbfc66.htm" />
+  <HelpKINode Title="RubikModel.ChangedEventHandler delegate" Url="html/6d86333d-a86c-f62a-06b6-9920167c0c44.htm" />
+  <HelpKINode Title="RubikModel.Corner class">
+    <HelpKINode Title="Corner Class" Url="html/379ef623-32b8-f287-d5de-1d4237ed6f78.htm" />
+    <HelpKINode Title="Corner Members" Url="html/0bb61359-346f-a418-e846-fe38871e3a7c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RubikModel.Cubev2 class">
+    <HelpKINode Title="Cubev2 Class" Url="html/3379c58f-2566-8dbf-ae46-eb559717d285.htm" />
+    <HelpKINode Title="Cubev2 Members" Url="html/788f4e0b-bb11-9256-1656-4cc223c5b6e0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RubikModel.Edge class">
+    <HelpKINode Title="Edge Class" Url="html/b00d0715-f801-d399-ab45-e3569c600d0d.htm" />
+    <HelpKINode Title="Edge Members" Url="html/75998a22-18eb-387e-6391-b86fb083e644.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RubikModel.IPhaseSolvable interface">
+    <HelpKINode Title="IPhaseSolvable Interface" Url="html/8d8dd835-d39c-c7ff-bcc9-e525247761cd.htm" />
+    <HelpKINode Title="IPhaseSolvable Members" Url="html/7787f231-d484-83d5-250b-8f8a82000f76.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RubikModel.Middle class">
+    <HelpKINode Title="Middle Class" Url="html/d72a3a42-2657-b293-7397-d8390d4ca017.htm" />
+    <HelpKINode Title="Middle Members" Url="html/24efc636-0c70-7007-87ef-026fb3a1e8af.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RubikModel.Phase1 class">
+    <HelpKINode Title="Phase1 Class" Url="html/b7bafd11-92bb-228d-276b-15ca7d2ec24a.htm" />
+    <HelpKINode Title="Phase1 Members" Url="html/007db95d-6295-56db-d887-99a75162ea7b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RubikModel.Phase2 class">
+    <HelpKINode Title="Phase2 Class" Url="html/4687cc0d-cc0b-cf29-70da-977716ab5521.htm" />
+    <HelpKINode Title="Phase2 Members" Url="html/4146acea-2705-2c24-c369-403f0a32fb5f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RubikModel.Phase3 class">
+    <HelpKINode Title="Phase3 Class" Url="html/ebdff7bf-0940-e878-45cc-594f9f23e6f4.htm" />
+    <HelpKINode Title="Phase3 Members" Url="html/778670b0-2bb8-8d54-6483-f4d83adaa8d6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RubikModel.Phase4 class">
+    <HelpKINode Title="Phase4 Class" Url="html/d491e57b-05fa-f04d-f40f-48d34cd46cab.htm" />
+    <HelpKINode Title="Phase4 Members" Url="html/3d878d4a-b57f-8817-e7bc-ab5ece0ec632.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RubikModel.Phase5 class">
+    <HelpKINode Title="Phase5 Class" Url="html/79d35d36-ebef-f6dc-8469-7340328affac.htm" />
+    <HelpKINode Title="Phase5 Members" Url="html/b05d485c-f319-5feb-b45f-3018265b8582.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RubikModel.Phase6 class">
+    <HelpKINode Title="Phase6 Class" Url="html/391107ba-f71d-5ddf-12dd-3aba337707eb.htm" />
+    <HelpKINode Title="Phase6 Members" Url="html/e5cad3d8-0d0b-b4aa-aade-8961c8276f4f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RubikModel.Piece class">
+    <HelpKINode Title="Piece Class" Url="html/2dd45898-93a1-535c-6511-58c33d91338a.htm" />
+    <HelpKINode Title="Piece Members" Url="html/d15927bb-e8b6-4a6d-fc2e-d5e3f20ffb80.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RubikModel.PositionValue class">
+    <HelpKINode Title="PositionValue Class" Url="html/f32fdc8a-e0ed-ca12-3c74-39338144aa84.htm" />
+    <HelpKINode Title="PositionValue Members" Url="html/530430a4-a4eb-8ca4-7585-33662554159b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RubikModel.RotatedEventHandler delegate" Url="html/b97e5916-9999-abaf-3a21-64e23b5f2732.htm" />
+  <HelpKINode Title="RubikModel.Rotation class">
+    <HelpKINode Title="Rotation Class" Url="html/488f25fd-2057-43ae-2585-aa4c9e9e94c9.htm" />
+    <HelpKINode Title="Rotation Members" Url="html/2103fbee-6271-16c2-bcc2-5d80eeeb494b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RubikSolvController class">
+    <HelpKINode Title="RubikSolvController Class" Url="html/6935d010-0336-5adf-8d89-831820acbb01.htm" />
+    <HelpKINode Title="RubikSolvController Members" Url="html/a228e574-c33d-5962-092b-4190fdde52b1.htm" />
+    <HelpKINode Title="about RubikSolvController class" Url="html/6935d010-0336-5adf-8d89-831820acbb01.htm" />
+    <HelpKINode Title="all members" Url="html/a228e574-c33d-5962-092b-4190fdde52b1.htm" />
+    <HelpKINode Title="constructor" Url="html/5e25268f-4952-7f61-f92b-bcc46ff2742e.htm" />
+    <HelpKINode Title="methods" Url="html/849a4654-1b03-c5b8-34d1-bc87bb43f661.htm" />
+    <HelpKINode Title="properties" Url="html/55ac7143-2088-d888-a9a6-e1313247b273.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RubikSolvController.Counter property" Url="html/efe5f84e-e409-3028-39a4-f3f5023207fa.htm" />
+  <HelpKINode Title="RubikSolvController.PrevStep method" Url="html/5b8fba89-8335-3665-b4eb-c6e17a55d4c2.htm" />
+  <HelpKINode Title="RubikSolvController.Rotations property" Url="html/6f9925af-827b-2349-ff67-2a35c17125a9.htm" />
+  <HelpKINode Title="RubikSolvController.RotationsCount property" Url="html/58ba8205-a3f3-ea7d-b715-323ad3b75c92.htm" />
+  <HelpKINode Title="RubikSolvController.RubikSolvController constructor" Url="html/5e25268f-4952-7f61-f92b-bcc46ff2742e.htm" />
+  <HelpKINode Title="RubikSolvController.Solve method" Url="html/df444bc0-d167-0164-0db7-d12ce87ff7af.htm" />
+  <HelpKINode Title="RubikSolvController.Step method" Url="html/267b4d62-53d8-be42-e30c-241bb2cd249e.htm" />
+  <HelpKINode Title="RubikTest namespace" Url="html/59b96d98-2a6d-54e3-c20d-0554e9a39eb7.htm" />
+  <HelpKINode Title="RubikTest.UnitTest1 class">
+    <HelpKINode Title="UnitTest1 Class" Url="html/4dac956a-7741-99f5-f212-b117b7b9c0db.htm" />
+    <HelpKINode Title="UnitTest1 Members" Url="html/675eadbe-4b39-5d84-2a51-f01e6633f067.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Solve method">
+    <HelpKINode Title="IPhaseSolvable.Solve Method " Url="html/9e11806d-41a4-2918-c171-1b852d5524d7.htm" />
+    <HelpKINode Title="Phase1.Solve Method " Url="html/1a53e2e2-00db-fe85-e323-3b091e469703.htm" />
+    <HelpKINode Title="Phase2.Solve Method " Url="html/c407104b-7e61-be71-79a9-4025bb573cfc.htm" />
+    <HelpKINode Title="Phase3.Solve Method " Url="html/a572b2f1-c1b7-819d-3340-3c84ee3a20cd.htm" />
+    <HelpKINode Title="Phase4.Solve Method " Url="html/5bbac5e9-03dc-50ff-3b78-182ed74e8afb.htm" />
+    <HelpKINode Title="Phase5.Solve Method " Url="html/9952ef72-c370-6ea5-543d-f19bffaaab91.htm" />
+    <HelpKINode Title="Phase6.Solve Method " Url="html/1d1d9c86-2456-224e-7905-9cbe33542c02.htm" />
+    <HelpKINode Title="RubikSolvController.Solve Method " Url="html/df444bc0-d167-0164-0db7-d12ce87ff7af.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Step method" Url="html/267b4d62-53d8-be42-e30c-241bb2cd249e.htm" />
+  <HelpKINode Title="TestMethod1 method" Url="html/c5e1ac1c-ff96-b040-e669-c24d070fcff4.htm" />
+  <HelpKINode Title="UnitTest1 class">
+    <HelpKINode Title="UnitTest1 Class" Url="html/4dac956a-7741-99f5-f212-b117b7b9c0db.htm" />
+    <HelpKINode Title="UnitTest1 Members" Url="html/675eadbe-4b39-5d84-2a51-f01e6633f067.htm" />
+    <HelpKINode Title="about UnitTest1 class" Url="html/4dac956a-7741-99f5-f212-b117b7b9c0db.htm" />
+    <HelpKINode Title="all members" Url="html/675eadbe-4b39-5d84-2a51-f01e6633f067.htm" />
+    <HelpKINode Title="constructor" Url="html/6c880a00-ead0-f7af-53e2-51e7cbcdd6d5.htm" />
+    <HelpKINode Title="methods" Url="html/f903c740-8664-0e19-da90-f1b6c69eeed0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UnitTest1.TestMethod1 method" Url="html/c5e1ac1c-ff96-b040-e669-c24d070fcff4.htm" />
+  <HelpKINode Title="UnitTest1.UnitTest1 constructor" Url="html/6c880a00-ead0-f7af-53e2-51e7cbcdd6d5.htm" />
+  <HelpKINode Title="Val property" Url="html/c161a6d4-5094-f8c4-998e-b1e871c932e4.htm" />
+  <HelpKINode Title="Value property" Url="html/b1f8b0da-4f14-9a1a-1a32-5217645026c4.htm" />
+  <HelpKINode Title="X property">
+    <HelpKINode Title="Piece.X Property " Url="html/eb6388a6-a737-c905-4afa-38989ae7fcad.htm" />
+    <HelpKINode Title="Position.X Property " Url="html/4b6cdf4c-046a-2624-0fdb-24fdc381a267.htm" />
+  </HelpKINode>
+  <HelpKINode Title="xAxis enumeration member" Url="html/68fa9302-44a6-6d79-072e-01ec00dbfc66.htm" />
+  <HelpKINode Title="Y property">
+    <HelpKINode Title="Piece.Y Property " Url="html/8ccacf6d-20ce-b43a-c24a-d9e120cfb7ed.htm" />
+    <HelpKINode Title="Position.Y Property " Url="html/9ad50a13-6770-02a6-fb7b-454e361fea16.htm" />
+  </HelpKINode>
+  <HelpKINode Title="yAxis enumeration member" Url="html/68fa9302-44a6-6d79-072e-01ec00dbfc66.htm" />
+  <HelpKINode Title="Z property">
+    <HelpKINode Title="Piece.Z Property " Url="html/44ebed12-fa11-1aed-5eed-187e9ceeb5bc.htm" />
+    <HelpKINode Title="Position.Z Property " Url="html/7f26f6b5-4b5a-a290-b422-f29290140998.htm" />
+  </HelpKINode>
+  <HelpKINode Title="zAxis enumeration member" Url="html/68fa9302-44a6-6d79-072e-01ec00dbfc66.htm" />
+</HelpKI>

@@ -21,7 +21,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\RubikGUI.XML</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -94,7 +95,7 @@
       <Project>{091662f8-5470-4e2d-b30c-3bd360a11fdb}</Project>
       <Name>RubikController</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Rubik\RubikModel.csproj">
+    <ProjectReference Include="..\RubikModel\RubikModel.csproj">
       <Project>{9d6035fe-6797-44a4-97c3-0626164c2ada}</Project>
       <Name>RubikModel</Name>
     </ProjectReference>

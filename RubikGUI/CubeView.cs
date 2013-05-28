@@ -1,4 +1,4 @@
-﻿using Rubik;
+﻿using RubikModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubikModel", "Rubik\RubikModel.csproj", "{9D6035FE-6797-44A4-97C3-0626164C2ADA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubikModel", "RubikModel\RubikModel.csproj", "{9D6035FE-6797-44A4-97C3-0626164C2ADA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubikTest", "RubikTest\RubikTest.csproj", "{3360648F-45DF-4162-80D7-501276A2750F}"
 EndProject
