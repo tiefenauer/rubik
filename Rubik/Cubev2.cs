@@ -227,7 +227,21 @@ namespace Rubik
         public object Clone()
         {
             Cubev2 cube = new Cubev2();
-            cube.pieces = this.pieces;
+            cube.pieces = new List<Piece>();
+            foreach (Piece oldpiece in this.pieces)
+            {
+                if (oldpiece is Middle)
+                {
+                    cube.pieces.Add(new Middle(oldpiece.X, oldpiece.Y, oldpiece.Z, oldpiece.A, oldpiece.B, oldpiece.C));          
+                }else if (oldpiece is Edge)
+                {
+                    cube.pieces.Add(new Edge(oldpiece.X, oldpiece.Y, oldpiece.Z, oldpiece.A, oldpiece.B, oldpiece.C));
+                }
+                else if (oldpiece is Corner)
+                {
+                    cube.pieces.Add(new Corner(oldpiece.X, oldpiece.Y, oldpiece.Z, oldpiece.A, oldpiece.B, oldpiece.C));
+                }
+            }            
             return cube;
         }
     }

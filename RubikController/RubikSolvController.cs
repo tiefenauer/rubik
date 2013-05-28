@@ -50,7 +50,7 @@ namespace RubikController
         /// <returns></returns>
         public Rotation Step()
         {
-            if (counter < rotations.Count)
+            if (counter+1 < rotations.Count)
             {
                 counter++;
                 Rotation rotation = rotations[counter];                

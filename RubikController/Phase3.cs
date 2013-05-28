@@ -45,6 +45,9 @@ namespace Rubik
 
         public List<Rotation> Solve(Cubev2 cube)
         {
+            this.cube = cube;
+            init();
+            cube.Rotated +=cube_Rotated;
             // step 1: bring edges from top layer to middle layer
             Edge nextEdge = getNextMiddleEdgeInTopLayer();
             while (nextEdge != null)
@@ -64,6 +67,7 @@ namespace Rubik
                 topToMiddle(nextEdge);
 
             }
+            cube.Rotated -= cube_Rotated;
             return rotations;
         }
 

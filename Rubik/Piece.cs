@@ -118,7 +118,7 @@ namespace Rubik
             {
                 colors.Add(this.B.Val);
             }
-            if (this.B != null)
+            if (this.C != null)
             {
                 colors.Add(this.C.Val);
             }
