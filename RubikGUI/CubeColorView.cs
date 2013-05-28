@@ -204,17 +204,17 @@ namespace RubikGUI
             List<Rotation> rotations = new List<Rotation>();
 
             Phase1 one = new Phase1(cube);
-            rotations.Concat(one.Solve(cube));
+            rotations.AddRange(one.Solve(cube));
             Phase2 two = new Phase2(this.cube);
-            rotations.Concat(two.Solve(cube));
+            rotations.AddRange(two.Solve(cube));
             Phase3 three = new Phase3(this.cube);
-            rotations.Concat(three.Solve(cube));
+            rotations.AddRange(three.Solve(cube));
             Phase4 four = new Phase4();
-            rotations.Concat(four.Solve(cube));
+            rotations.AddRange(four.Solve(cube));
             Phase5 five = new Phase5();
-            rotations.Concat(five.Solve(cube));
+            rotations.AddRange(five.Solve(cube));
             Phase6 six = new Phase6();
-            rotations.Concat(six.Solve(cube));
+            rotations.AddRange(six.Solve(cube));
             PaintCurrentCube();
         }
 
@@ -334,6 +334,7 @@ namespace RubikGUI
         {
             SaveCubeConfigToCube();
             solver.Solve(cube);
+            PaintCurrentCube();
         }
 
         private void Step_Click(object sender, EventArgs e)

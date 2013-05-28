@@ -40,7 +40,7 @@ namespace RubikController
             foreach (IPhaseSolvable phase in phases)
             {
                 List<Rotation> newRotations = phase.Solve(clonedCube);
-                rotations.Concat(newRotations);
+                rotations.AddRange(newRotations);                
             }
         }
 
