@@ -6,22 +6,40 @@ using System.Threading.Tasks;
 
 namespace RubikModel
 {
+    /// <summary>
+    /// Phase 2: Bring corners of top layer in Position
+    /// </summary>
     public class Phase2 : IPhaseSolvable
     {
-        Cubev2 cube = null;
+        // instance of the cube to be solved
+        private Cubev2 cube;
+        // color of the face on top (usually white)
         private String topColor;
+        // color in north direction
         private String northColor;
+        // color in south direction
         private String southColor;
+        // color in west direction
         private String westColor;
+        // color in east direction
         private String eastColor;
+
+        // rotations to reconstruct phase one
         private List<Rotation> rotations = new List<Rotation>();
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="cube">the cube to be solved</param>
         public Phase2(Cubev2 cube)
         {
             this.cube = cube;
             init();
         }
 
+        /// <summary>
+        /// Initialization: Determine colors of adjacend sides
+        /// </summary>
         private void init()
         {
             topColor = cube.Pieces.Where(p => p.Z == 1 && p is Middle).SingleOrDefault().C.Val;
@@ -32,6 +50,11 @@ namespace RubikModel
             eastColor = cube.Pieces.Where(p => p.X == 1 && p is Middle).SingleOrDefault().A.Val;
         }
 
+        /// <summary>
+        /// Solve phase two
+        /// </summary>
+        /// <param name="cube">the cube to be solved</param>
+        /// <returns></returns>
         public List<Rotation> Solve(Cubev2 cube)
         {
             //change refrence of this cube to new one
@@ -81,7 +104,7 @@ namespace RubikModel
         }
 
         /// <summary>
-        /// Eventhandler that adds the rotations to this handler whenever it happens.
+        /// Event handler that adds the rotations to this handler whenever it happens.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="data"></param>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace RubikModel
 {
     /// <summary>
-    /// Solve Phase one of a rubik's cube:
+    /// Phase one:
     /// Create the cross on the top (usually white) layer
     /// </summary>
     public class Phase1 : IPhaseSolvable
@@ -31,7 +31,7 @@ namespace RubikModel
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="cube"></param>
+        /// <param name="cube">the cube to be solved</param>
         public Phase1(Cubev2 cube)
         {
             this.cube = cube;
@@ -39,7 +39,7 @@ namespace RubikModel
         }
 
         /// <summary>
-        /// Initialization
+        /// Initialization: Determine colors of adjacend sides
         /// </summary>
         private void init()
         {
@@ -56,8 +56,10 @@ namespace RubikModel
         }
 
         /// <summary>
-        /// Solve phase one
+        /// Solve phase onw
         /// </summary>
+        /// <param name="cube">the cube to be solved</param>
+        /// <returns></returns>
         public List<Rotation> Solve(Cubev2 cube)
         {
             this.cube = cube;
@@ -73,7 +75,7 @@ namespace RubikModel
         }
 
         /// <summary>
-        /// Rotate north edge into its correct position
+        /// Rotate edge into its correct position
         /// </summary>
         /// <param name="edge"></param>
         private void rotateEdge(Edge edge)
@@ -103,7 +105,7 @@ namespace RubikModel
         }
 
         /// <summary>
-        /// Rotate edge in top layer to bottom layer
+        /// Rotate edge from top layer to bottom layer
         /// </summary>
         /// <param name="edge"></param>
         private void topToBottom(Edge edge)
@@ -116,7 +118,7 @@ namespace RubikModel
         }
 
         /// <summary>
-        /// Rotate edge in middle layer to bottom layer
+        /// Rotate edge from middle layer to bottom layer
         /// </summary>
         /// <param name="edge"></param>
         private void middleToBottom(Edge edge)
@@ -137,7 +139,7 @@ namespace RubikModel
         }
 
         /// <summary>
-        /// rotate edge in bottom layer to top layer
+        /// Rotate edge from bottom layer to top layer
         /// </summary>
         /// <param name="?"></param>
         private void bottomToTop(Edge edge)
@@ -150,7 +152,7 @@ namespace RubikModel
         }
 
         /// <summary>
-        /// check if an edge is matched against the face of the cube.
+        /// Check if an edge is matched against the face of the cube.
         /// </summary>
         /// <param name="edge"></param>
         /// <returns></returns>
@@ -169,7 +171,7 @@ namespace RubikModel
         }
 
         /// <summary>
-        /// Check if edge is in position
+        /// Check if edge is in position (i.e. in its correct target place)
         /// </summary>
         /// <param name="edge"></param>
         /// <returns></returns>
@@ -274,6 +276,7 @@ namespace RubikModel
         {
             return cube.Pieces.OfType<T>().ToList();
         }
+
 
         private Edge northEdge
         {

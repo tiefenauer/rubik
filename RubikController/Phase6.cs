@@ -6,16 +6,29 @@ using System.Threading.Tasks;
 
 namespace RubikModel
 {
+    /// <summary>
+    /// Phase 6: Bring edges in bottom layer into position (final phase)
+    /// </summary>
     public class Phase6 : IPhaseSolvable
     {
-        private Cubev2 cube;
-        private List<Rotation> rotations = new List<Rotation>();
 
-        private String bottomColor;
+        // instance of the cube to be solved
+        private Cubev2 cube;
+        // color of the face on top (usually white)
+        private String topColor;
+        // color in north direction
         private String northColor;
+        // color in south direction
         private String southColor;
+        // color in west direction
         private String westColor;
+        // color in east direction
         private String eastColor;
+        // color in bottom
+        private String bottomColor;
+
+        // rotations to reconstruct phase one
+        private List<Rotation> rotations = new List<Rotation>();
 
         /// <summary>
         /// Initialization
@@ -34,10 +47,10 @@ namespace RubikModel
         }
 
         /// <summary>
-        /// 
+        /// Solve phase 6
         /// </summary>
-        /// <param name="cube"></param>
-        /// <returns></returns>
+        /// <param name="cube">the cube to be solved</param>
+        /// <returns>a list of rotations applied to this cube</returns>
         public List<Rotation> Solve(Cubev2 cube)
         {
             this.cube = cube;
@@ -54,7 +67,7 @@ namespace RubikModel
         }
 
         /// <summary>
-        /// 
+        /// Create a matching edge
         /// </summary>
         private void matchOneEdge(){
             // F
@@ -83,7 +96,9 @@ namespace RubikModel
             cube.Rotate(Axis.yAxis, false, 1);
         }
 
-
+        /// <summary>
+        /// Rotate edges until cube is finished
+        /// </summary>
         private void finish()
         {
             Boolean counterclockwise = checkRotationDirection();
@@ -118,9 +133,9 @@ namespace RubikModel
         }
 
         /// <summary>
-        /// 
+        /// Rotate edges clockwise/counterclockwise
         /// </summary>
-        /// <returns></returns>
+        /// <param name="counterclockwise"></param>
         private void rotateEdges(Boolean counterclockwise)
         {
             // matching edge is in back
@@ -299,7 +314,7 @@ namespace RubikModel
         }
 
         /// <summary>
-        /// 
+        /// Check if Phase 6 (cube) is finished
         /// </summary>
         /// <returns></returns>
         private Boolean finished

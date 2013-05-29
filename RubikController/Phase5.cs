@@ -6,17 +6,29 @@ using System.Threading.Tasks;
 
 namespace RubikModel
 {
+    /// <summary>
+    /// Phase 5: Bring corners in bottom layer into position
+    /// </summary>
     public class Phase5 : IPhaseSolvable
     {
 
+        // instance of the cube to be solved
         private Cubev2 cube;
-        private List<Rotation> rotations = new List<Rotation>();
-
-        private String bottomColor;
+        // color of the face on top (usually white)
+        private String topColor;
+        // color in north direction
         private String northColor;
+        // color in south direction
         private String southColor;
+        // color in west direction
         private String westColor;
+        // color in east direction
         private String eastColor;
+        // color in bottom
+        private String bottomColor;
+
+        // rotations to reconstruct phase one
+        private List<Rotation> rotations = new List<Rotation>();
 
         /// <summary>
         /// Initialization
@@ -35,10 +47,10 @@ namespace RubikModel
         }
 
         /// <summary>
-        /// 
+        /// Solve phase 5
         /// </summary>
-        /// <param name="cube"></param>
-        /// <returns></returns>
+        /// <param name="cube">the cube to be solved</param>
+        /// <returns>a list of rotations</returns>
         public List<Rotation> Solve(Cubev2 cube)
         {
             this.cube = cube;
@@ -110,7 +122,6 @@ namespace RubikModel
                     }
                 }
             }
-
 
         }
 
@@ -250,6 +261,10 @@ namespace RubikModel
             }
         }
 
+        /// <summary>
+        /// Check if at least two corners in bottom layer are in position
+        /// </summary>
+        /// <returns></returns>
         private Boolean twoCornersMatch()
         {
             int matches = 0;
@@ -306,12 +321,6 @@ namespace RubikModel
 
         }
 
-        /// <summary>
-        /// Event handler for cube rotation
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="data"></param>
-        /// <param name="rotation"></param>
         void cube_Rotated(object sender, EventArgs data, Rotation rotation)
         {
             rotations.Add(rotation);

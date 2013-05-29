@@ -11,26 +11,37 @@ namespace RubikModel
     /// </summary>
     public class Phase3: IPhaseSolvable
     {
-        Cubev2 cube = null;
+        // instance of the cube to be solved
+        private Cubev2 cube;
+        // color of the face on top (usually white)
         private String topColor;
+        // color in north direction
         private String northColor;
+        // color in south direction
         private String southColor;
+        // color in west direction
         private String westColor;
+        // color in east direction
         private String eastColor;
-        private string bottomColor;
+        // color in bottom
+        private String bottomColor;
+
+        // rotations to reconstruct phase one
         private List<Rotation> rotations = new List<Rotation>();
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="cube">the cube to be solved</param>
         public Phase3(Cubev2 cube)
         {
             this.cube = cube;
             init();
         }
 
-        void cube_Rotated(object sender, EventArgs data, Rotation rotation)
-        {
-            rotations.Add(rotation);
-        }
-
+        /// <summary>
+        /// Initialization
+        /// </summary>
         private void init()
         {
             topColor = cube.Pieces.Where(p => p.Z == 1 && p is Middle).SingleOrDefault().C.Val;
@@ -42,7 +53,11 @@ namespace RubikModel
             eastColor = cube.Pieces.Where(p => p.X == 1 && p is Middle).SingleOrDefault().A.Val;
         }
 
-
+        /// <summary>
+        /// Solve phase three
+        /// </summary>
+        /// <param name="cube">the cube to be solved</param>
+        /// <returns></returns>
         public List<Rotation> Solve(Cubev2 cube)
         {
             this.cube = cube;
@@ -362,6 +377,12 @@ namespace RubikModel
                 return true;
             }
         }
+
+        void cube_Rotated(object sender, EventArgs data, Rotation rotation)
+        {
+            rotations.Add(rotation);
+        }
+
 
     }
 }

@@ -6,16 +6,28 @@ using System.Threading.Tasks;
 
 namespace RubikModel
 {
+    /// <summary>
+    /// Phase 4: Finish bottom face
+    /// </summary>
     public class Phase4 : IPhaseSolvable
     {
+        // instance of the cube to be solved
         private Cubev2 cube;
-        private List<Rotation> rotations = new List<Rotation>();
-
-        private String bottomColor;
+        // color of the face on top (usually white)
+        private String topColor;
+        // color in north direction
         private String northColor;
+        // color in south direction
         private String southColor;
+        // color in west direction
         private String westColor;
+        // color in east direction
         private String eastColor;
+        // color in bottom
+        private String bottomColor;
+
+        // rotations to reconstruct phase one
+        private List<Rotation> rotations = new List<Rotation>();
 
         /// <summary>
         /// Initialization
@@ -146,7 +158,7 @@ namespace RubikModel
         }
 
         /// <summary>
-        /// 
+        /// Check if cross in bottom is created
         /// </summary>
         /// <returns></returns>
         private Boolean bottomCrossCreated()
@@ -160,22 +172,7 @@ namespace RubikModel
         }
 
         /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        private Boolean case2()
-        {
-            IEnumerable<Piece> topLayerPieces = cube.Pieces.Where(p => p.Z == -1 && !(p is Middle));
-            foreach (Piece piece in topLayerPieces)
-            {
-                if (piece.C.Val == bottomColor)
-                    return false;
-            }
-            return true;
-        }
-
-        /// <summary>
-        /// 
+        /// Check if the edges in the bottom layer form an angle with the middle piece
         /// </summary>
         /// <returns></returns>
         private Boolean case3()
@@ -201,6 +198,10 @@ namespace RubikModel
             return false;
         }
 
+        /// <summary>
+        /// Check if the edges in the bottom layer form a line with the middle pieces
+        /// </summary>
+        /// <returns></returns>
         private Boolean case4()
         {
             int x = 0;
@@ -216,7 +217,7 @@ namespace RubikModel
         }
 
         /// <summary>
-        /// 
+        /// Create cross from case 2 (neither angle nor line)
         /// </summary>
         private void crossFromCase2()
         {
@@ -244,7 +245,7 @@ namespace RubikModel
         }
 
         /// <summary>
-        /// 
+        /// Create cross from case 3 (angle)
         /// </summary>
         private void crossFromCase3()
         {
@@ -273,7 +274,7 @@ namespace RubikModel
         }
 
         /// <summary>
-        /// 
+        /// Create cross from case 4 (line)
         /// </summary>
         private void crossFromCase4()
         {
