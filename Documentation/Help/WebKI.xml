@@ -362,7 +362,7 @@
     <HelpKINode Title="RubikSolvController.Solve Method " Url="html/df444bc0-d167-0164-0db7-d12ce87ff7af.htm" />
   </HelpKINode>
   <HelpKINode Title="Step method" Url="html/267b4d62-53d8-be42-e30c-241bb2cd249e.htm" />
-  <HelpKINode Title="TestMethod1 method" Url="html/c5e1ac1c-ff96-b040-e669-c24d070fcff4.htm" />
+  <HelpKINode Title="TestRandomCubes method" Url="html/9204c70d-5d00-064a-ad24-33d62f89e42f.htm" />
   <HelpKINode Title="UnitTest1 class">
     <HelpKINode Title="UnitTest1 Class" Url="html/4dac956a-7741-99f5-f212-b117b7b9c0db.htm" />
     <HelpKINode Title="UnitTest1 Members" Url="html/675eadbe-4b39-5d84-2a51-f01e6633f067.htm" />
@@ -371,7 +371,7 @@
     <HelpKINode Title="constructor" Url="html/6c880a00-ead0-f7af-53e2-51e7cbcdd6d5.htm" />
     <HelpKINode Title="methods" Url="html/f903c740-8664-0e19-da90-f1b6c69eeed0.htm" />
   </HelpKINode>
-  <HelpKINode Title="UnitTest1.TestMethod1 method" Url="html/c5e1ac1c-ff96-b040-e669-c24d070fcff4.htm" />
+  <HelpKINode Title="UnitTest1.TestRandomCubes method" Url="html/9204c70d-5d00-064a-ad24-33d62f89e42f.htm" />
   <HelpKINode Title="UnitTest1.UnitTest1 constructor" Url="html/6c880a00-ead0-f7af-53e2-51e7cbcdd6d5.htm" />
   <HelpKINode Title="Val property" Url="html/c161a6d4-5094-f8c4-998e-b1e871c932e4.htm" />
   <HelpKINode Title="Value property" Url="html/b1f8b0da-4f14-9a1a-1a32-5217645026c4.htm" />
