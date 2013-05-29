@@ -116,7 +116,7 @@ namespace RubikModel
             {
                 // Position 1 erstellen
                 case 0:
-                    while (southRightCorner.B.Val != eastColor)
+                    while (southRightCorner.A.Val != bottomColor)
                     {
                         cube.Rotate(Axis.zAxis, false, -1);
                         southRightCorner = corners.Where(p => p.X == 1 && p.Y == 1 & p.Z == -1).SingleOrDefault();

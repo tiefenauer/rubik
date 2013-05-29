@@ -60,13 +60,22 @@ namespace RubikModel
             while (!finished){
                 // get next edge which is already in middle layer, but in the wrong place
                 nextEdge = getNextUnmatchedMiddleLayerEdge();
-                // get dummy edge to swap with this edge
-                Edge dummyEdge = getDummyEdge(nextEdge);
-                // swap dummy edge ==> target edge is in top
-                swapEdge(dummyEdge, false);
-                topToMiddle(nextEdge);
+
+                // no unmatched middle edge and still not finished: this means that the next edge is again in bottom layer
+                if (nextEdge == null){
+                    nextEdge = getNextMiddleEdgeInTopLayer();
+                    topToMiddle(nextEdge);
+                }
+                else{
+                    // get dummy edge to swap with this edge
+                    Edge dummyEdge = getDummyEdge(nextEdge);
+                    // swap dummy edge ==> target edge is in top
+                    swapEdge(dummyEdge, false);
+                    topToMiddle(nextEdge);
+                }
 
             }
+
             cube.Rotated -= cube_Rotated;
             return rotations;
         }
