@@ -1078,6 +1078,7 @@
             this.dgvRotations.ReadOnly = true;
             this.dgvRotations.Size = new System.Drawing.Size(197, 266);
             this.dgvRotations.TabIndex = 84;
+            this.dgvRotations.Visible = false;
             // 
             // CubeColorView
             // 
