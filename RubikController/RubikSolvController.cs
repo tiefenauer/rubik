@@ -61,6 +61,7 @@ namespace RubikController
                 List<Rotation> newRotations = phase.Solve(clonedCube);
                 rotations.AddRange(newRotations);                
             }
+            counter = -1;
         }
 
         /// <summary>
