@@ -57,9 +57,11 @@ namespace RubikModel
             init();
 
             // step 1: adjust corners
-            adjustCorners();
+            if (!finished)
+                adjustCorners();
             // step 2: Finish corners
-            finish();
+            if(!finished)
+                finish();
 
             return rotations;
         }
