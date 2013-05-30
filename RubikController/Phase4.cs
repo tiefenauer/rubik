@@ -56,9 +56,11 @@ namespace RubikModel
             init();
 
             // step 1: Make cross
-            makeCross();
+            if(!finished)
+                makeCross();
             // step 2: Finish corners
-            finishCorners();
+            if(!finished)
+                finishCorners();
 
             return rotations;
         }

@@ -61,14 +61,19 @@ namespace RubikModel
         public List<Rotation> Solve(Cubev2 cube)
         {
             this.cube = cube;
+            rotations = new List<Rotation>();
             init();
-            cube.Rotated +=cube_Rotated;
+            cube.Rotated +=cube_Rotated;           
             // step 1: bring edges from top layer to middle layer
-            Edge nextEdge = getNextMiddleEdgeInTopLayer();
-            while (nextEdge != null)
+            Edge nextEdge = null;
+            if (!finished)
             {
-                topToMiddle(nextEdge);
                 nextEdge = getNextMiddleEdgeInTopLayer();
+                while (nextEdge != null)
+                {
+                    topToMiddle(nextEdge);
+                    nextEdge = getNextMiddleEdgeInTopLayer();
+                }
             }
 
             // step 2: If middle layer contains still wrong edges, swap them one by one with one from the top layer and then continue as in step 1
